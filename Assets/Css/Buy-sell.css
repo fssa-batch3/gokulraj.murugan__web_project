@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #061121;
+    width: 1440px;
+    height: auto;
+    color: white;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22px;
+    height: 70px;
+}
+header nav ul li {
+    display: inline;
+}
+header a {
+    color: #7c8189;
+    text-decoration: none;
+    margin: 25px;
+}
+#logo{
+    font-family: 'Zen Dots', cursive;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+.table{
+    background-color: white;
+    color: #061121;
+    width: 1300px;
+    margin: 70px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+th, td {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+}
+.buy{
+    border: 1px solid blue;
+    background-color: blue  ;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 30px;
+    border-style: none;
+    text-decoration: none;
+}
+footer{
+    background-color: #1e375c;
+    margin: 50px 0px 0px 0px;
+    width: 1487px;
+    height: 250px;
+    text-align: center;
+ }
+ .ftr1{
+     padding: 40px 0px 0px 0px;
+     word-spacing: 3px;
+     font-size: 20px;
+ }
+ #email{
+     width: 350px;
+     height: 40px;
+     border-radius: 20px;
+     border-style: none;
+     margin: 20px 0px 0px 130px;
+ }
+ #btn1{
+     width: 80px;
+     height: 40px;
+     border-radius: 19px;
+     border-style: none;
+     font-size: 18px;
+     margin: 0px 0px 0px 40px;
+ }
+ .ftr2{
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-end;
+     height: 70px;
+ }
+ .ftr2 a{
+     margin: 10px;
+     color: white;
+ }
