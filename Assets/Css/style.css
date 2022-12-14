@@ -3,18 +3,22 @@
     padding: 0;
     color: white;
 }
-body {
+
+.all{
     font-family: 'Rubik', sans-serif;
     background-color: #061121;
-    width: 1440px;
+    width: 100%;
     height: auto;
 }
+
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 22px;
-    height: 70px;
+    height: 100px;
+    /* position: sticky;
+    top: 0px; */
 }
 header nav ul li {
     display: inline;
@@ -24,126 +28,154 @@ header a {
     text-decoration: none;
     margin: 25px;
 }
-#logo{
+
+#logo {
     font-family: 'Zen Dots', cursive;
     font-size: 40px;
     letter-spacing: 4px;
 }
-.sec1 .para1{
+
+.sec1 .para1 {
     text-align: center;
-    margin: 140px 0px 0px 0px ;
+    margin: 140px 0px 0px 0px;
     font-size: 25px;
     word-spacing: 3px;
     letter-spacing: 1px;
 }
-.img1{
-    margin: 90px 0px 30px 530px ;
+
+.img1 {
+    margin: 90px 0px 30px 530px;
     width: 400px;
     height: 700px;
 }
-.para1-1{
+
+.para1-1 {
     margin-top: 70px;
 }
-.sec1 p{
+
+.sec1 p {
     margin: 10px;
 }
-.sec2{
+
+.sec2 {
     height: 700px;
     padding: 50px;
     text-align: center;
     font-size: 22px;
 }
-.sec2 h1{
-    margin: 60px 0px 0px 0px;
+
+.sec2 h1 {
+    margin: 60px 0px 10px 0px;
 }
-.sec2-1{
-    width:1000px;
+.sec2 p{
+    color: #0e99fa;
+}
+.sec2-1 {
+    width: 1000px;
     margin: 50px 0px 0px 200px;
     font-size: 30px;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-td{
+}
+
+td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid grey;
-}  
-.t1{
+}
+
+.t1 {
     color: red;
     font-size: 25px;
 }
-.sec2 .btn1{
+
+.sec2 .btn1 {
     background-color: white;
     color: #061121;
     padding: 10px;
     font-size: 30px;
     border-radius: 8px;
     font-weight: 600;
-    width: 100px; 
+    width: 100px;
 }
-.sec2 .btn1:hover{
+
+.sec2 .btn1:hover {
     background-color: #061121;
     color: white;
     border: 1.5px solid aqua;
 }
-.btn2{
-    background-color:#061121;
+
+.btn2 {
+    background-color: #061121;
     color: white;
     padding: 10px;
     font-size: 25px;
     border: 1px solid white;
     margin: 60px 0px 0px 0px;
 }
-.sec3{
+
+.sec3 {
     display: flex;
     height: 800px;
     word-spacing: 3px;
 }
-#img2{
+
+#img2 {
     width: 400px;
     height: 700px;
     margin: 50px 0px 0px 200px;
 }
-.para2{
+.para2 {
     margin: 200px 0px 20px 150px;
     font-size: 25px;
 }
-footer{
+.para2 h4{
+    color: #0e99fa;
+    text-transform: uppercase;
+}
+
+footer {
     background-color: #1e375c;
     margin: 50px 0px 0px 0px;
     width: 1487px;
-    height: 250px;
+    height: 280px;
     text-align: center;
- }
- .ftr1{
-     padding: 40px 0px 0px 0px;
-     word-spacing: 3px;
-     font-size: 20px;
- }
- #email{
-     width: 350px;
-     height: 40px;
-     border-radius: 20px;
-     border-style: none;
-     margin: 20px 0px 0px 130px;
- }
- #btn1{
-     width: 80px;
-     height: 40px;
-     border-radius: 19px;
-     border-style: none;
-     font-size: 18px;
-     margin: 0px 0px 0px 40px;
- }
- .ftr2{
-     display: flex;
-     justify-content: space-around;
-     align-items: flex-end;
-     height: 70px;
- }
- .ftr2 a{
-     margin: 10px;
-     color: white;
- }
+}
+.ftr1 {
+    padding: 40px 0px 0px 0px;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+#email {
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    margin: 40px 0px 0px 130px;
+    font-size: 18px;
+    color: black;
+}
+#btn5 {
+    width: 90px;
+    height: 50px;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #061121;
+    font-size: 18px;
+    margin: 0px 0px 0px 30px;
+    text-transform: uppercase;
+    
+}
+.ftr2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    height: 70px;
+}
+.ftr2 a {
+    margin: 10px;
+    color: white;
+}
