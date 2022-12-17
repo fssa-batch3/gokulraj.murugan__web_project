@@ -1,21 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
-    background-color:#061121 ;
+
+body {
+    background-color: #061121;
     color: white;
 }
-input{
-    width:350px;
+
+input {
+    width: 350px;
     height: 33px;
     display: block;
     margin: 5px;
     border: 1px solid grey;
-    border-radius: 50px;    
+    border-radius: 50px;
 }
-.hr{
-    width:200px;
-    height:2px;
+
+.hr {
+    width: 200px;
+    height: 2px;
     background-color: grey;
 }

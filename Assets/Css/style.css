@@ -1,8 +1,9 @@
 * {
     margin: 0px;
     padding: 0px;
-    color: white;  
+    color: white;
 }
+
 body {
     font-family: 'Rubik', sans-serif;
     background-color: #061121;
@@ -19,107 +20,123 @@ header {
     height: 70px;
     padding-top: 30px;
 }
+
 header nav ul li {
     display: inline;
 }
+
 header ul li a {
     color: #7c8189;
     text-decoration: none;
     margin: 25px;
 }
-#logo{
+
+#logo {
     font-family: 'Zen Dots', cursive;
     font-size: 40px;
     letter-spacing: 4px;
 }
+
 /* dropdown portion starts */
 .dropdown {
     position: relative;
     display: inline-block;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #061121;
     width: 80px;
     padding: 10px 16px;
     z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content  {
-    display: block;
-  }
+}
 
-  .dropdown-content a {
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
     display: block;
     text-decoration: none;
     color: #7c8189;
     padding: 10px 0px;
-  }
-  /* header portion ends */
+}
+
+/* header portion ends */
 /* main portion starts  */
-.img1{
+.img1 {
     margin: 0px 0px 0px 400px;
 }
-.sec1 .para1{
+
+.sec1 .para1 {
     text-align: center;
-    margin: 140px 0px 0px 0px ;
+    margin: 140px 0px 0px 0px;
     font-size: 25px;
     word-spacing: 3px;
     letter-spacing: 1px;
 }
-.para1-1{
+
+.para1-1 {
     margin-top: 70px;
 }
-.sec1 p{
+
+.sec1 p {
     margin: 10px;
 }
 
 
-.sec2{
+.sec2 {
     height: 700px;
     padding: 50px;
     text-align: center;
     font-size: 22px;
 }
-.sec2 h1{
+
+.sec2 h1 {
     margin: 60px 0px 0px 0px;
 }
-.sec2-1{
-    width:1000px;
+
+.sec2-1 {
+    width: 1000px;
     margin: 50px 0px 0px 200px;
     font-size: 30px;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-td{
+}
+
+td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid grey;
-}  
-.t1{
+}
+
+.t1 {
     color: red;
     font-size: 25px;
 }
-.sec2 .btn1{
+
+.sec2 .btn1 {
     background-color: white;
     color: #061121;
     padding: 10px;
     font-size: 30px;
     border-radius: 8px;
     font-weight: 600;
-    width: 100px; 
+    width: 100px;
 }
-.sec2 .btn1:hover{
+
+.sec2 .btn1:hover {
     background-color: #061121;
     color: white;
     border: 1.5px solid aqua;
 }
-.btn2{
-    background-color:#061121;
+
+.btn2 {
+    background-color: #061121;
     color: white;
     padding: 10px;
     font-size: 25px;
@@ -128,62 +145,71 @@ td{
 }
 
 
-.sec3{
+.sec3 {
     display: flex;
     height: 800px;
     word-spacing: 3px;
 }
-#img2{
+
+#img2 {
     width: 700px;
     height: 600px;
     margin: 50px 0px 0px 0px;
 }
-.para2{
+
+.para2 {
     margin: 200px 0px 20px 70px;
     font-size: 25px;
 }
+
 /* main portion ends */
 
 /* footer portion starts */
-footer{
+footer {
     background-color: #1e375c;
     width: 1487px;
     height: 270px;
     text-align: center;
- }
- .ftr1{
-     padding: 40px 0px 0px 0px;
-     word-spacing: 3px;
-     font-size: 20px;
- }
- #email{
-     width: 350px;
-     height: 40px;
-     border-radius: 20px;
-     border-style: none;
-     margin: 20px 10px 0px 0px;
-     text-align: center;
-    color: black;
-    }
- #btn1{
-     width: 80px;
-     height: 40px;
-     border-radius: 19px;
-     border-style: none;
-     background-color:#1098f7;
-     font-size: 18px;
-     text-transform: uppercase;
- }
- .ftr2{
-     display: flex;
-     justify-content: space-around;
-     align-items: flex-end;
-     height: 60px;
-     margin-left: -100px;
 }
-.ftr2 i{
+
+.ftr1 {
+    padding: 40px 0px 0px 0px;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+#email {
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    margin: 20px 10px 0px 0px;
+    text-align: center;
+    color: black;
+}
+
+#btn1 {
+    width: 80px;
+    height: 40px;
+    border-radius: 19px;
+    border-style: none;
+    background-color: #1098f7;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.ftr2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 60px;
+    margin-left: -100px;
+}
+
+.ftr2 i {
     color: white;
     margin: 0px 10px 0px 10px;
     font-size: 25px;
 }
+
 /* footer portion ends */
