@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #061121;
+    width: 1440px;
+    height: auto;
+    color: white;
+}
+
+/* header portion starts */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 22px;
+    height: 70px;
+    padding-top: 30px;
+    background-color: #061121;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header ul li a {
+    color: #7c8189;
+    text-decoration: none;
+    margin: 25px;
+}
+
+#logo {
+    font-family: 'Zen Dots', cursive;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+/* dropdown portion starts */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #061121;
+    width: 80px;
+    padding: 20px 16px;
+    z-index: 1;
+    left: 15px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: #7c8189;
+    padding: 10px 0px;
+}
+
+/* header portion ends */
+/* main portion starts */
+
+.box{
+    background-color: #1e375c;
+    width: 500px;
+    height: 650px;
+    border-radius: 20px;
+    margin: 100px 0px 0px 450px;
+}
+.box h1{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+}
+#img1{
+    width: 150px;
+    border-radius: 20px;
+    margin: 20px 50px 0px 170px;
+}
+.box h3{
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+    font-size: 28px;
+}
+#btn1{
+    width: 90px;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #1098f7;
+    margin: 10px 0px 0px 200px;
+}
+/* main portion ends */
+/* footer portion starts */
+footer {
+    background-color: #1e375c;
+    width: 1487px;
+    height: 270px;
+    text-align: center;
+    margin: 60px 0px 0px 0px;
+}
+
+.ftr1 {
+    padding: 40px 0px 0px 0px;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+#email {
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    border-style: none;
+    margin: 20px 10px 0px 0px;
+    text-align: center;
+    color: black;
+}
+
+#btn2 {
+    width: 80px;
+    height: 40px;
+    border-radius: 19px;
+    border-style: none;
+    background-color: #1098f7;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.ftr2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 60px;
+    margin-left: -100px;
+}
+
+.ftr2 i {
+    color: white;
+    margin: 0px 10px 0px 10px;
+    font-size: 25px;
+}
+
+/* footer portion ends */
