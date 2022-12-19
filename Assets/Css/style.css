@@ -21,16 +21,19 @@ header {
     padding-top: 30px;
 }
 
-header nav ul li {
+header nav {
     display: inline;
 }
 
-header ul li a {
+header  a {
     color: #7c8189;
     text-decoration: none;
     margin: 25px;
 }
-
+header a:hover{
+    color: white;
+    font-weight: 800;
+}
 #logo {
     font-family: 'Zen Dots', cursive;
     font-size: 40px;
@@ -48,8 +51,10 @@ header ul li a {
     position: absolute;
     background-color: #061121;
     width: 80px;
-    padding: 10px 16px;
+    padding: 10px 25px;
     z-index: 1;
+    left: -20px;
+    text-align: center;
 }
 
 .dropdown:hover .dropdown-content {
