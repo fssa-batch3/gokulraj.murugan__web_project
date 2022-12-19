@@ -4,12 +4,16 @@
 }
 
  body {
-    background-color: #061121;
+
+    background:url(../Images/bg2.jpg);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 input{
     border-radius: 20px;
@@ -18,5 +22,32 @@ input{
     height: 35px;
     font-size: 20px;
     display: block;
-    margin: 15px 15px 15px 10px;
+    margin: 20px 15px 20px 10px;
+}
+fieldset{
+    background-color:  #1e375c;
+    border-radius: 20px;
+    height: 420px;
+}
+.sec1 h1{
+    margin: 10px 0px 50px 130px ;
+    font-size: 50px;
+}
+#btn1{
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    background-color: blue;
+    margin:20px 25px 20px 25px;
+    color: white;
+}
+.sec1 p{
+    font-size: 20px;
+    margin: 10px 0px 0px 100px;
+}
+.sec1 a{
+    text-decoration: none;
+    color: aqua;
+    font-size: 20px;
+    margin: 10px 0px 50px 50px;
 }
