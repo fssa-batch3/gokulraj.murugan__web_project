@@ -1,0 +1,12 @@
+*{
+
+}
+
+.all{
+    display: flex;
+    align-items: center;
+}
+#img1{
+    margin: 100px 0px 0px 100px;
+}
+

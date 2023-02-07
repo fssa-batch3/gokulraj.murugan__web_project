@@ -18,13 +18,37 @@
             <label for="name"></label><input type="name" id="name" name="name" placeholder="username or Email">
             <label for="password"></label><input type="password" id="password" name="password" placeholder="Password">
             <div>
-            <button id="btn1">Sign in</button>
+            <button id="btn1" onclick="login()">Sign in</button>
             <p>Don't have an account? </p>
             <p><a href="#">Register</a></p></div>
 
         </fieldset>
     </form>
 </div>
+<script>
+    function login() {
+            let name = document.getElementById("name").value
+            let password = document.getElementById("password").value
+            let arr = JSON.parse(localStorage.getItem("hlo"))
+let res;
+            arr.find(element => {
+                if (element["name"] == name && element["password"]== password) {
+                    return res=1  ;
+                }
+                else {
+                    return res=0;
+                }
+            });
+            if(res==1){
+    alert("Logged in")
+        window.location.href="price.html"
+
+}
+else{
+    alert("none")
+}
+}
+</script>
 
 </body>
 
