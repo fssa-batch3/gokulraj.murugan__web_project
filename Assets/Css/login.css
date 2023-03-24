@@ -1,52 +1,153 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
- body {
-    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../Images/bg2.jpg);
-    color: white;
+body {
+    background-color: #EDF3FD;
+    /* width: 1440px; */
+    height: 900px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 800px;
-    background-position: center;
+    justify-content:space-between;
+    background-image: url(../Images/1.png);
+    background-position: 600%;
     background-repeat: no-repeat;
-    background-size: cover;
+    overflow: hidden;
 }
-input{
-    border-radius: 20px;
-    color: grey;
-    width: 350px;
-    height: 35px;
+ 
+.login{
+    padding: 100px;
+}
+a {
+    text-decoration: none;
+    color: black;
+
+}
+.head{
+    display: flex;
+    justify-content: space-between;
     font-size: 20px;
-    display: block;
-    margin: 20px 15px 20px 10px;
+    margin: 10px;
 }
-fieldset{
-    background-color:  #1e375c;
-    border-radius: 20px;
-    height: 420px;
+
+.h2{
+    margin: 20px 0px 30px 160px ;
 }
-.sec1 h1{
-    margin: 10px 0px 50px 130px ;
-    font-size: 50px;
+label{
+    margin: 0px 30px 0px 0px;
 }
-#btn1{
-    border-radius: 10px;
+
+input{
+    border-radius: 15px;
+    color: gray;
+    border-style: none;
     width: 300px;
     height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 10px 10px 0px;   
+}
+
+
+button{
+    margin: 20px 10px 10px 120px;
+    border-radius: 15px;
+    padding: 5px;
+    width: 150px;
+    height: 50px;
+    border: none;
     background-color: blue;
-    margin:20px 25px 20px 25px;
-    color: white;
+    font-size: 18px;
+
+
 }
-.sec1 p{
-    font-size: 20px;
-    margin: 10px 0px 0px 100px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .signup{
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 100px;
 }
-.sec1 a{
+.sec-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+.sec-1 a {
     text-decoration: none;
-    color: aqua;
-    font-size: 20px;
-    margin: 10px 0px 50px 50px;
 }
+.sec1-1{
+    font-size: 25px;
+    color: gray;
+}
+.sec1-2{
+    display: flex;
+    font-size: 20px;
+} */
+
+/* .design .sec-1{
+    background-color:blue;
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    transform: rotate(10deg);
+    overflow-x: hidden;
+} */
+

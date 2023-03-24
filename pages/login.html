@@ -10,45 +10,68 @@
 </head>
 
 <body>
-    <div class="sec1">
-    <form action="../pages/Price.html">
-        <fieldset>
-            <legend></legend>
-            <h1>Login</h1>
-            <label for="name"></label><input type="name" id="name" name="name" placeholder="username or Email">
-            <label for="password"></label><input type="password" id="password" name="password" placeholder="Password">
-            <div>
-            <button id="btn1" onclick="login()">Sign in</button>
-            <p>Don't have an account? </p>
-            <p><a href="signup.html">Register</a></p></div>
+    <div class="login">
+        <div class="head">
+            <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
+            <h5>New member?<a href="#">Sign Up</a></h5>
+        </div>
+        <div class="h2">
+            <h2>Sign In</h2>
+        </div>
 
-        </fieldset>
-    </form>
-</div>
-<script>
-    function login() {
-            let name = document.getElementById("name").value
+        <form action="" id="form">
+
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required><br>
+
+            <!-- <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required><br> -->
+
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
+
+            <button type="button" id="btn">Sign in</button>
+
+        </form>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>
+        function login() {
+            let email = document.getElementById("email").value
             let password = document.getElementById("password").value
-            let arr = JSON.parse(localStorage.getItem("hlo"))
-let res;
-            arr.find(element => {
-                if (element["name"] == name && element["password"]== password) {
-                    return res=1  ;
-                }
-                else {
-                    return res=0;
+            let arr = JSON.parse(localStorage.getItem("array"))
+
+            let profile_details = {
+                "email": email,
+                "password": password,
+            }
+            let res;
+            arr.find(e => {
+                if (e["email"] == email && e["password"] == password) {
+                    localStorage.setItem("profile_details", JSON.stringify(profile_details))
+                    return res = 1;
                 }
             });
-            if(res==1){
-    alert("Logged in")
-        window.location.href="price.html"
+            if (res == 1) {
+                alert("Logged in")
+                window.location.href = "../../profile.html"
+            }
+            else {
+                alert("Invalid Email or Password")
+            }
 
-}
-else{
-    alert("none")
-}
-}
-</script>
+        }
+
+        const form = document.getElementById("btn");
+        form.addEventListener("click", e => {
+            e.preventDefault();
+            login()
+        }) 
+    </script>
+
 
 </body>
 
