@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/Exchange.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="./dashboard.html">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./Exchange.html">
+                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="./wallet.html">
+                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="./cryptos.html">
+                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="all">
+        <div class="head">
+            <h3><a href="#">Buy</a></h3>
+            <h3><a href="#">Request</a></h3>
+        </div>
+        <hr class="line">
+        <div class="main">
+
+
+
+
+            <!-- <div id="bitcoin">
+                <h2 class="crypto_name">Bitcoin</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="image">
+                            <img src="../Assets/Images/profile.png" alt="" height="290px" width="100%">
+                            <hr class="hr">
+                            <div class="details">
+                                <h2>Username</h2>
+                            </div>
+                            <div class="coin" >
+                                <img src="../Assets/Images/Logo/btc.png" alt="" 
+                                    class="coin_image">
+                                <h5 >Bicoin</h5>
+                                <div class="price">
+                                    <h4>5</h4>
+                                    <h5 >BTC</h5>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button class="card_button"><a href="#">View Profile</a></button>
+                                <button class="card_button"><a href="#">BUY</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+            </script>
+            <script>
+
+                // <div id="bitcoin">
+
+                let box = document.createElement("div")
+                box.setAttribute("id", "bitcoin")
+                document.querySelector(".main").append(box)
+
+                // <h2 class="crypto_name">Bitcoin</h2>
+                let crypto_name = document.createElement("h2")
+                crypto_name.setAttribute("class", "crypto_name")
+                box.append(crypto_name)
+
+                // <div class="cards">
+                let cards = document.createElement("div")
+                cards.setAttribute("class", "cards")
+                box.append(cards)
+
+                // <div class="card">
+                let card = document.createElement("div")
+                card.setAttribute("class", "card")
+                cards.append(card)
+
+
+                // <div class="image">
+                let image = document.createElement("div")
+                image.setAttribute("class", "image")
+                card.append(image)
+
+                // <img src="../Assets/Images/profile.png" alt="" height="290px" width="100%">
+                let img = document.createElement("img")
+                img.setAttribute("src", "../Assets/Images/profile.png")
+                image.append(img)
+
+                // <hr class="hr">
+                let line = document.createElement("hr")
+                line.setAttribute("class", "hr")
+                image.append(line)
+
+                // <div class="details">
+                let details = document.createElement("div")
+                details.setAttribute("class", "details")
+                image.append(details)
+
+
+
+                // <h2>Username</h2>
+                let username = document.createElement("h2")
+                username.innerHTML = "Username"
+                details.append(username)
+
+
+
+                // <div class="coin" >
+                let coin = document.createElement("div")
+                coin.setAttribute("class", "coin")
+                image.append(coin)
+
+
+
+                // <img src="../Assets/Images/Logo/btc.png" alt="" 
+                //                     class="coin_image">
+
+                let coin_image = document.createElement("img")
+                coin_image.setAttribute("src", "../Assets/Images/Logo/btc.png")
+                coin_image.setAttribute("class", "coin_image")
+                coin.append(coin_image)
+
+                // <h5 >Bicoin</h5>
+                let name = document.createElement("h5")
+                name.innerHTML = "Username"
+                coin.append(name)
+
+                // <div class="price">
+                let price = document.createElement("div")
+                price.setAttribute("class", "price")
+                coin.append(price)
+
+
+                // <h4>5</h4>
+                let h4 = document.createElement("h4")
+                h4.innerHTML = "5"
+                price.append(h4)
+
+
+                // <h5 >BTC</h5>
+                let h5 = document.createElement("h5")
+                h5.innerHTML = "Btc"
+                price.append(h5)
+
+
+                // <div class="buttons">
+                let buttons = document.createElement("div")
+                price.setAttribute("class", "buttons")
+                image.append(buttons)
+
+                //  <button class="card_button"><a href="#">View Profile</a></button>
+
+                let view_profile1 = document.createElement("a")
+                view_profile1.setAttribute("href", "#")
+                buttons.append(view_profile1)
+
+                
+                let view_profile = document.createElement("btn")
+                view_profile.setAttribute("class", "card_button")
+                view_profile.innerHTML = "View Profile"
+                view_profile1.append(view_profile)
+
+                
+
+                //                 <button class="card_button"><a href="#">BUY</a></button>
+                let buy = document.createElement("a")
+                buy.setAttribute("href", "#")
+                buttons.append(buy)
+
+                let buy1= document.createElement("btn")
+                buy1.setAttribute("class", "card_button")
+                buy1.innerHTML = "BUY"
+                buy.append(buy1)
+
+
+
+
+            </script>
+
+</body>
+
+</html>

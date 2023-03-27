@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/cryptos.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="all">
+        <div class="head">
+
+        </div>
+        <div class="boxes">
+            <!-- <div class="box">
+
+                    <img src="../Assets/Images/logo/sol.png" width="25%" alt="error_found" class="img">
+               
+                <div class="text">
+                    <h2>Solana</h2>
+                    <p>sol</p>
+                </div>
+            </div> -->
+
+            <!-- <div class="form">
+                <form action="">
+                    <label for="coin_name"> Coin Name :</label>
+                    <input type="text" name="coin_name" id="coin_name"><br>
+
+                    <label for="symbol"> Symbol :</label>
+                    <input type="text" name="symbol" id="symbol"><br>
+
+                    <label for="logo">Image :</label>
+                    <input type="text" name="logo" id="logo"><br>
+
+                </form>
+
+                <button id="button1">Cancel</button>
+                <button id="button2" type="button" onclick="gen()">Submit</button>
+            </div> -->
+        </div>
+
+
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+
+    <script>
+
+        let product_list = [
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "hellSolanao",
+                "symbol": "sol"
+            },
+
+        ]
+        // <div class="box">
+
+        for (i = 0; i < product_list.length; i++) {
+            let box = document.createElement("div")
+            box.setAttribute("class", "box")
+            document.querySelector(".boxes").append(box)
+
+            //  img   
+            let img = document.createElement("img")
+            img.setAttribute("src", product_list[i]["img"])
+            img.setAttribute("class", "img")
+            img.setAttribute("width", "25%")
+            img.setAttribute("alt", "error_found")
+            box.prepend(img)
+
+            // <div class="text">
+            let text = document.createElement("div")
+            text.setAttribute("class", "text")
+            box.append(text)
+
+            //   <h2>Solana</h2>
+            let h2 = document.createElement("h2")
+            h2.innerText = "Solana"
+            text.prepend(h2)
+
+            //  <p>sol</p> 
+            let p = document.createElement("p")
+            p.innerText = "Sol"
+            text.append(p)
+
+
+
+        }
+
+
+
+
+
+        // form
+
+        function gen() {
+            let coin_name = document.getElementById("coin_name").value
+            let symbol = document.getElementById("symbol").value
+            let image = document.getElementById("logo").value
+            let res;
+            let product;
+            product = JSON.parse(localStorage.getItem("product")) ?? [];
+
+            if (coin_name = "") {
+                let product_details = {
+                    "coin_name": coin_name,
+                    "symbol": symbol,
+                    "image": image,
+                }
+                product.push(product_details);
+                localStorage.setItem("product", JSON.stringify(product))
+                window.location.href = "cryptos.html"
+              }
+            else {
+                let verify = JSON.parse(localStorage.getItem("product"))
+                verify.find(e => {
+                    if (e["coin_name"] == coin_name) {
+                        return res = 1
+                    }
+                    if(res ==1){
+                        alert("Product already taken")
+                    }
+                    else {
+                        let product_details = {
+                            "coin_name": coin_name,
+                            "symbol": symbol,
+                            "image": image,
+                        }
+                        product.push(product_details);
+                        localStorage.setItem("product", JSON.stringify(product))
+                        window.location.href = "cryptos.html"
+                    }
+                })
+            }
+
+        }
+    </script>
+</body>
+
+</html>
