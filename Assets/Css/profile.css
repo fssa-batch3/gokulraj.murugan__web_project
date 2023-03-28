@@ -4,13 +4,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-/* body {
-    background-color: #EDF3FD;
-    width: 1440px;
-    height: 850px;
-} */
-
 body {
     background-color: #EDF3FD;
     /* width: 1440px; */
@@ -20,7 +13,9 @@ body {
     background-image: fixed;
     background-repeat: no-repeat;
     overflow: hidden;
+    
 }
+
 /* sidebar navigation starts */
 .navigation {
     background-color: #4062ff;
@@ -94,61 +89,92 @@ body {
 
 /* sidebar navigation ends */
 
-.box{
+.box {
     width: 70%;
     height: 700px;
     border: 1px solid black;
     margin: 80px 10px 10px 385px;
     border-radius: 10px;
-    background-color: white ;
+    background-color: rgb(55, 153, 202);
     display: flex;
     position: sticky;
 
-    
+
 }
 
-.box1{
+.box1 {
     width: 400px;
     height: 600px;
     margin: 50px 40px;
     border: 1px solid black;
-        /* background-color: #4062ff; */
+    background-color: #fff;
+    color: white;
     border-radius: 10px;
 }
 
-.profile_pic{
+.profile_pic {
     border: 1px solid black;
     margin: 10px;
 }
 
-.profile_details{
+.profile_details {
     /* border: 1px solid black; */
     width: 380px;
     height: 250px;
     background-color: white;
     border-radius: 15px;
-    margin:10px;
+    margin: 10px;
 }
 
 
 .profile_details h2 {
-    margin: 10px 130px;   
+    margin: 10px 130px;
 }
-.box2{
+
+.box2 {
     width: 500px;
     height: 300px;
     border: 1px solid black;
     border-radius: 10px;
     margin: 50px 41px 50px 20px;
+    background-color: #fff;
+
+}
+.box3{
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 50px 41px 50px 20px;
+    background-color: #fff;
+
 }
 
+.heading{
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
 
-label,input{
+}
+.line{
+    width: 90%;
+    margin: 0px 20px;
+}
+
+label,
+input {
     margin: 11px 5px;
-    font-size: 17px ;
+    font-size: 17px;
 }
 
-#btn1{
+.buttons{
+    width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    border-style: none;
+    margin-left: 200px;
+}
+#btn1 {
     margin: 10px 120px;
     width: 90px;
     height: 40px;
@@ -157,95 +183,22 @@ label,input{
 }
 
 
-.right_box{
+.right_box {
     overflow: scroll
 }
 
 /* scroll bar */
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 10px;
     height: 20px;
 }
 
 ::-webkit-scrollbar-track {
     border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #4062ff;
-        border-radius: 10px;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .all {
-    margin-left: 350px;
-    margin-top: 20px;
-    width: 76%;
-    height: 840px;
-    border: 1px solid black;
-    padding: 10px;
-    z-index: 3;
-    border-radius: 15px;
-    background-color: #EDF3FD;
 }
 
-.head{
-    width: 100%;
-    height: 80px;
-    border: 1px solid black;
-    border-radius: 15px;
-
+::-webkit-scrollbar-thumb {
+    background-color: #4062ff;
+    border-radius: 10px;
 }
-
-.h2{
-    width: 100%;
-    height: 50px;
-    border: 1px solid black ;
-    margin: 5px;
-    font-size: 20px;     
-    padding: 5px;
-}
-form{
-    margin: 20px;
-
-}
-
-input{
-    margin: 10px;
-    border-radius: 15px;   
-} */

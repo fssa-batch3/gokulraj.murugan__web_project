@@ -39,16 +39,16 @@
         function login() {
             let email = document.getElementById("email").value
             let password = document.getElementById("password").value
-            let arr = JSON.parse(localStorage.getItem("array"))
+            let arr = JSON.parse(localStorage.getItem("Userdata"))
 
-            let profile_details = {
+            let login = {
                 "email": email,
                 "password": password,
             }
             let res;
             arr.find(e => {
                 if (e["email"] == email && e["password"] == password) {
-                    localStorage.setItem("profile_details", JSON.stringify(profile_details))
+                    localStorage.setItem("login", JSON.stringify(login))
                     return res = 1;
                 }
             });

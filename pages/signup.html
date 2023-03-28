@@ -16,7 +16,7 @@
             <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
         </div>
         <div class="h2">
-            <h2>Sign In</h2>
+            <h2>Sign Up</h2>
         </div>
         <div class="content">
             <form action="">
@@ -33,10 +33,10 @@
                 <input type="password" name="password" id="password" placeholder="Password">
                 <br>
                 <label for="cpassword">Confirm Password :</label>
-                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password">
+                <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password">
                 <br>
 
-                <button type="button" id="btn">Sign up</button>
+                <button type="button" role="button" id="btn" onclick="signup()">Sign up</button>
             </form>
         </div>
     </div>
@@ -52,62 +52,59 @@
 
         function signup() {
 
-            const first_name = document.getElementById("first_name").value;
+            const first_name = document.getElementById("fn_name").value;
             const last_name = document.getElementById("last_name").value
             const email = document.getElementById("email").value
-            const phone_number = document.getElementById("phone_number").value
+            // const phone_number = document.getElementById("phone_number").value
             const password = document.getElementById("password").value
             const confirm_password = document.getElementById("confirm_password").value
 
 
-
-
-
             let res;
-            let gokul = JSON.parse(localStorage.getItem("array")) ?? [];
+            let gokul = JSON.parse(localStorage.getItem("Userdata")) ?? [];
 
             if (password === confirm_password) {
                 if (gokul == "") {
                     let gokul_data = {
-                        "first_name": first_name,
-                        "last_name": last_name,
+                        "Username": first_name + last_name,
+                        // "last_name": last_name,
                         "email": email,
                         "password": password,
-                        "phone": phone_number,
+                        "confirm_password": confirm_password,
                     }
 
 
                     gokul.push(gokul_data);
-                    localStorage.setItem("array", JSON.stringify(gokul))
+                    localStorage.setItem("Userdata", JSON.stringify(gokul))
                     window.location.href = 'login.html'
 
                 }
 
                 else {
-                    let check = JSON.parse(localStorage.getItem("array"))
+                    let check = JSON.parse(localStorage.getItem("Userdata"))
                     check.find(e => {
-                        if (e["email"] == email) {
+                        if (e["email"] === email) {
                             return res = 1;
                         }
                         console.log(check)
                     })
 
-                    if (res = 1) {
+                    if (res == 1) {
                         alert("email already taken")
                     }
                     else {
                         let gokul_data = {
-                            "first_name": first_name,
-                            "last_name": last_name,
+                            "Username": first_name + last_name,
+                            // "last_name": last_name,
                             "email": email,
                             "password": password,
-                            "phone": phone_number,
+                            "confirm_password": confirm_password,
                         }
 
 
                         gokul.push(gokul_data);
-                        localStorage.setItem("array", JSON.stringify(gokul))
-                        window.location.href = 'login.html'
+                        localStorage.setItem("Userdata", JSON.stringify(gokul))
+                        window.location.href = './login.html'
                     }
                 }
 
@@ -120,7 +117,7 @@
 
 
         let form = document.getElementById("btn");
-        form.addEventListener("click", e => {
+        form.addEventListener("submit", e => {
             e.preventDefault();
             signup()
         })

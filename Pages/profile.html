@@ -63,31 +63,40 @@
             <div class="profile_details">
                 <h2>My profile</h2>
                 <label for="name">UserName :</label>
-                <input type="text" name="name" id="name" ><br>
+                <input type="text" name="name" id="name" disabled><br>
 
                 <label for="email">Email :</label>
                 <input type="email" name="email" id="email" disabled><br>
 
                 <label for="phone_no">Phone Number :</label>
-                <input type="number" name="phone_no" id="phone_no"><br>
+                <input type="number" name="phone_no" id="" disabled><br>
 
 
                 <button id="btn1">Edit</button>
+                <button id="save">Save</button>
+                <button id="delete">Log out</button>
             </div>
 
         </div>
 
         <div  class="right_box">
+            
             <div class="box2">
 
 
             </div>
-            <div class="box2"></div>
+            <div class="box3">
+                <div class="heading">
+                    <h5>PassWords</h5>
+                    <button class="buttons">Change</button>
+                </div>
+                <hr class="line">
+            </div>
             <div class="box2"></div>
             <div class="box2"></div>
             <div class="box2"></div>
 
-           
+
         </div>
 
         
@@ -115,32 +124,97 @@
             <input type="number" name="phone_no" id="phone_no"><br>
             
                 <label for="password">Password :</label>
-                <input type="password" name="password" id="password"> <br>            -->
-
-
-          
-
-    </div>
+                <input type="password" name="password" id="password"> <br>           
+    </div> -->
 
 
     
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
-        let storage =  JSON.parse(localStorage.getItem("array"))
+    // <script>
+    //     let storage =  JSON.parse(localStorage.getItem("array"))
         
 
-        let name = document.getElementById("name")
-        let email = document.getElementById("email")
+    //     let name = document.getElementById("name")
+    //     let email = document.getElementById("email")
 
-        for (let i = 0; i < array.length; i++) {
-            email.value = array[i]["email"]
-            name.value = profile[i]["first_name"]
+    //     for (let i = 0; i < array.length; i++) {
+    //         email.value = array[i]["email"]
+    //         name.value = profile[i]["first_name"]
             
-        }
+    //     }
         
-    </script>
+    // </script>
 
+
+
+<script>
+
+    let arr = JSON.parse(localStorage.getItem("Userdata")) // getting data from localStorage
+    const profile = JSON.parse(localStorage.getItem("login"))
+
+    let check;
+    let res;
+
+    //assigning variables
+    let email = document.getElementById("email");
+    let name = document.getElementById("name"); 
+    
+
+    let user_details = JSON.parse(localStorage.getItem("Userdata"));
+    // showing datas in Profile Page
+      user_details.find(e =>{
+        if(e["email"] == profile["email"]){
+        res = e;
+        }
+    })
+    
+    name.value = res["Username"];
+    email.value = res["email"];
+    
+           
+
+
+
+
+
+
+//           Update profile  
+    let edit = document.getElementById("btn1")
+    edit.addEventListener("click",e => {
+      name.removeAttribute("disabled")
+})
+
+
+
+    let save = document.getElementById("save")
+    save.addEventListener("click",e => {   
+    e.preventDefault()
+    res["Username"] = name.value;
+    res["email"] = email.value;
+
+  alert("Profile Updated")
+
+  localStorage.setItem("Userdata",JSON.stringify(user_details))
+ })
+//            Udpate profile completed
+
+    
+
+
+//         Delete Profile
+    let logout = document.getElementById("delete")
+    logout.addEventListener("click",e =>{
+        e.preventDefault()
+
+        localStorage.removeItem("login")
+        window.location.href = "./profile.html"
+    })
+
+
+
+
+</script>
 
 </body>
 </html>
