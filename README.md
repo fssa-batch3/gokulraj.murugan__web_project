@@ -17,16 +17,16 @@ userflow:https://drive.google.com/file/d/1PAQb8pytT9U06sRtHzPNtj3jkNTeIFW3/view?
 wireframe: https://drive.google.com/file/d/1_hrcavf3ZiFKqhTeV6SAfWEolDO-UBdt/view?usp=sharing
 
 # Features
---  Registeration page    -   complete
--- Login page            -  complete
--- Profile Read page     - complete
---  Profile  Update Page  - complete
---  Profile  Delete page  - complete 
---  Product Json          - complete
---  Product Exchange card - complete
---  Product URL params    - Yet to complete
---  Search                - Yet to complete 
---  Product Create        - Yet to complete 
+- Registeration page    -   complete
+- Login page            -  complete
+- Profile Read page     - complete
+-  Profile  Update Page  - complete
+-  Profile  Delete page  - complete 
+-  Product Json          - complete
+-  Product Exchange card - complete
+-  Product URL params    - Yet to complete
+-  Search                - Yet to complete 
+-  Product Create        - Yet to complete 
  
 
 
