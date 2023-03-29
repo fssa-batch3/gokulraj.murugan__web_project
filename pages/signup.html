@@ -21,22 +21,33 @@
         <div class="content">
             <form action="">
                 <label for="fn_name">First name :</label>
-                <input type="text" name="fn_name" id="fn_name" placeholder="First Name">
+                <input type="text" name="fn_name" id="fn_name" placeholder="First Name" pattern="[A-Za-z]{0,32}"
+                    required>
                 <br>
                 <label for="last_name">Last name :</label>
-                <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name" pattern="[A-Za-z]{0,32}"
+                    required>
                 <br>
                 <label for="email">Email :</label>
                 <input type="email" name="email" id="email" placeholder="Email">
                 <br>
-                <label for="password">Password :</label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <br>
-                <label for="cpassword">Confirm Password :</label>
-                <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password">
+
+                <label for="phone_number">Phone Number :</label>
+                <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" maxlength="10"
+                    required>
                 <br>
 
-                <button type="button" role="button" id="btn" onclick="signup()">Sign up</button>
+
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" placeholder="Password"
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <br>
+                <label for="cpassword">Confirm Password :</label>
+                <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password"
+                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <br>
+
+                <button type="button" role="button" id="btn">Sign up</button>
             </form>
         </div>
     </div>
@@ -55,7 +66,7 @@
             const first_name = document.getElementById("fn_name").value;
             const last_name = document.getElementById("last_name").value
             const email = document.getElementById("email").value
-            // const phone_number = document.getElementById("phone_number").value
+            const phone_number = document.getElementById("phone_number").value
             const password = document.getElementById("password").value
             const confirm_password = document.getElementById("confirm_password").value
 
@@ -69,6 +80,7 @@
                         "Username": first_name + last_name,
                         // "last_name": last_name,
                         "email": email,
+                        "phone_number": phone_number,
                         "password": password,
                         "confirm_password": confirm_password,
                     }
@@ -97,6 +109,7 @@
                             "Username": first_name + last_name,
                             // "last_name": last_name,
                             "email": email,
+                            "phone_number": phone_number,
                             "password": password,
                             "confirm_password": confirm_password,
                         }
@@ -116,11 +129,13 @@
         }
 
 
-        let form = document.getElementById("btn");
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            signup()
-        })
+
+        document.getElementById("phone_no").onclick = signup
+        // let form = document.getElementById("btn");
+        // form.addEventListener("submit", e => {
+        //     e.preventDefault();
+        //     signup()
+        // })
 
 
     </script>

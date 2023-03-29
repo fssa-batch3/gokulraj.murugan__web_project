@@ -63,13 +63,13 @@
             <div class="profile_details">
                 <h2>My profile</h2>
                 <label for="name">UserName :</label>
-                <input type="text" name="name" id="name" disabled><br>
+                <input type="text" name="name" id="name" pattern="[A-Za-z]{0,32}" disabled><br>
 
                 <label for="email">Email :</label>
                 <input type="email" name="email" id="email" disabled><br>
 
                 <label for="phone_no">Phone Number :</label>
-                <input type="number" name="phone_no" id="" disabled><br>
+                <input type="number" name="phone_no" id="phone_number"  maxlength="10" disabled><br>
 
 
                 <button id="btn1">Edit</button>
@@ -150,8 +150,8 @@
 
 <script>
 
-    let arr = JSON.parse(localStorage.getItem("Userdata")) // getting data from localStorage
-    const profile = JSON.parse(localStorage.getItem("login"))
+    let arr = JSON.parse(localStorage.getItem("Userdata")) ;// getting data from localStorage
+    const profile = JSON.parse(localStorage.getItem("login"));
 
     let check;
     let res;
@@ -159,6 +159,7 @@
     //assigning variables
     let email = document.getElementById("email");
     let name = document.getElementById("name"); 
+    let phone_number = document.getElementById("phone_number");
     
 
     let user_details = JSON.parse(localStorage.getItem("Userdata"));
@@ -171,6 +172,7 @@
     
     name.value = res["Username"];
     email.value = res["email"];
+    phone_number.value = res["phone_number"];
     
            
 
@@ -192,6 +194,7 @@
     e.preventDefault()
     res["Username"] = name.value;
     res["email"] = email.value;
+    res["phone_number"] = phone_number.value;
 
   alert("Profile Updated")
 
