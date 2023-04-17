@@ -19,7 +19,7 @@
             <h2>Sign Up</h2>
         </div>
         <div class="content">
-            <form action="">
+            <form>
                 <label for="fn_name">First name :</label>
                 <input type="text" name="fn_name" id="fn_name" placeholder="First Name" pattern="[A-Za-z]{0,32}"
                     required>
@@ -40,11 +40,11 @@
 
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password" placeholder="Password"
-                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required>
                 <br>
                 <label for="cpassword">Confirm Password :</label>
                 <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password"
-                    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 <br>
 
                 <button type="button" role="button" id="btn">Sign up</button>
@@ -130,12 +130,12 @@
 
 
 
-        document.getElementById("phone_no").onclick = signup
-        // let form = document.getElementById("btn");
-        // form.addEventListener("submit", e => {
-        //     e.preventDefault();
-        //     signup()
-        // })
+        // document.getElementById("btn").onclick = signup
+        let form = document.getElementById("btn");
+        form.addEventListener("click", e => {
+            e.preventDefault();
+            signup()
+        })
 
 
     </script>
