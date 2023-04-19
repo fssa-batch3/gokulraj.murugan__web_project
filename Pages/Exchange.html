@@ -102,26 +102,31 @@
 
             <div id="overlay"></div>
             <div class="popup">
+
                 <div><a href="#"><i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i></a>
                 </div>
-                <label for="cryoto_name2">Coin Name :</label>
-                <input type="text" name="cryoto_name2" id="crypto_name2"><br>
+                <form action="">
+                    <label for="cryoto_name2">Coin Name :</label>
+                    <input type="text" name="cryoto_name2" id="crypto_name2" required><br>
 
-                <label for="username">Username :</label>
-                <input type="text" name="username" id="username"><br>
+                    <label for="username">Username :</label>
+                    <input type="text" name="username" id="username" required><br>
 
-                <label for="crypto">How many coins :</label>
-                <input type="number" name="crypto" id="crypto" minlength="1"><br>
+                    <label for="crypto">How many coins :</label>
+                    <input type="number" name="crypto" id="crypto" minlength="1" required><br>
 
-                <label for="money">Money :</label>
-                <input type="number" name="money" id="money"><br>
-
+                    <label for="money">Money :</label>
+                    <input type="number" name="money" id="money" required><br>
+                </form>
                 <button id="sell">Sell</button>
+
             </div>
         </div>
         <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
         </script>
+        <script src="../Assets/js/exchange.js"></script>
 
+        <!-- 
         <script>
 
             // Product Create starts
@@ -273,8 +278,8 @@
             }
             // Product Read ends
 
-
-
+ -->
+        <!-- <script>
             // Pop up starts
             let overlay = document.querySelector('#overlay');
             let popup = document.querySelector('.popup');
@@ -294,7 +299,7 @@
             // Pop up ends
 
 
-        </script>
+        </script> -->
 
 </body>
 
