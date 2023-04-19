@@ -16,31 +16,31 @@
         <ul>
 
             <li>
-                <a href="#">
+                <a href="../Pages/dashboard.html">
                     <span class="icon"><i class="fa-solid fa-house"></i></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/Exchange.html">
                     <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/wallet.html">
                     <span class="icon"><i class="fa-solid fa-wallet"></i></span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/cryptos.html">
                     <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="title">Profile</span>
                 </a>
@@ -53,36 +53,43 @@
             </li>
         </ul>
     </div>
+
+
+
     <div class="all">
         <div class="wallet">
             <h2><i class="fa-solid fa-wallet"></i>Your Wallet</h2>
             <hr >
         </div>
         <div class="box" style="display: flex;">
-            <div class="boxes">
-
-            </div>
-            <div class="boxes">
-    
-            </div>
-            <!-- <div class="boxes">
-            </div>
-            <div class="boxes">   
-            </div>
-            <div class="boxes">
-            </div>
-            <div class="boxes">                
-            </div>-->
+            <div class="boxes"></div>
         </div>
-        <div class="act">
-            <div class="hlo">
+
+
+        <div class="details">
+            <div class="recent_activity">
                 <h2><i class="fa-solid fa-clock-rotate-left"></i>Recent Activity</h2>
                 <hr>
             </div>
-            <div class="clock">
-                <!-- <div class="today">
-                    <div></div> -->
+            <div class="list_of_details">
+                <div class="today">
+                        <h3 style="margin: 20px 0px 20px 50px;color: grey;">Today</h3>
+
+                    <div class="one_detail">
+                        <div class="seller_details">
+                            <img src="../Assets/Images/test-1.png" width="15%"  alt="">
+                            <h3 class="seller_username">Username</h3>
+                        </div>
+                        <h4 class="method">Withdraw</h4>
+                        <h4 class="time">9.14 A.M</h4>
+                        <h4 class="coins">2 BTC</h4>
+                    </div>
+
                 </div>
+                <div class="yesterday">
+
+                </div>
+                
             </div>
 
         </div>
@@ -91,22 +98,10 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-    
-
-
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>   
     <script>
-        const product_details=[
+        const withdraw_details = [
             {
                 name:"Jones",
                 type:"withdraw",
@@ -170,6 +165,8 @@
             }
         ]
 
+
+            
        </script>
 </body>
 </html>

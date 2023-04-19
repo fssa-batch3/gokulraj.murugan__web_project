@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Assets/Css/profile.css">
 </head>
+
 <body>
     <div class="navigation">
         <div>
@@ -61,163 +63,129 @@
                 <img src="../Assets/Images/profile.png" alt="">
             </div>
             <div class="profile_details">
-                <h2>My profile</h2>
+                <h2>My profile</h2> 
                 <label for="name">UserName :</label>
-                <input type="text" name="name" id="name" pattern="[A-Za-z]{0,32}" disabled><br>
+                <input type="text" name="name" id="name" pattern="[A-Za-z]{1,32}" disabled><br>
 
                 <label for="email">Email :</label>
                 <input type="email" name="email" id="email" disabled><br>
 
                 <label for="phone_no">Phone Number :</label>
-                <input type="number" name="phone_no" id="phone_number"  maxlength="10" disabled><br>
+                <input type="number" name="phone_no" id="phone_number" minlength="8" maxlength="10" disabled><br>
 
 
                 <button id="btn1">Edit</button>
                 <button id="save">Save</button>
                 <button id="delete">Log out</button>
             </div>
-
         </div>
 
-        <div  class="right_box">
-            
-            <div class="box2">
 
+        <div class="right_box">
 
-            </div>
+            <div class="box2"></div>
+
             <div class="box3">
                 <div class="heading">
-                    <h5>PassWords</h5>
+                    <h4 >Passwords</h4>
                     <button class="buttons">Change</button>
                 </div>
                 <hr class="line">
+                <div>
+                    <label for="password">Password : </label>
+                    <input type="password" name="password" id="password" disabled><br>
+
+                    <label for="confirm_password">Confirm Password :</label>
+                    <input type="password" name="confirm_password" id="confirm_password" disabled>
+                </div>
             </div>
-            <div class="box2"></div>
-            <div class="box2"></div>
-            <div class="box2"></div>
 
-
+            <div class="box2"></div>
+            <div class="box2"></div>
+            <div class="box2"></div>
         </div>
-
-        
-
-
     </div>
-    <!-- <div class="all">
-        <div class="head">
-
-        </div>
-        <div class="h2">
-            <h2>Account details</h2>
-        </div>
-        <form action="">
-
-            <label for="name">Username :</label>
-            <input type="text" name="name" id="name"><br>
-
-            
-            
-            <label for="email">Email :</label>
-            <input type="email" name="email" id="email"><br>
-            
-            <label for="phone_no">Phone Number :</label>
-            <input type="number" name="phone_no" id="phone_no"><br>
-            
-                <label for="password">Password :</label>
-                <input type="password" name="password" id="password"> <br>           
-    </div> -->
 
 
-    
+
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    // <script>
-    //     let storage =  JSON.parse(localStorage.getItem("array"))
-        
+    <script>
 
-    //     let name = document.getElementById("name")
-    //     let email = document.getElementById("email")
+        let arr = JSON.parse(localStorage.getItem("Userdata"));// getting data from localStorage
+        const profile = JSON.parse(localStorage.getItem("login"));
 
-    //     for (let i = 0; i < array.length; i++) {
-    //         email.value = array[i]["email"]
-    //         name.value = profile[i]["first_name"]
-            
-    //     }
-        
-    // </script>
+        let check;
+        let res;
 
-
-
-<script>
-
-    let arr = JSON.parse(localStorage.getItem("Userdata")) ;// getting data from localStorage
-    const profile = JSON.parse(localStorage.getItem("login"));
-
-    let check;
-    let res;
-
-    //assigning variables
-    let email = document.getElementById("email");
-    let name = document.getElementById("name"); 
-    let phone_number = document.getElementById("phone_number");
-    
-
-    let user_details = JSON.parse(localStorage.getItem("Userdata"));
-    // showing datas in Profile Page
-      user_details.find(e =>{
-        if(e["email"] == profile["email"]){
-        res = e;
-        }
-    })
-    
-    name.value = res["Username"];
-    email.value = res["email"];
-    phone_number.value = res["phone_number"];
-    
-           
+        //assigning variables
+        let email = document.getElementById("email");
+        let name = document.getElementById("name");
+        let phone_number = document.getElementById("phone_number");
+        let password = document.getElementById("password");
+        let confirm_password = document.getElementById("confirm_password")
 
 
+        let user_details = JSON.parse(localStorage.getItem("Userdata"));
 
 
+        // showing datas in Profile Page
+
+        user_details.find(e => {
+            if (e["email"] == profile["email"]) {
+                res = e;
+            }
+        })
+
+            //   console.log(res)
+
+        name.value = res["Username"];
+        email.value = res["email"];
+        phone_number.value = res["phone_number"];
+        password.value = res["password"]
+        confirm_password.value = res["confirm_password"]
 
 
-//           Update profile  
-    let edit = document.getElementById("btn1")
-    edit.addEventListener("click",e => {
-      name.removeAttribute("disabled")
-})
+        //           Update profile  
 
-
-
-    let save = document.getElementById("save")
-    save.addEventListener("click",e => {   
-    e.preventDefault()
-    res["Username"] = name.value;
-    res["email"] = email.value;
-    res["phone_number"] = phone_number.value;
-
-  alert("Profile Updated")
-
-  localStorage.setItem("Userdata",JSON.stringify(user_details))
- })
-//            Udpate profile completed
+        let edit = document.getElementById("btn1")
+        edit.addEventListener("click", e => {
+            name.removeAttribute("disabled")
+            phone_number.removeAttribute("disabled")
+        })
 
     
 
+        let save = document.getElementById("save")
+        save.addEventListener("click", e => {
+            e.preventDefault()
+            res["Username"] = name.value;
+            res["email"] = email.value;
+            res["phone_number"] = phone_number.value;
 
-//         Delete Profile
-    let logout = document.getElementById("delete")
-    logout.addEventListener("click",e =>{
-        e.preventDefault()
+            alert("Profile Updated")
 
-        localStorage.removeItem("login")
-        window.location.href = "./profile.html"
-    })
+            localStorage.setItem("Userdata", JSON.stringify(user_details))
+        })
+        //            Udpate profile completed
 
 
 
 
-</script>
+        //         Delete Profile
+        let logout = document.getElementById("delete")
+        logout.addEventListener("click", e => {
+            e.preventDefault()
+
+            localStorage.removeItem("login")
+            window.location.href = "./profile.html"
+        })
+
+
+
+
+    </script>
 
 </body>
+
 </html>

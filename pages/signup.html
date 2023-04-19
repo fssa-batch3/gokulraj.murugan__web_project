@@ -18,10 +18,10 @@
         <div class="h2">
             <h2>Sign Up</h2>
         </div>
-        <div class="content">
-            <form>
+        <form id="form">
+            <div class="content">
                 <label for="fn_name">First name :</label>
-                <input type="text" name="fn_name" id="fn_name" placeholder="First Name" pattern="[A-Za-z]{0,32}"
+                <input type="text" name="fn_name" id="fn_name" placeholder="First Name" pattern="[A-Za-z]{1,32}"
                     required>
                 <br>
                 <label for="last_name">Last name :</label>
@@ -29,27 +29,27 @@
                     required>
                 <br>
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="email" name="email" id="email" placeholder="Email" required>
                 <br>
 
                 <label for="phone_number">Phone Number :</label>
-                <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" maxlength="10"
-                    required>
+                <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number"  pattern="[0-9]{10}" 
+                    maxlength="10"  required>
                 <br>
 
 
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password" placeholder="Password"
-                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 <br>
                 <label for="cpassword">Confirm Password :</label>
                 <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password"
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 <br>
 
-                <button type="button" role="button" id="btn">Sign up</button>
-            </form>
-        </div>
+                <button id="btn">Sign up</button>
+        </form>
+    </div>
     </div>
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
@@ -131,8 +131,8 @@
 
 
         // document.getElementById("btn").onclick = signup
-        let form = document.getElementById("btn");
-        form.addEventListener("click", e => {
+        let form = document.getElementById("form");
+        form.addEventListener("submit", e => {
             e.preventDefault();
             signup()
         })

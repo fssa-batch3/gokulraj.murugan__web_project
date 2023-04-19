@@ -56,239 +56,243 @@
         </ul>
     </div>
     <div class="all">
+
+
         <div class="head">
             <h3><a href="./Exchange.html">Buy</a></h3>
-            <h3><a href="#">Request</a></h3>
+            <button id="sell_button" onclick="openPopup()">Sell</button>
             <div>
-                <input type="search" name="search" placeholder="Search" id="search"
-                    style="margin: 7px 0px 0px 400px;width: 300px;height: 30px;border-radius: 10px;border-style: none;text-align: center;font-size: 20px;">
+                <input type="search" name="search" placeholder="Search" id="search">
             </div>
         </div>
         <hr class="line">
 
         <div class="main">
+
             <div class="exchagnes">
-                <h1 class="crypto_name">Bitcoin</h1>
-                <div class="cards" style="border: 1px solid black;width: 96%;margin: 20px;height: auto;display: flex;">
-                    <div class="onecard"
-                        style="border: 1px solid black;margin: 20px;width: 350px;height: 450px;padding: 10px;">
-                        <div class="profile" style="border: 1px solid black;padding: 8px;display: flex;">
-                            <img src="../Assets/Images/profile.png" width="30%" style="border: 1px solid black;" alt="">
+                <h2 class="crypto_name">Coin</h2>
+                <div class="cards">
+
+                    <!-- <div class="onecard">
+
+                        <div class="profile">
+                              <img src="../Assets/Images/profile.png" class="user_photo" alt="">
                             <div class="coin_details">
-                                <div class="coin_details2"
-                                    style="display: flex;justify-content: center;align-items: center;">
-                                    <img src="../Assets/Images/Logo/btc.png" width="15%" alt="">
-                                    <h3>Bitcoin</h3>
+                                <div class="coin_details2">
+                                    <img src="../Assets/Images/Logo/btc.png" width="12%" alt="" class="crypto_image">
+                                    <h4 class="crypto_name2">Bitcoin</h4>
                                 </div>
-                                <h3 class="username" style="text-align: center;">Username</h3>
+                                <h4 class="username">Username</h4>
                             </div>
                         </div>
 
-                        <div class="exchange" style="border: 1px solid blue;width: 100%;height: 300px;margin: 10px 0px;">
-                            <input type="number" name="crypto" id="crypto" style="border-style :none;border-left: 5px solid blue ;border-radius: 3px;margin: 30px  20px;width: 220px;height: 35px;background-color: white;" disabled>
-                            <input type="number" name="price" id="price" style="border-style :none;border-left: 5px solid blue ;border-radius: 3px;margin: 30px 20px;width: 220px;height: 35px;background-color: white;" disabled>
+                        <div class="exchange">
+                            <input type="number" name="crypto" id="crypto" disabled><br>
+                            <input type="number" name="price" id="price" disabled><br>
+                            <button class="buttons">Edit</button>
+                            <button class="buttons">Buy</button>
                         </div>
 
-                    </div>
+                    </div> -->
 
                 </div>
+
+
+            </div>
+
+            <div id="overlay"></div>
+            <div class="popup">
+                <div><a href="#"><i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i></a>
+                </div>
+                <label for="cryoto_name2">Coin Name :</label>
+                <input type="text" name="cryoto_name2" id="crypto_name2"><br>
+
+                <label for="username">Username :</label>
+                <input type="text" name="username" id="username"><br>
+
+                <label for="crypto">How many coins :</label>
+                <input type="number" name="crypto" id="crypto" minlength="1"><br>
+
+                <label for="money">Money :</label>
+                <input type="number" name="money" id="money"><br>
+
+                <button id="sell">Sell</button>
             </div>
         </div>
-
-
-
-
-        <!-- <div id="bitcoin">
-                <h2 class="crypto_name">Bitcoin</h2>
-                <div class="cards">
-                    <div class="card">
-                        <div class="image">
-                            <img src="../Assets/Images/profile.png" alt="" height="290px" width="100%">
-                            <hr class="hr">
-                            <div class="details">
-                                <h2>Username</h2>
-                            </div>
-                            <div class="coin" >
-                                <img src="../Assets/Images/Logo/btc.png" alt="" 
-                                    class="coin_image">
-                                <h5 >Bicoin</h5>
-                                <div class="price">
-                                    <h4>5</h4>
-                                    <h5 >BTC</h5>
-                                </div>
-                            </div>
-                            <div class="buttons">
-                                <button class="card_button"><a href="#">View Profile</a></button>
-                                <button class="card_button"><a href="#">BUY</a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
         </script>
+
         <script>
 
+            // Product Create starts
+            function product_details() {
+                let product_id = Math.floor(Math.random() * 50)
+                let crypto_name2 = document.getElementById("crypto_name2").value;
+                let username = document.getElementById("username").value;
+                let crypto = document.getElementById("crypto").value;
+                let money = document.getElementById("money").value;
+
+                let res;
+                let product_details = JSON.parse(localStorage.getItem("product_details")) ?? [];
 
 
+                let product = {
+                    "product_id": product_id,
+                    "crypto_name": crypto_name2,
+                    "username": username,
+                    "no_of_coins": crypto,
+                    "money": money,
+                }
 
-                // // <div id="bitcoin">
+                product_details.push(product)
+                localStorage.setItem("product_details", JSON.stringify(product_details))
+                window.location.href = "exchange.html"
+            }
 
-                // let box = document.createElement("div")
-                // box.setAttribute("id", "bitcoin")
-                // document.querySelector(".main").append(box)
-
-                // // <h2 class="crypto_name">Bitcoin</h2>
-                // let crypto_name = document.createElement("h2")
-                // crypto_name.setAttribute("class", "crypto_name")
-                // box.append(crypto_name)
-
-                // // <div class="cards">
-                // let cards = document.createElement("div")
-                // cards.setAttribute("class", "cards")
-                // box.append(cards)
-
-                // // <div class="card">
-                // let card = document.createElement("div")
-                // card.setAttribute("class", "card")
-                // cards.append(card)
-
-
-                // // <div class="image">
-                // let image = document.createElement("div")
-                // image.setAttribute("class", "image")
-                // card.append(image)
-
-                // // <img src="../Assets/Images/profile.png" alt="" height="290px" width="100%">
-                // let img = document.createElement("img")
-                // img.setAttribute("src", "../Assets/Images/profile.png")
-                // image.append(img)
-
-                // // <hr class="hr">
-                // let line = document.createElement("hr")
-                // line.setAttribute("class", "hr")
-                // image.append(line)
-
-                // // <div class="details">
-                // let details = document.createElement("div")
-                // details.setAttribute("class", "details")
-                // image.append(details)
-
-
-
-                // // <h2>Username</h2>
-                // let username = document.createElement("h2")
-                // username.innerHTML = "Username"
-                // details.append(username)
-
-
-
-                // // <div class="coin" >
-                // let coin = document.createElement("div")
-                // coin.setAttribute("class", "coin")
-                // image.append(coin)
-
-
-
-                // // <img src="../Assets/Images/Logo/btc.png" alt=""
-                // //                     class="coin_image">
-
-                // let coin_image = document.createElement("img")
-                // coin_image.setAttribute("src", "../Assets/Images/Logo/btc.png")
-                // coin_image.setAttribute("class", "coin_image")
-                // coin.append(coin_image)
-
-                // // <h5 >Bicoin</h5>
-                // let name = document.createElement("h5")
-                // name.innerHTML = "Username"
-                // coin.append(name)
-
-                // // <div class="price">
-                // let price = document.createElement("div")
-                // price.setAttribute("class", "price")
-                // coin.append(price)
-
-
-                // // <h4>5</h4>
-                // let h4 = document.createElement("h4")
-                // h4.innerHTML = "5"
-                // price.append(h4)
-
-
-                // // <h5 >BTC</h5>
-                // let h5 = document.createElement("h5")
-                // h5.innerHTML = "Btc"
-                // price.append(h5)
-
-
-                // // <div class="buttons">
-                // let buttons = document.createElement("div")
-                // price.setAttribute("class", "buttons")
-                // image.append(buttons)
-
-                // //  <button class="card_button"><a href="#">View Profile</a></button>
-
-                // let view_profile1 = document.createElement("a")
-                // view_profile1.setAttribute("href", "#")
-                // buttons.append(view_profile1)
-
-
-                // let view_profile = document.createElement("btn")
-                // view_profile.setAttribute("class", "card_button")
-                // view_profile.innerHTML = "View Profile"
-                // view_profile1.append(view_profile)
-
-
-
-                // // <button class="card_button"><a href="#">BUY</a></button>
-                // let buy = document.createElement("a")
-                // buy.setAttribute("href", "./selectpayment.html")
-                // buttons.append(buy)
-
-                // let buy1 = document.createElement("btn")
-                // buy1.setAttribute("class", "card_button")
-                // buy1.innerHTML = "BUY"
-                // buy.append(buy1)
+            let check = document.getElementById("sell");
+            check.addEventListener("click", e => {
+                e.preventDefault()
+                product_details()
+            })
+            // Product Create ends
 
 
 
 
 
-                // const searchbox = document.getElementById("search");
-                // searchbox.addEventListener("keydown", (e) => {
-                //     const searchQuery = searchbox.value.trim().toLowerCase();
-                //     // console.log(searchQuery);
-                //     if (e.key === "Enter") {
-                //         e.preventDefault();
-                //     }
-                //     const filteredList = filteredData.filter((item) => {
-                //         return coin.toLowerCase().includes(searchQuery) || coin.toLowerCase().includes(searchQuery)
-                //     })
-                //     const parentHtmlDiv = document.querySelector(".parent");
-                //     parentHtmlDiv.innerHTML = "";
+
+
+            // Product Read starts
+            product_detail = JSON.parse(localStorage.getItem("product_details"))
+            console.log(product_detail)
+
+
+            for (let i = 0; i < product_detail.length; i++) {
+
+                // <div class="onecard">
+                let onecard = document.createElement("div")
+                onecard.setAttribute("class", "onecard")
+                document.querySelector(".cards").prepend(onecard)
+
+                // <div class="profile">
+                let profile = document.createElement("div")
+                profile.setAttribute("class", "profile")
+                onecard.append(profile)
+
+                // <img src="../Assets/Images/profile.png" class="user_photo" alt="">
+                let user_photo = document.createElement("img")
+                user_photo.setAttribute("src", "../Assets/Images/profile.png")
+                user_photo.setAttribute("class", "user_photo")
+                user_photo.setAttribute("alt", "error_found")
+                profile.append(user_photo)
+
+                // <div class="coin_details">
+                let coin_details = document.createElement("div")
+                coin_details.setAttribute("class", "coin_details")
+                profile.append(coin_details)
+
+                // <div class="coin_details2">
+                let coin_details2 = document.createElement("div")
+                coin_details2.setAttribute("class", "coin_details2")
+                coin_details.append(coin_details2)
+
+
+                // <img src="../Assets/Images/Logo/btc.png" width="12%" alt="" class="crypto_image">
+                let crypto_image = document.createElement("img")
+                crypto_image.setAttribute("src", "../Assets/Images/Logo/btc.png")
+                crypto_image.setAttribute("class", "crypto_image")
+                crypto_image.setAttribute("alt", "error_found")
+                crypto_image.setAttribute("width", "12")
+                coin_details2.append(crypto_image)
+
+
+                //  <h4 class="crypto_name2">Bitcoin</h4>
+                let cryoto_name2 = document.createElement("h4")
+                cryoto_name2.setAttribute("class", "cryoto_name2")
+                cryoto_name2.innerText = product_detail[i]["crypto_name"]
+                coin_details2.append(cryoto_name2)
+
+                // <h4 class="username">Username</h4>
+                let username = document.createElement("h4")
+                username.setAttribute("class", "username")
+                username.innerText = product_detail[i]["username"]
+                coin_details.append(username)
+
+                // <div class="exchange">
+                let exchange = document.createElement("div")
+                exchange.setAttribute("class", "exchange")
+                onecard.append(exchange)
+
+                // <input type="number" name="crypto" id="crypto" disabled>
+                let crypto = document.createElement("input")
+                crypto.setAttribute("type", "number")
+                crypto.setAttribute("name", "crypto")
+                crypto.setAttribute("id", "crypto")
+                crypto.setAttribute("disabled", "")
+                crypto.value = product_detail[i]["no_of_coins"]
+                exchange.append(crypto)
+
+                // <br>
+                let space = document.createElement("br")
+                exchange.append(space)
+
+
+                // <input type="number" name="price" id="price" disabled>
+                let price = document.createElement("input")
+                price.setAttribute("type", "number")
+                price.setAttribute("name", "price")
+                price.setAttribute("id", "price")
+                price.setAttribute("disabled", "")
+                price.value = product_detail[i]["money"]
+                exchange.append(price)
+
+                // <br>
+                let space2 = document.createElement("br")
+                exchange.append(space2)
+
+                // <button class="buttons">Edit</button>
+                let edit_button = document.createElement("button")
+                edit_button.setAttribute("class", "buttons")
+                edit_button.setAttribute("dataset-keyword", product_detail[i]["product_id"])
+                edit_button.setAttribute("id", "edit")
+                edit_button.innerText = "Edit"
+                exchange.append(edit_button)
+
+                // <a href="" class="buy_link">
+                let buy_link = document.createElement("a")
+                buy_link.setAttribute("href", "#")
+                buy_link.setAttribute("class", "buy_link")
+                exchange.append(buy_link)
+
+
+                // <button class="buttons">Buy</button>
+                let buy_button = document.createElement("button")
+                buy_button.setAttribute("class", "buttons")
+                buy_button.innerText = "Buy"
+                buy_link.append(buy_button)
+            }
+            // Product Read ends
+
+
+
+            // Pop up starts
+            let overlay = document.querySelector('#overlay');
+            let popup = document.querySelector('.popup');
+            let closeBtn = document.querySelector('#close-btn');
+
+            function openPopup() {
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closePopup);
+            // Pop up ends
+
 
         </script>
 

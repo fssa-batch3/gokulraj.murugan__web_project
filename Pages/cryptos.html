@@ -18,31 +18,31 @@
         <ul>
 
             <li>
-                <a href="#">
+                <a href="../Pages/dashboard.html">
                     <span class="icon"><i class="fa-solid fa-house"></i></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/Exchange.html">
                     <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/wallet.html">
                     <span class="icon"><i class="fa-solid fa-wallet"></i></span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/cryptos.html">
                     <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="title">Profile</span>
                 </a>
@@ -62,6 +62,7 @@
 
         </div>
         <div class="boxes">
+
             <!-- <div class="box">
 
                     <img src="../Assets/Images/logo/sol.png" width="25%" alt="error_found" class="img">
@@ -102,56 +103,110 @@
         let product_list = [
             {
 
-                "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
-                "symbol": "sol"
+                "img": "../Assets/Images/logo/btc.png",
+                "name": "Bitcoin",
+                "symbol": "BTC"
+            },
+            {
+
+                "img": "../Assets/Images/logo/eth.png",
+                "name": "Ether",
+                "symbol": "ETH"
+            },
+            {
+
+                "img": "../Assets/Images/logo/etc.png",
+                "name": "Etherium",
+                "symbol": "ETC"
+            },
+            {
+
+                "img": "../Assets/Images/logo/doge.png",
+                "name": "Dodge",
+                "symbol": "doge"
+            },
+            {
+
+                "img": "../Assets/Images/logo/bnb.png",
+                "name": "Binace",
+                "symbol": "bnb"
+            },
+            {
+
+                "img": "../Assets/Images/logo/stak.png",
+                "name": "Solanao",
+                "symbol": "STAK"
             },
             {
 
                 "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
+                "name": "Solanao",
                 "symbol": "sol"
             },
+
+            {
+
+                "img": "../Assets/Images/logo/elec.png",
+                "name": "Solanao",
+                "symbol": "ELEC"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/flo.png",
+                "name": "Solanao",
+                "symbol": "FLO"
+            },
+
+
+            {
+
+                "img": "../Assets/Images/logo/game.png",
+                "name": "Solanao",
+                "symbol": "GAME"
+            },
+
+
+            {
+
+                "img": "../Assets/Images/logo/gold.png",
+                "name": "Solanao",
+                "symbol": "GOLD"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/usd.png",
+                "name": "Solanao",
+                "symbol": "USD"
+            },
+
+
+            {
+
+                "img": "../Assets/Images/logo/vivo.png",
+                "name": "Solanao",
+                "symbol": "VIVO"
+            },
+
+
             {
 
                 "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
-                "symbol": "sol"
-            },
-            {
-
-                "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
-                "symbol": "sol"
-            },
-            {
-
-                "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
-                "symbol": "sol"
-            },
-            {
-
-                "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
-                "symbol": "sol"
-            },
-            {
-
-                "img": "../Assets/Images/logo/sol.png",
-                "name": "hellSolanao",
+                "name": "Solanao",
                 "symbol": "sol"
             },
 
         ]
-        // <div class="box">
 
-        for (i = 0; i < product_list.length; i++) {
+        for (let i = 0; i < product_list.length; i++) {
+
+            //  <div class = "box">
             let box = document.createElement("div")
             box.setAttribute("class", "box")
             document.querySelector(".boxes").append(box)
 
-            //  img   
+            //  image tag for coin  
             let img = document.createElement("img")
             img.setAttribute("src", product_list[i]["img"])
             img.setAttribute("class", "img")
@@ -164,18 +219,15 @@
             text.setAttribute("class", "text")
             box.append(text)
 
-            //   <h2>Solana</h2>
+            //   <h2> coin name</h2>
             let h2 = document.createElement("h2")
-            h2.innerText = "Solana"
+            h2.innerText = product_list[i]["name"]
             text.prepend(h2)
 
-            //  <p>sol</p> 
+            //  <p> symbol </p> 
             let p = document.createElement("p")
-            p.innerText = "Sol"
+            p.innerText = product_list[i]["symbol"]
             text.append(p)
-
-
-
         }
 
 
@@ -184,47 +236,49 @@
 
         // form
 
-        function gen() {
-            let coin_name = document.getElementById("coin_name").value
-            let symbol = document.getElementById("symbol").value
-            let image = document.getElementById("logo").value
-            let res;
-            let product;
-            product = JSON.parse(localStorage.getItem("product")) ?? [];
 
-            if (coin_name = "") {
-                let product_details = {
-                    "coin_name": coin_name,
-                    "symbol": symbol,
-                    "image": image,
-                }
-                product.push(product_details);
-                localStorage.setItem("product", JSON.stringify(product))
-                window.location.href = "cryptos.html"
-              }
-            else {
-                let verify = JSON.parse(localStorage.getItem("product"))
-                verify.find(e => {
-                    if (e["coin_name"] == coin_name) {
-                        return res = 1
-                    }
-                    if(res ==1){
-                        alert("Product already taken")
-                    }
-                    else {
-                        let product_details = {
-                            "coin_name": coin_name,
-                            "symbol": symbol,
-                            "image": image,
-                        }
-                        product.push(product_details);
-                        localStorage.setItem("product", JSON.stringify(product))
-                        window.location.href = "cryptos.html"
-                    }
-                })
-            }
 
-        }
+        // function product_create() {
+        //     let coin_name = document.getElementById("coin_name").value
+        //     let symbol = document.getElementById("symbol").value
+        //     let image = document.getElementById("logo").value
+        //     let res;
+        //     let product;
+        //     product = JSON.parse(localStorage.getItem("product")) ?? [];
+
+        //     if (coin_name = "") {
+        //         let product_details = {
+        //             "coin_name": coin_name,
+        //             "symbol": symbol,
+        //             "image": image,
+        //         }
+        //         product.push(product_details);
+        //         localStorage.setItem("product", JSON.stringify(product))
+        //         window.location.href = "cryptos.html"
+        //     }
+        //     else {
+        //         let verify = JSON.parse(localStorage.getItem("product"))
+        //         verify.find(e => {
+        //             if (e["coin_name"] == coin_name) {
+        //                 return res = 1
+        //             }
+        //             if (res == 1) {
+        //                 alert("Product already taken")
+        //             }
+        //             else {
+        //                 let product_details = {
+        //                     "coin_name": coin_name,
+        //                     "symbol": symbol,
+        //                     "image": image,
+        //                 }
+        //                 product.push(product_details);
+        //                 localStorage.setItem("product", JSON.stringify(product))
+        //                 window.location.href = "cryptos.html"
+        //             }
+        //         })
+        //     }
+
+        // }
     </script>
 </body>
 

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #EDF3FD;
+    background-color: #FAF9F6;
     width: 1440px;
     height: 850px;
 }
@@ -86,19 +86,21 @@ body {
 
 
 
- .all {
+.all {
     border: 1px solid black;
     margin: 22px 0px 0px 350px;
-    
+    background-color: #EDF3FD;
     font-size: 20px;
     border-radius: 15px;
 }
+
 .head {
     display: flex;
     margin: 20px 20px 10px 30px;
     font-size: 20px;
 }
-.head h3{
+
+.head h3 {
     margin: 10px 20px;
 }
 
@@ -108,7 +110,7 @@ body {
     padding: 10px;
 }
 
-.head h3 a:hover{
+.head h3 a:hover {
     background-color: #4062ff;
     color: white;
     border-radius: 10px;
@@ -116,88 +118,212 @@ body {
 
 }
 
-.line{
+#search {
+    margin: 7px 0px 0px 400px;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.line {
     width: 96%;
     margin: 0px 10px 0px 20px;
 }
 
- .main{
+.main {
     margin: 20px;
-    border: 1px solid black;
-      
+    /* border: 1px solid black; */
 }
-/*
-.crypto_name{
-    margin: 15px 10px 10px 20px;
-    color:#4062ff;
+
+.crypto_name {
+    margin: 0px 0px 0px 30px;
 }
-.cards{
+
+
+.cards {
+    /* border: 1px solid black; */
+    width: 96%;
+    margin: 20px;
+    height: auto;
+    overflow: scroll;
     display: flex;
-    flex-wrap: wrap;
-}
-.card{
-    border: 1px solid black;
-    width: 350px;
-    height: 500px;
-    border-radius: 10px;
-    margin: 10px;
 }
 
-.image{
-    width: 95%;
-    height: 95%;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    margin: 10px 10px 10px 10px;
-}
-
-.hr{
-    width: 95%;
-    margin: 10px 10px 10px 10px;
-}
-
-
-.details h2{
-    margin: 5px 0px 0px 80px;
-}
-.coin{
-    display: flex;
-    align-items: center;
-}
-.coin_image{
-    margin: 10px;
-    width: 15%;
-}
-.price{
-    display: flex;
-    margin-left: 90px;
-}
-.price h5{
-    margin-left: 10px;
-
-}
-.buttons{
-    padding-left: 70px ;
-}
-.buttons a{
-    text-decoration: none;
-    color: white;
-   
-}
-.card_button{
-    background-color: #4062ff;
-    border-style: none;
-    border-radius: 10px;
+.onecard {
+    /* border: 1px solid black; */
+    margin: 20px;
+    width: 320px;
+    height: 350px;
     padding: 10px;
-    margin: 10px;
+    /* background-color:#FAF9F6;*/
+    border-radius: 15px;
+    background-color: white;
+}
+
+.profile {
+    /* border: 1px solid black; */
+    padding: 5px;
+    display: flex;
+}
+
+.user_photo {
+    background-color: #EDF3FD;
+    border-radius: 10px;
+    width: 30%;
+
+}
+
+.coin_details {
+    background-color: #EDF3FD;
+    /* border: 1px solid black; */
+    margin-left: 10px;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.coin_details2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.crypto_image {
+    width: 12%;
+}
+
+.crypto_name2 {
+    margin: 0px 0px 0px 15px;
+}
+
+.username {
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+    color: #4062ff;
+}
+
+.exchange {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 220px;
+    margin: 10px 0px;
+    background-color: #EDF3FD;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.exchange input {
+    border-style: none;
+    border-left: 5px solid blue;
+    border-radius: 3px;
+    margin: 30px 0px 0px 20px;
+    width: 250px;
+    height: 35px;
+    background-color: white;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.buttons {
+    margin: 20px 0px 0px 35px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #4062ff;
+    color: white;
+}
+
+#sell_button {
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #4062ff;
     font-size: 18px;
-} */
+    color: white;
+    margin-top: 5px;
+}
+
+#sell_button:hover {
+    background-color: #EDF3FD;
+    color: #4062ff;
+    border: 2px solid #4062ff;
+}
+
+.buttons:hover {
+    background-color: #EDF3FD;
+    color: #4062ff;
+    border: 2px solid #4062ff;
+}
+
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4062ff;
+    border-radius: 10px;
+}
+
+/* Scroll bar ends */
 
 
 
+/* pop up starts */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+.popup {
+    /* width:500px ;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    position: sticky;
+    left: 250px;
+    padding: 20px;
+    font-size: 20px; */
+    width: 500px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+}
 
+.popup label,
+input {
+    margin: 10px;
+}
 
-
-
-
+.popup #sell {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    background-color: #4062ff;
+}

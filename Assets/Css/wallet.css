@@ -113,6 +113,7 @@ body {
     margin-left: 30px;
 }
 
+
 .box{
     margin-left: 30px;
 }
@@ -124,24 +125,47 @@ body {
     border-radius: 15px;
 }
 
-.act{
+.details{
     margin-top: 10px;
 }
 
-.hlo h2{
+.recent_activity h2{
    color: gray;
    /* border: 1px solid black; */
    margin: 5px 5px 5px 5px;
 
 }
 
-.hlo i{
+.recent_activity i{
     font-size: 40px;
     margin: 10px 10px 10px 65px;
 }
-.hlo hr{
+.recent_activity hr{
     color: gray;
     width: 95%;
     margin: 10px 0px 10px 40px;
+}
+
+.one_detail{
+    border-bottom: 1px solid grey;
+    width: 94%;
+    height: 100px;
+    margin: 0px 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.seller_details{
+    display: flex;
+    align-items: center;
+}
+
+.seller_username{
+    margin-left: 20px;
+}
+
+.time{
+    color: grey;
 }
 
