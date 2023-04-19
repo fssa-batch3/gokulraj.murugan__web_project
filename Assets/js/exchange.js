@@ -167,3 +167,6 @@ function closePopup() {
 
 closeBtn.addEventListener('click', closePopup);
             // Pop up ends
+document.getElementById("sell_button").addEventListener("click",function(){
+    openPopup()
+})
