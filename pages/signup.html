@@ -33,18 +33,20 @@
                 <br>
 
                 <label for="phone_number">Phone Number :</label>
-                <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number"  pattern="[0-9]{10}" 
-                    maxlength="10"  required>
+                <input type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" pattern="[0-9]{10}"
+                    required>
                 <br>
 
 
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password" placeholder="Password"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Enter a Uppercase,a lowercase, a number,a special character" required>
                 <br>
                 <label for="cpassword">Confirm Password :</label>
                 <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Enter a Uppercase,a lowercase, a number,a special character" required>
                 <br>
 
                 <button id="btn">Sign up</button>
@@ -63,6 +65,7 @@
 
         function signup() {
 
+            const user_id = Math.floor(Math.random() * 100)
             const first_name = document.getElementById("fn_name").value;
             const last_name = document.getElementById("last_name").value
             const email = document.getElementById("email").value
@@ -77,6 +80,7 @@
             if (password === confirm_password) {
                 if (gokul == "") {
                     let gokul_data = {
+                        "User_id": user_id,
                         "Username": first_name + last_name,
                         // "last_name": last_name,
                         "email": email,
@@ -106,6 +110,7 @@
                     }
                     else {
                         let gokul_data = {
+                            "User_id": user_id,
                             "Username": first_name + last_name,
                             // "last_name": last_name,
                             "email": email,

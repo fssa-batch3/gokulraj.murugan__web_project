@@ -227,7 +227,17 @@ body {
     font-size: 16px;
 }
 
-.buttons {
+#buttons1 {
+    margin: 20px 0px 0px 35px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #4062ff;
+    color: white;
+}
+
+#buttons2 {
     margin: 20px 0px 0px 35px;
     width: 80px;
     height: 30px;
@@ -259,7 +269,16 @@ body {
     color: #4062ff;
     border: 2px solid #4062ff;
 }
-
+#save{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 16px;
+    margin: 10px 0px 0px 150px;
+    background-color: #4062ff;
+    display: none;
+}
 
 /* scroll bar */
 

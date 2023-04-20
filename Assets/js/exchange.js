@@ -32,13 +32,8 @@ check.addEventListener("click", e => {
 // Product Create ends
 
 
-
-
-
-
-
 // Product Read starts
-product_detail = JSON.parse(localStorage.getItem("product_details"))
+let  product_detail = JSON.parse(localStorage.getItem("product_details"))
 console.log(product_detail)
 
 
@@ -70,7 +65,6 @@ for (let i = 0; i < product_detail.length; i++) {
     let coin_details2 = document.createElement("div")
     coin_details2.setAttribute("class", "coin_details2")
     coin_details.append(coin_details2)
-
 
     // <img src="../Assets/Images/Logo/btc.png" width="12%" alt="" class="crypto_image">
     let crypto_image = document.createElement("img")
@@ -111,7 +105,6 @@ for (let i = 0; i < product_detail.length; i++) {
     let space = document.createElement("br")
     exchange.append(space)
 
-
     // <input type="number" name="price" id="price" disabled>
     let price = document.createElement("input")
     price.setAttribute("type", "number")
@@ -139,7 +132,6 @@ for (let i = 0; i < product_detail.length; i++) {
     buy_link.setAttribute("class", "buy_link")
     exchange.append(buy_link)
 
-
     // <button class="buttons">Buy</button>
     let buy_button = document.createElement("button")
     buy_button.setAttribute("class", "buttons")
@@ -166,7 +158,12 @@ function closePopup() {
 }
 
 closeBtn.addEventListener('click', closePopup);
-            // Pop up ends
-document.getElementById("sell_button").addEventListener("click",function(){
-    openPopup()
-})
+
+// document.getElementById("sell_button").onclick = openPopup
+// document.getElementById("sell_button").addEventListener("click", function () {
+//     openPopup()
+// })
+
+ // Pop up ends
+
+
