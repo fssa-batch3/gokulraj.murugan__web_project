@@ -84,8 +84,6 @@ body {
 
 /* sidebar navigation ends */
 
-
-
 .all {
     border: 1px solid black;
     margin: 22px 0px 0px 350px;
@@ -237,7 +235,7 @@ body {
     color: white;
 }
 
-.buttons2 {
+#buttons2 {
     margin: 20px 0px 0px 35px;
     width: 80px;
     height: 30px;
@@ -269,16 +267,7 @@ body {
     color: #4062ff;
     border: 2px solid #4062ff;
 }
-#save{
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    border-style: none;
-    font-size: 16px;
-    margin: 10px 0px 0px 150px;
-    background-color: #4062ff;
-    display: none;
-}
+
 
 /* scroll bar */
 
@@ -298,9 +287,6 @@ body {
 
 /* Scroll bar ends */
 
-
-
-/* pop up starts */
 #overlay {
     display: none;
     position: fixed;
@@ -311,7 +297,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.popup ,.popup_edit{
+.popup{
     width: 500px;
     display: none;
     position: fixed;
@@ -330,7 +316,7 @@ input {
     margin: 10px;
 }
 
-.popup #sell {
+.popup #save {
     width: 100px;
     height: 30px;
     border-radius: 10px;

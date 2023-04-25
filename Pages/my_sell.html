@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/Css/Exchange.css">
     <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/my_sell.css">
 </head>
 
 <body>
@@ -18,31 +18,31 @@
         <ul>
 
             <li>
-                <a href="./dashboard.html">
+                <a href="../Pages/dashboard.html">
                     <span class="icon"><i class="fa-solid fa-house"></i></span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
-                <a href="./Exchange.html">
+                <a href="../Pages/Exchange.html">
                     <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
-                <a href="./wallet.html">
+                <a href="../Pages/wallet.html">
                     <span class="icon"><i class="fa-solid fa-wallet"></i></span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
-                <a href="./cryptos.html">
+                <a href="../Pages/cryptos.html">
                     <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
-                <a href="./profile.html">
+                <a href="profile.html">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="title">Profile</span>
                 </a>
@@ -55,12 +55,12 @@
             </li>
         </ul>
     </div>
+
     <div class="all">
 
 
         <div class="head">
             <h3><a href="./Exchange.html">Buy</a></h3>
-            <button id="sell_button" type="button">Sell</button>
             <div>
                 <input type="search" name="search" placeholder="Search" id="search">
             </div>
@@ -94,12 +94,11 @@
                         </div>
 
                     </div> -->
-
                 </div>
-
-
             </div>
-            <!-- pop up -->
+
+
+            <!-- pop up for edit -->
             <div id="overlay"></div>
             <div class="popup">
 
@@ -110,7 +109,7 @@
                     <input type="text" name="cryoto_name2" id="crypto_name2" required><br>
 
                     <label for="username">Username :</label>
-                    <input type="text" name="username" id="username" required><br>
+                    <input type="text" name="edit_username" id="username" required><br>
 
                     <label for="crypto">How many coins :</label>
                     <input type="number" name="crypto" id="crypto" minlength="1" required><br>
@@ -118,76 +117,24 @@
                     <label for="money">Money :</label>
                     <input type="number" name="money" id="money" required><br>
                 </form>
-                <button id="sell">Sell</button>
+                <button id="save">Save</button>
             </div>
-
-
-
-
-
-
         </div>
-        <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
-        </script>
-        <!-- <script src="../Assets/js/exchange.js"></script> -->
+    </div>
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>
+        // Product Read starts
+        let product_detail = JSON.parse(localStorage.getItem("product_details"))
+        let login_details = JSON.parse(localStorage.getItem("login"));
+        let button_id;
 
+        // console.log(product_detail)
+        if (product_detail == null) {
 
-        <script>
-
-
-            let user_id;
-            let login = JSON.parse(localStorage.getItem("login"));
-            user_id = login["user_id"];
-            // console.log(user_id)
-
-            // Product Create starts
-            function product_details() {
-                let product_id = Math.floor(Math.random() * 50)
-                let crypto_name2 = document.getElementById("crypto_name2").value;
-                let username = document.getElementById("username").value;
-                let crypto = document.getElementById("crypto").value;
-                let money = document.getElementById("money").value;
-
-                let res;
-                let product_details = JSON.parse(localStorage.getItem("product_details")) ?? [];
-
-
-
-                let product = {
-                    "user_id": user_id,
-                    "product_id": product_id,
-                    "crypto_name": crypto_name2,
-                    "username": username,
-                    "no_of_coins": crypto,
-                    "money": money,
-                }
-
-                product_details.push(product)
-                localStorage.setItem("product_details", JSON.stringify(product_details))
-                window.location.href = "exchange.html"
-            }
-
-            let check = document.getElementById("sell");
-            check.addEventListener("click", e => {
-                e.preventDefault()
-                product_details()
-            })
-            // Product Create ends
-
-
-
-
-
-
-
-            // Product Read starts
-            product_detail = JSON.parse(localStorage.getItem("product_details"))
-            // console.log(product_detail)
-            if (product_detail == null) {
-
-            }
-            else {
-                
+        }
+        else {
+            if (login_details["user_id"] == product_detail["user_id"]) {
 
                 for (let i = 0; i < product_detail.length; i++) {
 
@@ -272,104 +219,88 @@
                     let space2 = document.createElement("br")
                     exchange.append(space2)
 
-                    // <button class="buttons">Buy</button>
-                    let buy_button = document.createElement("button")
-                    buy_button.setAttribute("class", "buttons2")
-                    buy_button.setAttribute("value", product_detail[i]["product_id"])
-                    buy_button.innerText = "Buy"
-                    exchange.append(buy_button)
+                    // <button class="buttons">Edit</button>
+                    let edit_button = document.createElement("button")
+                    edit_button.setAttribute("class", "edit")
+                    edit_button.setAttribute("id", "buttons1")
+                    edit_button.setAttribute("data-keyword", product_detail[i]["product_id"])
+                    // console.log(edit_button.dataset.keyword);
+                    edit_button.innerText = "Edit"
+                    exchange.append(edit_button)
 
 
                 }
             }
-            // Product Read ends
+        }
+        // Product Read ends
 
 
+        // Pop up starts
+        // let sell_button = document.getElementById("sell_button")
+        let overlay = document.querySelector('#overlay');
+        let popup = document.querySelector('.popup');
+        let closebtn = document.getElementById('close-btn');
+        let edit_button = document.getElementById("buttons1");
+        let save = document.getElementById("save");
 
-            // Pop up starts
-            let sell_button = document.getElementById("sell_button")
-            let overlay = document.querySelector('#overlay');
-            let popup = document.querySelector('.popup');
-            let closebtn = document.getElementById('close-btn');
-            let edit_button = document.getElementById("buttons1")
-            let edit_popup = document.querySelector(".popup_edit")
-            let save = document.getElementById("save")
-
-
-            function openPopup() {
-                popup.style.display = 'block';
-                overlay.style.display = 'block';
-                edit_button.style.display = "block"
-                save.style.display = "none"
-            }
-
-            function closePopup() {
-                popup.style.display = 'none';
-                overlay.style.display = 'none';
-            }
+        function openPopup() {
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        }
 
 
-            function edit_openPopup() {
-                edit_popup.style.display = 'block';
-                overlay.style.display = 'block';
-                sell_button.style.display = "none"
-                save.style.display = "block"
-            }
+        function closePopup() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
 
-            closebtn.addEventListener("click", closePopup);
-            sell_button.addEventListener("click", openPopup);
-
-            // Pop up ends
+        
+        edit_button.addEventListener("click", openPopup);
+        closebtn.addEventListener("click", closePopup);
+        // Pop up ends
 
 
-            // payment details create
+        // product update starts
 
-            let payment_id = document.querySelectorAll(".buttons2")
-            let product_Id;
-            let res;
-            payment_id.forEach((data) => {
-                data.addEventListener("click", () => {
-                    product_Id = data.value
-                    console.log(product_Id);
-                    product_detail.find((element) => {
-                        if (product_Id == element["product_id"]) {
-                            res = element
+        let edit_crypto_name2 = document.getElementById("crypto");
+        let edit_username = document.getElementById("username");
+        let edit_crypto = document.getElementById("crypto");
+        let edit_money = document.getElementById("money");
 
-                            // console.log(res);
-
-                            payment_detail()
-                        }
-                    })
-                })
-
-                function payment_detail() {
-                    let store_data = JSON.parse(localStorage.getItem("payment_details")) ?? [];
-                    let order_id = Math.floor(Math.random() * 100);
+        let edit = document.querySelectorAll(".edit");
+        let edit_product = JSON.parse(localStorage.getItem("product_details"));
+        button_id = edit_button.dataset.keyword;
+        console.log(button_id);
 
 
-                    if (store_data == "") {
-                        let payment_details = {
-                            "order_id": order_id,
-                            "user_id": res["user_id"],
-                            "product_id": product_Id,
-                            "crypto_name": res["crypto_name"],
-                            "no_of_coins": res["no_of_coins"],
-                            "money": res["money"],
-                            "username": res["username"],
-                        }
+        edit.forEach((editbtn) => {
 
-                        console.log(payment_details)
-                        store_data.push(payment_details)
-                        localStorage.setItem("Payment_details", JSON.stringify(store_data))
-                        window.location.href = "./selectpayment.html"
-                    }
-                    else {
+            editbtn.addEventListener("click", () => {
+
+                for (let i = 0; i < edit_product.length; i++) {
+                    if (button_id == edit_product[i]["product_id"]) {
+                        res = edit_product[i];
+                        console.log(res);
+
+                        res["crypto_name"] = edit_crypto_name2.value;
+                        res["username"] = edit_username.value;
+                        res["no_of_coins"] = edit_crypto.value;
+                        res["money"] = edit_money.value;
 
                     }
+
+
+
+
                 }
-            });
-        </script>
 
+
+
+
+            })
+        })
+
+    </script>
 </body>
 
 </html>

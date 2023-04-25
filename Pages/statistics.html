@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/statistics.css">
     <title>Document</title>
-    <link rel="stylesheet" href="../Assets/Css/selectpayment.css">
-</head>
 
+</head>
 <body>
     <div class="navigation">
         <div>
@@ -55,58 +54,11 @@
             </li>
         </ul>
     </div>
-    <div class="main">
-        <div class="payment">
-            <div class="summary">
-                <h3>Order Summary</h3>
-                <h4>678394098907</h4>
-            </div>
-            <hr class="line">
-            <form action="" class="form">
-                <div class="box">
-                    <input type="radio" name="visa" id="visa" class="radio"> 
-                    <label for="visa"><img src="../Assets/Images/visa_logo.png" alt="">
-                        ****  1234</label>
-                </div>
-                
-
-                <div class="box">
-                    <input type="radio" name="master" id="master" class="radio">
-                    <label for="master"><img src="../Assets/Images/Mastercard-logo.png" alt="">
-                        ****  1234</label>
-                </div>
-                <div class="box">
-                    <input type="radio" name="new_card" id="new_card" class="radio">
-                    <label for="new_card"><i class="fa fa-plus" ></i>Add new card</label>
-                </div>
-
-                <button id="button">Pay</button>
-
-            </form>
-        </div>
-    </div>
-    <script>
-        let visa = document.getElementById("visa")
-        let master = document.getElementById("master");
-        let new_card = document.getElementById("new_card");
-        let login_details = JSON.parse(localStorage.getItem("login"));
-        console.log(login_details.user_id) 
-
-        function paymentmethod(){
-            let paymentmethod;
-            if(visa.value == true){
-                "paymentmethod"  = "visa"; 
-            }
-            else if(master.value == true){
-                "paymentmethod" =  "master"
-            }
-
-            
-        }
-    </script>
-
+     <h2 id="data" style="margin-left:500px"></h2>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    
     </script>
-</body>
+<script src="../Assets/js/statics.js"></script>
 
+</body>
 </html>

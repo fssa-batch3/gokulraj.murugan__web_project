@@ -8,9 +8,8 @@
     <!-- font family link -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,400&display=swap"
         rel="stylesheet">
-
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Bitwallet</title>
-
     <!-- CSS link  -->
     <link rel="stylesheet" href="../Assets/Css/dashboard.css">
 </head>
@@ -181,21 +180,28 @@
                 <img src="../Assets/Images/Logo/eth.png" width="20%" class="img2" alt="">
                 <div class="para1">
                     <h4>Ether</h4>
-                    <p>Today</p>
+                    <p id="ethereum">Today</p>
                 </div>
             </div>
             <div class="Transaction">
                 <img src="../Assets/Images/Logo/btc.png" width="20%" alt="" class="img2">
                 <div class="para1">
                     <h4>Bitcoin</h4>
-                    <p>Today</p>
+                    <p id="bitcoin">Today</p>
                 </div>
             </div>
             <div class="Transaction">
                 <img src="../Assets/Images/Logo/sol.png" width="20%" class="img2" alt="">
                 <div class="para1">
                     <h4>Dodge coin</h4>
-                    <p>Today</p>
+                    <p id="dogecoin">Today</p>
+                </div>
+            </div>
+            <div class="Transaction">
+                <img src="../Assets/Images/Logo/sol.png" width="20%" class="img2" alt="">
+                <div class="para1">
+                    <h4>lite coin</h4>
+                    <p id="litecoin">Today</p>
                 </div>
             </div>
         </div>
@@ -211,7 +217,10 @@
 
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    
     </script>
+
 </body>
+      <script src="../Assets/js/liveprice.js"></script>
 
 </html>
