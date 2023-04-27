@@ -294,3 +294,7 @@ body {
 .img2{
     margin: 16px;
 }
+
+#profile_image{
+    border-radius: 50%;
+}

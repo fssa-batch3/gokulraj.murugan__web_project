@@ -91,6 +91,7 @@ body {
     width: 77%;
     height: 800px;
     border-radius: 15px;
+    background-color: #FAF9F6;
 }
 
 .head{
@@ -135,40 +136,11 @@ p{
     margin-left:30px;
 }
 
-
-
-
-
-/* form */
-
-.form{
-   border: 1px solid black;
-   height: 300px;
-    width: 650px;  
-
-
-}
-label{
-    margin: 30px ;
-}
-input{
-    margin: 10px 0px 0px 20px;
-}
-#button1{
-    margin: 20px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: red;
-
+.link{
+    text-decoration: none;
+    color: black;
 }
 
-#button2{
-    margin: 20px;
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: green;
-}
+
+
+

@@ -60,10 +60,13 @@
     <div class="box">
         <div class="box1">
             <div class="profile_pic">
-                <img src="../Assets/Images/profile.png" alt="">
+                <img src="../Assets/Images/profile.png" alt="" id="profile_image">
             </div>
             <div class="profile_details">
-                <h2>My profile</h2> 
+                <!-- <h2>My profile</h2>  -->
+                <label for="profille_pic">Profile Pic :</label>
+                <input type="url" name="profille_pic" id="profile_pic" disabled><br>
+
                 <label for="name">UserName :</label>
                 <input type="text" name="name" id="name" pattern="[A-Za-z]{1,32}" disabled><br>
 
@@ -71,11 +74,12 @@
                 <input type="email" name="email" id="email" disabled><br>
 
                 <label for="phone_no">Phone Number :</label>
-                <input type="number" name="phone_no" id="phone_number" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Enter a Uppercase,a lowercase, a number,a special character" disabled><br>
+                <input type="number" name="phone_no" id="phone_number" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Enter a Uppercase,a lowercase, a number,a special character" disabled><br>
 
 
                 <button id="btn1">Edit</button>
-                <button id="save">Save</button>
+                <!-- <button id="save">Save</button> -->
                 <button id="delete">Log out</button>
             </div>
         </div>
@@ -83,15 +87,12 @@
 
         <div class="right_box">
 
-            <div class="box2"></div>
-
             <div class="box3">
                 <div class="heading">
-                    <h4 >Passwords</h4>
-                    <button class="buttons">Change</button>
+                    <h4>Passwords</h4>
                 </div>
                 <hr class="line">
-                <div>
+                <div class="password_box">
                     <label for="password">Password : </label>
                     <input type="password" name="password" id="password" disabled><br>
 
@@ -100,8 +101,15 @@
                 </div>
             </div>
 
-            <div class="box2"></div>
-            <div class="box2"></div>
+
+            <div class="box2">
+                <div class="heading">
+                    <h4>Payment Card</h4>
+                    <button>Edit</button>
+                </div>
+                <hr class="line">
+            </div>
+
             <div class="box2"></div>
         </div>
     </div>
@@ -119,62 +127,94 @@
         let res;
 
         //assigning variables
+        let profile_pic = document.getElementById("profile_pic");
         let email = document.getElementById("email");
         let name = document.getElementById("name");
         let phone_number = document.getElementById("phone_number");
         let password = document.getElementById("password");
         let confirm_password = document.getElementById("confirm_password")
-
+        let profile_image = document.getElementById("profile_image");
 
         let user_details = JSON.parse(localStorage.getItem("Userdata"));
 
 
         // showing datas in Profile Page
 
-        user_details.find(e => 
-        {
+        user_details.find(e => {
             if (e["email"] == profile["email"]) {
                 res = e;
             }
         })
 
-            //   console.log(res)
+        //   console.log(res)
 
         name.value = res["Username"];
         email.value = res["email"];
         phone_number.value = res["phone_number"];
         password.value = res["password"]
         confirm_password.value = res["confirm_password"]
-
+        profile_pic.value = res["profile_pic"]
+        profile_image.src = res["profile_pic"]
 
         //           Update profile  
 
         let edit = document.getElementById("btn1")
+        // let save = document.getElementById("save")
+        let logout = document.getElementById("delete")
+
         edit.addEventListener("click", e => {
-            name.removeAttribute("disabled")
-            phone_number.removeAttribute("disabled")
-        })
-
-    
-
-        let save = document.getElementById("save")
-        save.addEventListener("click", e => {
             e.preventDefault()
-            res["Username"] = name.value;
-            res["email"] = email.value;
-            res["phone_number"] = phone_number.value;
-
-            alert("Profile Updated")
-
-            localStorage.setItem("Userdata", JSON.stringify(user_details))
+            update_profile()
         })
-        //            Udpate profile completed
 
+        function update_profile() {
+
+            if (edit.innerText == "Edit") {
+
+                edit.innerText = "Save"
+
+                profile_pic.removeAttribute("disabled")
+                name.removeAttribute("disabled")
+                phone_number.removeAttribute("disabled")
+                password.removeAttribute("disabled")
+                confirm_password.removeAttribute("disabled")
+                password.setAttribute("type", "text")
+                confirm_password.setAttribute("type", "text")
+            }
+            else if (edit.innerText == "Save") {
+
+                edit.innerText = "Edit"
+
+                res["profile_pic"] = profile_pic.value;
+                res["Username"] = name.value;
+                res["email"] = email.value;
+                res["phone_number"] = phone_number.value;
+                res["password"] = password.value;
+                res["confirm_password"] = confirm_password.value;
+
+                alert("Profile Updated")
+
+                profile_pic.setAttribute("disabled", "")
+                name.setAttribute("disabled", "")
+                phone_number.setAttribute("disabled", "")
+                password.setAttribute("disabled", "")
+                confirm_password.setAttribute("disabled", "")
+                password.setAttribute("type", "password")
+                confirm_password.setAttribute("type", "password")
+                profile_image.src = res["profile_pic"]
+                console.log(profile_image);
+
+
+                localStorage.setItem("Userdata", JSON.stringify(user_details))
+
+            }
+        }
+        //     Udpate profile completed
 
 
 
         //         Delete Profile
-        let logout = document.getElementById("delete")
+
         logout.addEventListener("click", e => {
             e.preventDefault()
 
