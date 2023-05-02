@@ -324,3 +324,13 @@ input {
     font-size: 16px;
     background-color: #4062ff;
 }
+
+.buttons2{
+    margin: 20px 0px 0px 50px;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #4062ff;
+    color: white;
+}

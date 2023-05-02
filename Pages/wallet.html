@@ -79,17 +79,17 @@
                 <div class="today">
                     <h3 style="margin: 20px 0px 20px 50px;color: grey;">Today</h3>
 
-                    <div class="one_detail">
-                        <div class="seller_details">
-                            <img src="../Assets/Images/test-1.png" width="15%" alt="">
-                            <h3 class="seller_username">Username</h3>
+                        <!-- <div class="one_detail">
+                            <div class="seller_details">
+                                <img src="../Assets/Images/test-1.png" width="15%" alt="">
+                                <h3 class="seller_username">Username</h3>
+                            </div>
+                            <h4 class="method">Withdraw</h4>
+                            <h4 class="time">9.14 A.M</h4>
+                            <h4 class="coins">2 BTC</h4>
                         </div>
-                        <h4 class="method">Withdraw</h4>
-                        <h4 class="time">9.14 A.M</h4>
-                        <h4 class="coins">2 BTC</h4>
-                    </div>
 
-                </div>
+                    </div> -->
                 <div class="yesterday">
 
                 </div>
@@ -105,71 +105,35 @@
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
     <script>
-        const withdraw_details = [
-            {
-                name: "Jones",
-                type: "withdraw",
-                time: "9.32 AM",
-                coins_type: {
-                    Image: "../Assets/Images/sol.png",
-                    alt_text: "error_found",
-                    text: "ETH",
-                }
-
-            },
-
-            {
-                name: "Jones",
-                type: "withdraw",
-                time: "9.32 AM",
-                coins_type: {
-                    Image: "../Assets/Images/sol.png",
-                    alt_text: "error_found",
-                    text: "ETH",
-                }
-
-            },
-
-            {
-                name: "Jones",
-                type: "withdraw",
-                time: "9.32 AM",
-                coins_type: {
-                    Image: "../Assets/Images/sol.png",
-                    alt_text: "error_found",
-                    text: "ETH",
-                }
-
-            },
+        let payment = JSON.parse(localStorage.getItem
+        ("payment_details"))
+        let login = JSON.parse(localStorage.getItem("login"))
 
 
-            {
-                name: "Jones",
-                type: "withdraw",
-                time: "9.32 AM",
-                coins_type: {
-                    Image: "../Assets/Images/sol.png",
-                    alt_text: "error_found",
-                    text: "ETH",
-                }
+        if(login.user_id == payment[i]["user_id"]){
+            let one_detail = document.createElement("div");
+            one_detail.setAttribute("class","one_detail")
+            document.querySelector(".today").prepend(one_detail)
 
-            },
+            let seller_details = document.createElement("div");
+            seller_detail.setAttribute("class","seller_details")
+            one_detail.append(seller_details)
 
+            let img = document.createElement("img");
+            img.setAttribute("src","../Assets/Images/test-1.png");
+            img.setAttribute("width","15%")
+            one_detail.append("img")
 
-            {
-                name: "Jones",
-                type: "withdraw",
-                time: "9.32 AM",
-                coins_type: {
-                    Image: "../Assets/Images/sol.png",
-                    alt_text: "error_found",
-                    text: "ETH",
-                }
+            let seller_username = document.createElement("h3");
+            seller_username.setAttribute("class","username")
+            one_detail.append(seller_username);
 
-            }
-        ]
+            let method = document.createElement("h4");
+            method.setAttribute("class","username")
+            one_detail.append(method);
 
-
+            
+        }
 
     </script>
 </body>
