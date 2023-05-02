@@ -126,6 +126,9 @@ body {
     border-radius: 10px 10px 0px 0px;
 }
 
+#delete{
+    display: none;
+}
 .profile_details {
     /* border: 1px solid black; */
     width: 380px;

@@ -92,16 +92,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color:  #FAF9F6;
 
 }
 
 .payment {
-
     border: 1px solid black;
     width: 450px;
     height: 500px;
     padding: 10px;
-    border-radius: 0px 15px 15px 15px;
+    border-radius: 0px 20px 20px 20px;
+    background-color: #EDF3FD;  
 }
 
 .summary {
@@ -113,6 +114,7 @@ body {
 
 .summary h3 {
     margin-top: 10px;
+
 }
 
 .line {

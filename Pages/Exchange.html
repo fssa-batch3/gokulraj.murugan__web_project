@@ -69,48 +69,48 @@
 
         <div class="main">
 
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Bitcoin</h2>
-                    <div data-id="bitcoin" class="cards">
-                    </div>
+                <div data-id="bitcoin" class="cards">
+                </div>
             </div>
-            <div class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Tether</h2>
                 <div data-id="tether" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Doge Coin</h2>
                 <div data-id="dogecoin" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Solana</h2>
                 <div data-id="solana" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Ethereum</h2>
                 <div data-id="ethereum" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Lite Coin</h2>
                 <div data-id="litecoin" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Binance</h2>
                 <div data-id="binance" class="cards">
                 </div>
             </div>
-            <div  class="exchagnes" >
+            <div class="exchagnes">
                 <h2 class="crypto_name">Cardano</h2>
                 <div data-id="cardano" class="cards">
                 </div>
             </div>
-            
-            
+
+
 
 
 
@@ -124,10 +124,10 @@
                 </div>
                 <form>
                     <label for="cryoto_name2">Coin Name :</label>
-                    <input type="text" name="cryoto_name2" id="crypto_name2" required><br>
+                    <input type="text" name="cryoto_name2" id="crypto_name2" required ><br>
 
                     <label for="crypto">How many coins :</label>
-                    <input type="number" name="crypto" id="no_of_coins"  required><br>
+                    <input type="number" name="crypto" id="no_of_coins" required><br>
 
                     <label for="money">Money :</label>
                     <input type="number" name="money" id="money" required><br>
@@ -135,6 +135,9 @@
                 <button id="sell">Sell</button>
             </div>
 
+
+
+          
 
 
 
@@ -193,10 +196,10 @@
 
                 }
 
-                
+
                 product_details.push(product)
                 localStorage.setItem("product_details", JSON.stringify(product_details))
-                window.location.href = "exchange.html"      
+                window.location.href = "exchange.html"
             }
 
             let check = document.getElementById("sell");
@@ -219,7 +222,7 @@
 
             }
             else {
-               
+
 
 
                 for (let i = 0; i < product_detail.length; i++) {
@@ -235,7 +238,7 @@
                             e.prepend(onecard)
                         }
                         // console.log(e.dataset.id)
-                    })  
+                    })
 
                     // <div class="profile">
                     let profile = document.createElement("div")
@@ -292,7 +295,7 @@
                     crypto.setAttribute("name", "crypto")
                     crypto.setAttribute("id", "crypto")
                     crypto.setAttribute("disabled", "")
-                    crypto.setAttribute("value",product_detail[i]["no_of_coins"])
+                    crypto.setAttribute("value", product_detail[i]["no_of_coins"])
                     crypto
                     exchange.append(crypto)
 
@@ -333,7 +336,6 @@
             let overlay = document.querySelector('#overlay');
             let popup = document.querySelector('.popup');
             let closebtn = document.getElementById('close-btn');
-            // let edit_button = document.getElementById("buttons1")
             let edit_popup = document.querySelector(".popup_edit")
             let save = document.getElementById("save")
 
@@ -341,21 +343,11 @@
             function openPopup() {
                 popup.style.display = 'block';
                 overlay.style.display = 'block';
-                // edit_button.style.display = "block"
-                // save.style.display = "none"
             }
 
             function closePopup() {
                 popup.style.display = 'none';
                 overlay.style.display = 'none';
-            }
-
-
-            function edit_openPopup() {
-                edit_popup.style.display = 'block';
-                overlay.style.display = 'block';
-                sell_button.style.display = "none"
-                save.style.display = "block"
             }
 
             closebtn.addEventListener("click", closePopup);
@@ -372,14 +364,14 @@
             payment_id.forEach((data) => {
                 data.addEventListener("click", () => {
                     product_Id = data.value
-                    console.log(product_Id);
+                    // console.log(product_Id);
+
                     product_detail.find((element) => {
                         if (product_Id == element["product_id"]) {
                             res = element
-
                             // console.log(res);
-
-                            payment_detail()
+                           alert("are you sure you want to buy??")
+                           payment_detail()
                         }
                     })
                 })
@@ -389,25 +381,22 @@
                     let order_id = Math.floor(Math.random() * 100);
 
 
-                    if (store_data == "") {
-                        let payment_details = {
-                            "order_id": order_id,
-                            "user_id": res["user_id"],
-                            "product_id": product_Id,
-                            "crypto_name": res["crypto_name"],
-                            "no_of_coins": res["no_of_coins"],
-                            "money": res["money"],
-                            "username": res["username"],
-                        }
 
-                        console.log(payment_details)
-                        store_data.push(payment_details)
-                        localStorage.setItem("Payment_details", JSON.stringify(store_data))
-                        window.location.href = "./selectpayment.html"
+                    let payment_details = {
+                        "order_id": order_id,
+                        "user_id": res["user_id"],
+                        "product_id": product_Id,
+                        "crypto_name": res["crypto_name"],
+                        "no_of_coins": res["no_of_coins"],
+                        "money": res["money"],
+                        "username": res["username"],
                     }
-                    else {
 
-                    }
+                    // console.log(payment_details)
+                    store_data.push(payment_details)
+                    localStorage.setItem("payment_details", JSON.stringify(store_data))
+                    window.location.href = "./selectpayment.html"
+
                 }
             });
         </script>

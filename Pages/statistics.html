@@ -56,10 +56,80 @@
             </li>
         </ul>
     </div>
-    <h2 id="data" style="margin-left:500px"></h2>
+    <div class="all">
+        <div class="head">
+            <div class="coin_name">
+                <img src="../Assets/Images/Logo/btc.png" alt="" width="5%">
+                <h2>Bitcoin</h2>
+                <h3>BTC</h3>
+            </div>
+            <a href="#">Buy</a>
+        </div>
+        <div class="coin">
+            <h1>price</h1>
+            <h3>Rank : </h3>
+
+        </div>
+    </div>
+
+    <div style="width:800px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        // Define the data
+        const data = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Bitcoin',
+                data: [5000, 6000, 7000, 8000, 9000, 10000],
+                borderColor: 'red',
+                fill: false
+            }, {
+                label: 'Ethereum',
+                data: [300, 400, 500, 600, 700, 800],
+                borderColor: 'blue',
+                fill: false
+            }]
+        };
+
+        // Define the chart options
+        const options = {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Crypto Statistics'
+            },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Price'
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Month'
+                    }   
+                }]
+            }
+        };
+
+        // Create the chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+    </script>
+    <!-- <h2 id="data" style="margin-left:500px"></h2> -->
+
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
 
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../Assets/js/statics.js"></script>
 
 </body>

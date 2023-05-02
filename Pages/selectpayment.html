@@ -59,9 +59,9 @@
         <div class="payment">
             <div class="summary">
                 <h3>Order Summary</h3>
-                <h4>678394098907</h4>
+                <h4 id="price"></h4>
             </div>
-            <hr class="line">
+            <hr class="line"> 
             <form action="" class="form">
                 <div class="box">
                     <input type="radio" name="visa" id="visa" class="radio"> 
@@ -86,23 +86,51 @@
         </div>
     </div>
     <script>
+        // let  box = document.createElement("div");
+        // box.setAttribute("class","box");
+
+
+        // let radio  = document.createElement("input");
+        // radio.setAttribute("type","radio");
+        // radio.setAttribute("name",",master");
+        // radio.setAttribute("id","master");
+        // radio.setAttribute("class","radio")
+        // box.append(radio);
+
+        // let label = document.createElement("input");
+        // label.setAttribute("for","master");
+        // box.append(label);
+
+        // let img = document.createElement("img");
+        // img.setAttribute("src","../Assets/Images/Mastercard-logo.png");
+        // label.append(img);
+
+    
+
+
         let visa = document.getElementById("visa")
         let master = document.getElementById("master");
         let new_card = document.getElementById("new_card");
         let login_details = JSON.parse(localStorage.getItem("login"));
         console.log(login_details.user_id) 
+        let payment_details = JSON.parse(localStorage.getItem("payment_details"))
+        let price = document.getElementById("price");
+        console.log(payment_details)
 
-        function paymentmethod(){
-            let paymentmethod;
-            if(visa.value == true){
-                "paymentmethod"  = "visa"; 
-            }
-            else if(master.value == true){
-                "paymentmethod" =  "master"
-            }
+        price.innerText = payment_details[0]["no_of_coins"] + "BTC"
+        
+
+        // function paymentmethod(){
+        //     let paymentmethod;
+        //     if(visa.value == true){
+        //         "paymentmethod"  = "visa"; 
+        //     }
+        //     else if(master.value == true){
+        //         "paymentmethod" =  "master"
+        //     }
 
             
-        }
+        // }
     </script>
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">

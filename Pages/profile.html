@@ -109,8 +109,6 @@
                 </div>
                 <hr class="line">
             </div>
-
-            <div class="box2"></div>
         </div>
     </div>
 
@@ -180,6 +178,7 @@
                 confirm_password.removeAttribute("disabled")
                 password.setAttribute("type", "text")
                 confirm_password.setAttribute("type", "text")
+                logout.style.display = "block"
             }
             else if (edit.innerText == "Save") {
 
@@ -202,6 +201,7 @@
                 password.setAttribute("type", "password")
                 confirm_password.setAttribute("type", "password")
                 profile_image.src = res["profile_pic"]
+                logout.style.display = "none"
                 console.log(profile_image);
 
 

@@ -83,3 +83,21 @@ body {
 }
 
 /* sidebar navigation ends */
+
+
+.all{
+    margin: 20px  0px 0px 350px;
+    border: 1px solid  black;
+    width: 77%;
+    height: 800px;
+    background-color: #EDF3FD;
+}
+
+.head{
+    display: flex;
+    
+}
+.coin_name{
+    display: flex;
+    align-items: center;
+}
