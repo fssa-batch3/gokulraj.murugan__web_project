@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/signup.css">
+</head>
+
+<body>
+    <div class="all">
+        <div class="head">
+            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+        </div>
+        <div class="h2">
+            <h2>Sign Up</h2>
+        </div>
+        <form id="form">
+            <div class="content">
+                <label for="fn_name">First name :</label>
+                <input type="text" name="fn_name" id="fn_name" placeholder="First Name" pattern="[A-Za-z]{1,32}"
+                    required>
+                <br>
+                <label for="last_name">Last name :</label>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name" pattern="[A-Za-z]{0,32}"
+                    required>
+                <br>
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br>
+
+                <label for="phone_number">Phone Number :</label>
+                <input type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" pattern="[0-9]{10}"
+                    required>
+                <br>
+
+
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" placeholder="Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Enter a Uppercase,a lowercase, a number,a special character" required>
+                <br>
+                <label for="cpassword">Confirm Password :</label>
+                <input type="password" name="cpassword" id="confirm_password" placeholder="Confirm Password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Enter a Uppercase,a lowercase, a number,a special character" required>
+                <br>
+
+                <button id="btn">Sign up</button>
+        </form>
+    </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>
+
+
+
+
+
+
+        function signup() {
+
+            const user_id = Math.floor(Math.random() * 100)
+            const first_name = document.getElementById("fn_name").value;
+            const last_name = document.getElementById("last_name").value
+            const email = document.getElementById("email").value
+            const phone_number = document.getElementById("phone_number").value
+            const password = document.getElementById("password").value
+            const confirm_password = document.getElementById("confirm_password").value
+
+
+            let res;
+            let gokul = JSON.parse(localStorage.getItem("Userdata")) ?? [];
+
+            if (password === confirm_password) {
+                if (gokul == "") {
+                    let gokul_data = {
+                        "User_id": user_id,
+                        "Username": first_name + last_name,
+                        // "last_name": last_name,
+                        "email": email,
+                        "phone_number": phone_number,
+                        "password": password,
+                        "confirm_password": confirm_password,
+                    }
+
+
+                    gokul.push(gokul_data);
+                    localStorage.setItem("Userdata", JSON.stringify(gokul))
+                    window.location.href = 'login.html'
+
+                }
+
+                else {
+                    let check = JSON.parse(localStorage.getItem("Userdata"))
+                    check.find(e => {
+                        if (e["email"] === email) {
+                            return res = 1;
+                        }
+                        console.log(check)
+                    })
+
+                    if (res == 1) {
+                        alert("email already taken")
+                    }
+                    else {
+                        let gokul_data = {
+                            "User_id": user_id,
+                            "Username": first_name + last_name,
+                            // "last_name": last_name,
+                            "email": email,
+                            "phone_number": phone_number,
+                            "password": password,
+                            "confirm_password": confirm_password,
+                        }
+
+
+                        gokul.push(gokul_data);
+                        localStorage.setItem("Userdata", JSON.stringify(gokul))
+                        window.location.href = './login.html'
+                    }
+                }
+
+
+            }
+            else {
+                alert("password not matched")
+            }
+        }
+
+
+
+        // document.getElementById("btn").onclick = signup
+        let form = document.getElementById("form");
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            signup()
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>
