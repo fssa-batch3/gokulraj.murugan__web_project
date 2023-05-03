@@ -92,6 +92,8 @@ body {
     border-radius: 20px;
     background-color: white;
     font-size: 18px;
+    height: auto;
+
 }
 .wallet{
     color: gray;
@@ -176,7 +178,7 @@ body {
 }
 
 .seller_username{
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .time{

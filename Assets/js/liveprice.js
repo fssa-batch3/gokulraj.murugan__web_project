@@ -13,9 +13,9 @@ var liveprice = {
 }
 
 $.ajax(liveprice).done(function (response){
-    btc.innerHTML = response.bitcoin.usd;
-    ltc.innerHTML = response.litecoin.usd;
-    eth.innerHTML = response.ethereum.usd;
-    doge.innerHTML = response.dogecoin.usd;
+    btc.innerHTML = response.bitcoin.usd  +  "USD" ;
+    ltc.innerHTML = response.litecoin.usd  + "USD";
+    eth.innerHTML = response.ethereum.usd  + "USD";
+    doge.innerHTML = response.dogecoin.usd   + "USD";
 
 });

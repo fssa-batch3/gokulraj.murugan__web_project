@@ -68,3 +68,8 @@ button{
     color: white;
 }
 
+#viewpassword{
+    width: 15px;
+    height: 15px;
+    margin: 30px 0px 30px 150px;
+}
