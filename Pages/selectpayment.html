@@ -56,28 +56,49 @@
         </ul>
     </div>
     <div class="main">
+        <div class="blackscreen"></div>
+        <div class="popup">
+            <h1>Payment Details</h1>
+            <form action="">
+                <input type="number" name="card_number" id="card_number" placeholder="CARD NUMBER" class="card"
+                    required><br>
+                <input type="text" name="name" id="card_name" placeholder="CARDHOLDER NAME" class="card" required><br>
+                <label id="expiry">Expiration Date:</label><br>
+                <input type="number" name="month" id="month" placeholder="DATE" class="date">
+                <input type="number" name="year" id="year" placeholder="YEAR" class="date">
+                <input type="number" name="cvv" id="cvv" placeholder="CVV" class="date">
+
+                <button id="submit">Submit</button>
+
+            </form>
+            <button id="cancel">cancel</button>
+        </div>
+
+
+
+
         <div class="payment">
             <div class="summary">
                 <h3>Order Summary</h3>
                 <h4 id="price"></h4>
             </div>
-            <hr class="line"> 
+            <hr class="line">
             <form action="" class="form">
-                <div class="box">
-                    <input type="radio" name="visa" id="visa" class="radio"> 
+                <!-- <div class="box">
+                    <input type="radio" name="visa" id="visa" class="radio">
                     <label for="visa"><img src="../Assets/Images/visa_logo.png" alt="">
-                        ****  1234</label>
+                        **** 1234</label>
                 </div>
-                
+
 
                 <div class="box">
-                    <input type="radio" name="master" id="master" class="radio">
+                    <input type="radio" name="new_card" id="master" class="radio">
                     <label for="master"><img src="../Assets/Images/Mastercard-logo.png" alt="">
-                        ****  1234</label>
-                </div>
+                        **** 1234</label>
+                </div> -->
                 <div class="box">
                     <input type="radio" name="new_card" id="new_card" class="radio">
-                    <label for="new_card"><i class="fa fa-plus" ></i>Add new card</label>
+                    <label for="new_card"><i class="fa fa-plus"></i>Add new card</label>
                 </div>
 
                 <button id="button">Pay</button>
@@ -86,51 +107,114 @@
         </div>
     </div>
     <script>
-        // let  box = document.createElement("div");
-        // box.setAttribute("class","box");
+        let cards = JSON.parse(localStorage.getItem("card_details"));
+        console.log(cards)
 
-
-        // let radio  = document.createElement("input");
-        // radio.setAttribute("type","radio");
-        // radio.setAttribute("name",",master");
-        // radio.setAttribute("id","master");
-        // radio.setAttribute("class","radio")
-        // box.append(radio);
-
-        // let label = document.createElement("input");
-        // label.setAttribute("for","master");
-        // box.append(label);
-
-        // let img = document.createElement("img");
-        // img.setAttribute("src","../Assets/Images/Mastercard-logo.png");
-        // label.append(img);
-
-    
-
+        let popup = document.querySelector(".popup")
+        let blackscreen = document.querySelector(".blackscreen")
 
         let visa = document.getElementById("visa")
         let master = document.getElementById("master");
         let new_card = document.getElementById("new_card");
         let login_details = JSON.parse(localStorage.getItem("login"));
-        console.log(login_details.user_id) 
         let payment_details = JSON.parse(localStorage.getItem("payment_details"))
         let price = document.getElementById("price");
-        console.log(payment_details)
+        // console.log(payment_details)
+        let product_id;
+        let user_id = login_details.user_id;
 
-        price.innerText = payment_details[0][""] + "BTC"
-        
+        price.innerText = payment_details[0]["no_of_coins"] + "BTC"
 
-        // function paymentmethod(){
-        //     let paymentmethod;
-        //     if(visa.value == true){
-        //         "paymentmethod"  = "visa"; 
-        //     }
-        //     else if(master.value == true){
-        //         "paymentmethod" =  "master"
-        //     }
+        let card_number = document.getElementById("card_number");
+        let card_name = document.getElementById("card_name");
+        let number = document.getElementById("month");
+        let year = document.getElementById("year");
+        let cvv = document.getElementById("cvv");
 
-            
-        // }
+        function card() {
+            let card_details = JSON.parse(localStorage.getItem("card_details")) ?? []
+
+
+            let card_detail = {
+
+                "user_id": user_id,
+                "card number": card_number.value,
+                "card name": card_name.value,
+                "number": number.value,
+                "year": year.value,
+                "cvv": cvv.value,
+            }
+
+            card_details.push(card_detail);
+            localStorage.setItem("card_details", JSON.stringify(card_details))
+            popup.style.display = "none"
+            blackscreen.style.display = "none"
+            alert("card added")
+        }
+
+
+            let newcard = document.getElementById("new_card");
+            newcard.addEventListener("click",(element) => {
+                popup.style.display = "block"
+            blackscreen.style.display = "block"
+           
+            })
+
+        let submit = document.getElementById("submit");
+        submit.addEventListener("click", (e) => {
+            e.preventDefault()
+            card()
+        })
+
+
+
+
+
+        if (cards == null) {
+
+         }
+        else {
+            for (let i = 0; i < cards.length; i++) {
+
+                let box = document.createElement("div");
+                box.setAttribute("class", "box");
+                document.querySelector(".form").prepend(box)
+
+
+                let radio = document.createElement("input");
+                radio.setAttribute("type", "radio");
+                radio.setAttribute("name", ",master");
+                radio.setAttribute("id", "master");
+                radio.setAttribute("class", "radio")
+                box.append(radio);
+
+                let label = document.createElement("label");
+                label.setAttribute("for", "master");
+                label.innerText = cards[i]["card number"]
+                box.append(label);
+
+                let img = document.createElement("img");
+                img.setAttribute("src", "../Assets/Images/Mastercard-logo.png");
+                label.prepend(img);
+            }
+        }
+
+
+
+
+        let cancel = document.getElementById("cancel");
+        cancel.addEventListener("click", (el) => {
+            popup.style.display = "none"
+            blackscreen.style.display = "none"
+        })
+
+        let pay = document.getElementById("button");
+        pay.addEventListener("click",(pay)=>{
+            alert("Thank you 😄")
+            window.location.href = "./exchange.html"
+        })
+
+
     </script>
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">

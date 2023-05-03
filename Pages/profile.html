@@ -108,6 +108,17 @@
                     <button>Edit</button>
                 </div>
                 <hr class="line">
+                <div class="payment_box">
+                    <div>
+                        <img src="../Assets/Images/Mastercard-logo.png" alt="">
+                        <h4>Master card account</h4>
+                    </div>
+                    <div>
+                        <label for="">Card Number :</label> 
+                        <input type="number" >
+                       
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -219,8 +230,13 @@
             e.preventDefault()
 
             localStorage.removeItem("login")
-            window.location.href = "./profile.html"
+            window.location.href = "../../index.html"
         })
+
+
+
+        //payment card
+        let card = JSON.parse(localStorage.getItem("card_details"))
 
 
 
