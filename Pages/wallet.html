@@ -78,8 +78,7 @@
             <div class="list_of_details">
                 <div class="today">
                     <h3 style="margin: 20px 0px 20px 50px;color: grey;">Today</h3>
-
-                        <!-- <div class="one_detail">
+                    <!-- <div class="one_detail">
                             <div class="seller_details">
                                 <img src="../Assets/Images/test-1.png" width="15%" alt="">
                                 <h3 class="seller_username">Username</h3>
@@ -90,52 +89,85 @@
                         </div>
 
                     </div> -->
-                <div class="yesterday">
 
                 </div>
 
             </div>
 
+
+
         </div>
 
+        <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+        </script>
+        <script>
+            let payment = JSON.parse(localStorage.getItem
+                ("payment_details"))
+            let login = JSON.parse(localStorage.getItem("login"))
+            let user_detail = JSON.parse(localStorage.getItem("Userdata"))
+
+            user_detail.find(e => {
+                if (e["email"] == login["email"]) {
+                    res = e;
+                }
+            })
+            // console.log(res)
+            // console.log(res["profile_pic"])
 
 
-    </div>
-
-    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
-    </script>
-    <script>
-        let payment = JSON.parse(localStorage.getItem
-        ("payment_details"))
-        let login = JSON.parse(localStorage.getItem("login"))
 
 
-        if(login.user_id == payment[i]["user_id"]){
-            let one_detail = document.createElement("div");
-            one_detail.setAttribute("class","one_detail")
-            document.querySelector(".today").prepend(one_detail)
 
-            let seller_details = document.createElement("div");
-            seller_detail.setAttribute("class","seller_details")
-            one_detail.append(seller_details)
 
-            let img = document.createElement("img");
-            img.setAttribute("src","../Assets/Images/test-1.png");
-            img.setAttribute("width","15%")
-            one_detail.append("img")
+            // console.log(login.user_id);
+            // console.log(payment[0]["user_id"]);
+            for (let i = 0; i < payment.length; i++) {
 
-            let seller_username = document.createElement("h3");
-            seller_username.setAttribute("class","username")
-            one_detail.append(seller_username);
+                if (login.user_id == payment[i]["user_id"]) {
 
-            let method = document.createElement("h4");
-            method.setAttribute("class","username")
-            one_detail.append(method);
+
+                    let one_detail = document.createElement("div");
+                    one_detail.setAttribute("class", "one_detail")
+                    document.querySelector(".today").append(one_detail)
+
+                    let seller_details = document.createElement("div");
+                    seller_details.setAttribute("class", "seller_details")
+                    one_detail.append(seller_details)
+
+                    let user_photo = document.createElement("img");
+                    user_photo.setAttribute("src", payment[i]["profile_pic"]);
+                    user_photo.setAttribute("width", "80px")
+                    user_photo.style.borderRadius = "50px"
+                    seller_details.append(user_photo)
+
+                    let seller_username = document.createElement("h3");
+                    seller_username.setAttribute("class", "seller_username")
+                    seller_username.innerText = payment[i]["username"]
+                    seller_details.append(seller_username);
+
+                    let method = document.createElement("h4");
+                    method.setAttribute("class", "method")
+                    method.innerText = payment[i]["type"]
+                    one_detail.append(method);
+
+                    let time = document.createElement("h4");
+                    time.setAttribute("class", "time")
+                    time.innerText = payment[i]["time"]
+                    one_detail.append(time);
+
+                    let coins = document.createElement("h4");
+                    coins.setAttribute("class", "coins")
+                    coins.innerText = payment[i]["no_of_coins"] + "BTC"
+                    one_detail.append(coins);
+
+                }
+            }
+
 
             
-        }
+                
 
-    </script>
+        </script>
 </body>
 
 </html>

@@ -137,24 +137,16 @@
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
     <script>
+
         // Product Read starts
         let product_detail = JSON.parse(localStorage.getItem("product_details"))
         let login_details = JSON.parse(localStorage.getItem("login"));
         let button_id;
 
-        
-        product_detail = JSON.parse(localStorage.getItem("product_details"))
-        // console.log(product_detail)
         // Product Read ends
-        if () {
 
-        }
-        else (
-            if (product_detail == null) {
-
-        }
-        else {
-            for (let i = 0; i < product_detail.length; i++) {
+        for (let i = 0; i < product_detail.length; i++) {
+            if (product_detail[i]["User_id"] === login_details["user_id"]) {
 
                 // <div class="onecard">
                 let onecard = document.createElement("div")
@@ -225,7 +217,6 @@
                 crypto.setAttribute("id", "crypto")
                 crypto.setAttribute("disabled", "")
                 crypto.setAttribute("value", product_detail[i]["no_of_coins"])
-                crypto
                 exchange.append(crypto)
 
                 // <br>
@@ -257,7 +248,8 @@
             }
         }
 
-        )
+
+
 
 
 
@@ -287,50 +279,12 @@
         }
 
 
-        edit_button.addEventListener("click", openPopup);
+        // edit_button.addEventListener("click", openPopup);
         closebtn.addEventListener("click", closePopup);
         // Pop up ends
 
 
         // product update starts
-
-        let edit_crypto_name2 = document.getElementById("crypto");
-        let edit_username = document.getElementById("username");
-        let edit_crypto = document.getElementById("crypto");
-        let edit_money = document.getElementById("money");
-
-        let edit = document.querySelectorAll(".edit");
-        let edit_product = JSON.parse(localStorage.getItem("product_details"));
-        button_id = edit_button.dataset.keyword;
-        console.log(button_id);
-
-
-        edit.forEach((editbtn) => {
-
-            editbtn.addEventListener("click", () => {
-
-                for (let i = 0; i < edit_product.length; i++) {
-                    if (button_id == edit_product[i]["product_id"]) {
-                        res = edit_product[i];
-                        console.log(res);
-
-                        res["crypto_name"] = edit_crypto_name2.value;
-                        res["username"] = edit_username.value;
-                        res["no_of_coins"] = edit_crypto.value;
-                        res["money"] = edit_money.value;
-
-                    }
-
-
-
-
-                }
-
-
-
-
-            })
-        })
 
     </script>
 </body>

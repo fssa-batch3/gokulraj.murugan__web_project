@@ -76,52 +76,25 @@
         <canvas id="myChart"></canvas>
     </div>
     <script>
-        // Define the data
-        const data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-            datasets: [{
-                label: 'Bitcoin',
-                data: [5000, 6000, 7000, 8000, 9000, 10000],
-                borderColor: 'red',
-                fill: false
-            }, {
-                label: 'Ethereum',
-                data: [300, 400, 500, 600, 700, 800],
-                borderColor: 'blue',
-                fill: false
-            }]
-        };
 
-        // Define the chart options
-        const options = {
-            responsive: true,
-            title: {
-                display: true,
-                text: 'Crypto Statistics'
-            },
-            scales: {
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Price'
-                    }
-                }],
-                xAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Month'
-                    }   
-                }]
-            }
-        };
 
-        // Create the chart
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const chart = new Chart(ctx, {
+        const config = {
             type: 'line',
             data: data,
-            options: options
-        });
+        };
+
+
+        const labels = Utils.months({ count: 7 });
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First Dataset',
+                data: [0, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
     </script>
     <!-- <h2 id="data" style="margin-left:500px"></h2> -->
 

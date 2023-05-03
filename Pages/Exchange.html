@@ -124,7 +124,7 @@
                 </div>
                 <form>
                     <label for="cryoto_name2">Coin Name :</label>
-                    <input type="text" name="cryoto_name2" id="crypto_name2" required ><br>
+                    <input type="text" name="cryoto_name2" id="crypto_name2" required><br>
 
                     <label for="crypto">How many coins :</label>
                     <input type="number" name="crypto" id="no_of_coins" required><br>
@@ -137,7 +137,7 @@
 
 
 
-          
+
 
 
 
@@ -317,16 +317,28 @@
                     let space2 = document.createElement("br")
                     exchange.append(space2)
 
-                    // <button class="buttons">Buy</button>
-                    let buy_button = document.createElement("button")
-                    buy_button.setAttribute("class", "buttons2")
-                    buy_button.setAttribute("value", product_detail[i]["product_id"])
-                    buy_button.innerText = "Buy"
-                    exchange.append(buy_button)
+
+                    if (login["user_id"] === product_detail[i]["User_id"]) {
+                        // buy_button.style.display = "none"
+                    }
+                    else {
+                        // <button class="buttons">Buy</button>
+                        let buy_button = document.createElement("button")
+                        buy_button.setAttribute("class", "buttons2")
+                        buy_button.setAttribute("value", product_detail[i]["product_id"])
+                        buy_button.innerText = "Buy"
+                        exchange.append(buy_button)
+                    }
+
+
 
 
                 }
             }
+
+
+
+
             // Product Read ends
 
 
@@ -338,6 +350,8 @@
             let closebtn = document.getElementById('close-btn');
             let edit_popup = document.querySelector(".popup_edit")
             let save = document.getElementById("save")
+
+
 
 
             function openPopup() {
@@ -361,6 +375,26 @@
             let payment_id = document.querySelectorAll(".buttons2")
             let product_Id;
             let res;
+
+            // time code starts
+
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let amPm = hours < 12 ? 'am' : 'pm';
+
+            // Convert from 24-hour to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            // Add leading zero to minutes if necessary
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            let currentTime = `${hours}.${minutes} ${amPm}`;
+            // time code ends
+
+
+
             payment_id.forEach((data) => {
                 data.addEventListener("click", () => {
                     product_Id = data.value
@@ -370,8 +404,8 @@
                         if (product_Id == element["product_id"]) {
                             res = element
                             // console.log(res);
-                           alert("are you sure you want to buy??")
-                           payment_detail()
+                            alert("are you sure you want to buy??")
+                            payment_detail()
                         }
                     })
                 })
@@ -379,17 +413,20 @@
                 function payment_detail() {
                     let store_data = JSON.parse(localStorage.getItem("payment_details")) ?? [];
                     let order_id = Math.floor(Math.random() * 100);
-
+                    console.log(res)
 
 
                     let payment_details = {
+                        "profile_pic": res["profile_pic"],
                         "order_id": order_id,
-                        "user_id": res["user_id"],
+                        "user_id": login.user_id,
                         "product_id": product_Id,
                         "crypto_name": res["crypto_name"],
                         "no_of_coins": res["no_of_coins"],
                         "money": res["money"],
                         "username": res["username"],
+                        "time": currentTime,
+                        "type": "Buy",
                     }
 
                     // console.log(payment_details)
