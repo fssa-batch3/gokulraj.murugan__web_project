@@ -57,54 +57,306 @@
         </ul>
     </div>
     <div class="all">
-        <div class="head">
-            <div class="coin_name">
-                <img src="../Assets/Images/Logo/btc.png" alt="" width="5%">
-                <h2>Bitcoin</h2>
-                <h3>BTC</h3>
+        <!-- <div class="main">
+            <div class="box">
+                <p id="rank">Rank #1</p>
+                <div class="top">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="20%">
+                    <h1>Bitcoin</h1>
+                    <h4>BTC</h4>
+                    <input type="checkbox" id="check">
+                </div>
+                <div class="price_change">
+                        <h2 id="price"> &#8377; 12,34,56</h2>
+                        <h3>98%</h3>
+                </div>
+                <div class="value">
+                    <div class="box1">
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="box1">
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
             </div>
-            <a href="#">Buy</a>
+            <div class="stat">
+                <img src="../Assets/Images/stat.png" width="80%" alt="">
+            </div>
         </div>
-        <div class="coin">
-            <h1>price</h1>
-            <h3>Rank : </h3>
+        <divstyle="margin-top: 50px ;">
+            <div class="converter">
+                <h2 class="box_h2">Bitcoin Converter</h2>
+                <div>
+                    <div class="coin">
+                        <p class="input_span">BTC</p>
+                        <input type="number" class="input_value">
+                    </div>
+                    <div class="coin">
+                        <p class="input_span">INR</p>
+                        <input type="number" class="input_value">
+                    </div>
+                </div>
+            </div>
+            <div class="statistics">
+                <h2 class="box_h2">BTC price statistics</h2>
+                <div class="stat2">
+                    <div class="box1">
+                        <div class="phone">
+                            <p>Bitcoin Price </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>24h Low / 24h High</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>7d Low / 7d High</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Volume / Market Cap</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
 
-        </div>
+                        <div class="phone">
+                            <p>Trading Volume </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap Rank</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap Dominance</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </divstyle=> -->
     </div>
 
-    <div style="width:800px;">
-        <canvas id="myChart"></canvas>
-    </div>
-    <script>
 
-
-        const config = {
-            type: 'line',
-            data: data,
-        };
-
-
-        const labels = Utils.months({ count: 7 });
-        const data = {
-            labels: labels,
-            datasets: [{
-                label: 'My First Dataset',
-                data: [0, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            }]
-        };
-    </script>
     <!-- <h2 id="data" style="margin-left:500px"></h2> -->
+    <script src="../Assets/js/statics.js"></script>
+   <script>
+     let url=window.location.search;
+     let params=new URLSearchParams(url)
+     let param_value=params.get("name")
+     console.log(param_value)
 
+        let main = document.createElement("div");
+        main.setAttribute("class", "main");
+
+        let box = document.createElement("div");
+        box.setAttribute("class", "box");
+        main.append(box);
+
+        let rank = document.createElement("p");
+        rank.setAttribute("id", "rank");
+        rank.innerText = "Rank #1"
+        box.append(rank);
+
+        let top1 = document.createElement("div");
+        top1.setAttribute("class", "top")
+        box.append(top1);
+
+        let logo = document.createElement("img")
+        logo.setAttribute("src", "../Assets/Images/Logo/btc.png")
+        logo.setAttribute("width", "20%")
+        top1.append(logo)
+
+        let coin_name = document.createElement("h1")
+        coin_name.innerText = "Bitcoin"
+        top1.append(coin_name);
+
+        let symbol = document.createElement("h4")
+        symbol.innerText = "BTC"
+        top1.append(symbol);
+
+        let check = document.createElement("input")
+        check.setAttribute("id", "check")
+        check.setAttribute("type", "checkbox")
+        top1.append(check)
+
+        let price_change = document.createElement("div");
+        price_change.setAttribute("class", "price_change");
+
+        let price = document.createElement("h2");
+        price.setAttribute("id", "price");
+        price.innerText = "&#8377;" + "12,34,56"
+        price_change.append(price);
+
+        let percentage = document.createElement("h3");
+        percentage.innerText = "98 %";
+        price_change.append(percentage);
+
+        let value = document.createElement("div");
+        value.setAttribute("class", "value")
+        box.append(value);
+
+        for (let i = 0; i < 2; i++) {
+            let box1 = document.createElement("div");
+            box1.setAttribute("class", "box1");
+            value.append(box1)
+
+            for (let j = 0; j < 3; j++) {
+                let flex = document.createElement("div");
+                flex.setAttribute("class", "flex");
+                box1.append(flex)
+
+                let p = document.createElement("p")
+                p.innerText = "market value"
+                flex.append(p)
+
+                let h5 = document.createElement("h5");
+                h5.innerText = "";
+                flex.append(h5)
+
+                let line = document.createElement("hr");
+                box1.append(line)
+            }
+        }
+
+        let stat = document.createElement("div")
+        stat.setAttribute("class", "stat")
+        main.append(stat);
+
+
+        let img = document.createElement("img");
+        img.setAttribute("src", "../Assets/Images/stat.png");
+        img.setAttribute("width", "80%");
+        stat.append(img);
+
+        let aside = document.createElement("div");
+        aside.setAttribute("class", "aside");
+        
+
+        let converter = document.createElement("div");
+        converter.setAttribute("class", "converter");
+        aside.append(converter);
+
+        let box_h2 = document.createElement("h2");
+        box_h2.setAttribute("class", "box_h2");
+        box_h2.innerText = "Bitcoin Converter";
+        converter.append(box_h2);
+
+        let div = document.createElement("div");
+        converter.append(div);
+
+        let coin = document.createElement("div");
+        coin.setAttribute("class", "coin");
+        div.append(coin);
+
+        let input_span = document.createElement("p");
+        input_span.setAttribute("class", "input_span");
+        coin.append(input_span);
+
+        let input_value = document.createElement("input");
+        input_value.setAttribute("type", "number")
+        input_value.setAttribute("class", "input_value");
+        coin.append(input_value);
+
+        let coin2 = document.createElement("div");
+        coin2.setAttribute("class", "coin");
+        div.append(coin2);
+
+        let input_span2 = document.createElement("p");
+        input_span2.setAttribute("class", "input_span");
+        coin2.append(input_span2);
+
+        let input_value2 = document.createElement("input");
+        input_value2.setAttribute("type", "number")
+        input_value2.setAttribute("class", "input_value");
+        coin2.append(input_value2);
+
+
+        let statistics = document.createElement("div");
+        statistics.setAttribute("class", "statistics");
+        aside.append(statistics);
+
+        let box_h2s = document.createElement("h2");
+        box_h2s.setAttribute("class", "box_h2");
+        box_h2s.innerText = "BTC price statistics";
+        statistics.append(box_h2s);
+
+        let stat2 = document.createElement("div");
+        stat2.setAttribute("class", "stat2");
+        statistics.append(stat2);
+
+        let box2 = document.createElement("div");
+        box2.setAttribute("class", "box1");
+        stat2.append(box2);
+
+
+        for (let l = 0; l < 6; l++) {
+            let phone = document.createElement("div");
+            phone.setAttribute("class", "phone");
+            box2.append(phone);
+
+            let stat_data = document.createElement("p");
+            stat_data.innerText = "Bitcoin Price";
+            phone.append(stat_data);
+
+            let h5 = document.createElement("h5");
+            h5.innerText = "09875430987"
+            phone.append(h5);
+
+            let line_2 = document.createElement("hr");
+            phone.append(line_2);
+        }
+
+
+
+        document.querySelector(".all").append(main);
+        document.querySelector(".all").append(aside);
+
+    </script>
+    <script src="../Assets/js/statics.js"></script>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
 
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../Assets/js/statics.js"></script>
-
+    
 </body>
 
 </html>

@@ -84,18 +84,19 @@ body {
 
 /* sidebar navigation ends */
 
-.all{
+.all {
     border: 1px solid black;
     width: 76%;
     height: 800px;
-    margin: 25px 0px 0px  350px;
+    margin: 25px 0px 0px 350px;
     border-radius: 20px;
     background-color: white;
     font-size: 18px;
     height: auto;
 
 }
-.wallet{
+
+.wallet {
     color: gray;
     width: 100%;
     height: 80px;
@@ -106,12 +107,12 @@ body {
 }
 
 
-.wallet i{
+.wallet i {
     font-size: 40px;
     margin: 10px 10px 10px 60px;
 }
 
-#my_sell{
+#my_sell {
     color: blue;
     text-decoration: none;
     margin: 20px 120px 10px 0px;
@@ -120,49 +121,68 @@ body {
     height: 40px;
     border-radius: 20px;
     padding: 10px 5px 5px 5px;
-    
+
 }
 
-.line{
+.line {
     color: gray;
     width: 95%;
     margin: 0px 0px 10px 30px;
 }
 
 
-.box{
+.boxes {
     margin-left: 30px;
 }
-.boxes{
-    width: 300px;
-    height: 120px;
+
+.box {
+    width: 260px;
+    height: 100px;
     border: 1px solid black;
-    margin: 0px 10px 10px 10px;
+    margin: 15px 10px 10px 10px;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
 }
 
-.details{
+.logos {
+    margin: 0px 0px 0px 30px;
+    width: 25%;
+}
+
+
+.price{
+    color: grey;
+}
+.details {
     margin-top: 10px;
 }
 
-.recent_activity h2{
-   color: gray;
-   /* border: 1px solid black; */
-   margin: 5px 5px 5px 5px;
+.box1 {
+    margin-left: 25px;
+    text-align: center;
+}
+
+.recent_activity h2 {
+    color: gray;
+    /* border: 1px solid black; */
+    margin: 5px 5px 5px 5px;
 
 }
 
-.recent_activity i{
+.recent_activity i {
     font-size: 40px;
     margin: 10px 10px 10px 65px;
 }
-.recent_activity hr{
+
+.recent_activity hr {
     color: gray;
     width: 95%;
     margin: 10px 0px 10px 40px;
 }
 
-.one_detail{
+.one_detail {
     border-bottom: 1px solid grey;
     width: 94%;
     height: 100px;
@@ -172,16 +192,15 @@ body {
     align-items: center;
 }
 
-.seller_details{
+.seller_details {
     display: flex;
     align-items: center;
 }
 
-.seller_username{
+.seller_username {
     margin-left: 50px;
 }
 
-.time{
+.time {
     color: grey;
 }
-

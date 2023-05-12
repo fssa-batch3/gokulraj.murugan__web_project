@@ -191,23 +191,26 @@
     </script>
     <script>
 
-        let username = document.querySelectorAll(".username");
-        let user_details = JSON.parse(localStorage.getItem("Userdata"))
+        // getting values from local storage
+        let userdata = JSON.parse(localStorage.getItem("userdata"))
         let login = JSON.parse(localStorage.getItem("login"));
+
+        let username = document.querySelectorAll(".username");
         let profile_image = document.getElementById("profile_image");
         let res;
 
-        user_details.find(e => {
-            if(e["email"] == login["email"]){
+        userdata.find(e => {
+            if (e["email"] == login["email"]) {
                 res = e;
             }
         })
-        // console.log(res);
+            // console.log(res);
 
-        username.forEach((e)=>{
-            e.innerText = res["Username"];
+        username.forEach((e) => {
+            e.innerText = res["username"];
         })
-        profile_image.setAttribute("src",res["profile_pic"])
+
+        profile_image.setAttribute("src", res["profile_pic"])
 
 
 

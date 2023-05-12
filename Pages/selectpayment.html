@@ -60,16 +60,17 @@
         <div class="popup">
             <h1>Payment Details</h1>
             <form action="">
-                <input type="number" name="card_number" id="card_number" placeholder="CARD NUMBER" class="card"
-                    required><br>
-                <input type="text" name="name" id="card_name" placeholder="CARDHOLDER NAME" class="card" required><br>
+                <input type="tel" inputmode="numeric" pattern="[0-9]{16}" autocomplete="cc-number" maxlength="16"
+                    name="card_number" id="card_number" placeholder="CARD NUMBER" class="card" required><br>
+                <input type="text" pattern="[A-Za-z]{1,32}" name="name" id="card_name" placeholder="CARDHOLDER NAME"
+                    class="card" required><br>
                 <label id="expiry">Expiration Date:</label><br>
                 <input type="number" name="month" id="month" placeholder="DATE" class="date">
                 <input type="number" name="year" id="year" placeholder="YEAR" class="date">
-                <input type="number" name="cvv" id="cvv" placeholder="CVV" class="date">
+                <input type="number" name="cvv" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" id="cvv"
+                    placeholder="CVV" class="date">
 
                 <button id="submit">Submit</button>
-
             </form>
             <button id="cancel">cancel</button>
         </div>
@@ -107,24 +108,25 @@
         </div>
     </div>
     <script>
-        let cards = JSON.parse(localStorage.getItem("card_details"));
-        console.log(cards)
+       
+        let login_details = JSON.parse(localStorage.getItem("login"));
+        let payment_details = JSON.parse(localStorage.getItem("payment_details"))
+       
+
+        // console.log(cards)
+
 
         let popup = document.querySelector(".popup")
         let blackscreen = document.querySelector(".blackscreen")
 
-        let visa = document.getElementById("visa")
+
         let master = document.getElementById("master");
         let new_card = document.getElementById("new_card");
-        let login_details = JSON.parse(localStorage.getItem("login"));
-        let payment_details = JSON.parse(localStorage.getItem("payment_details"))
         let price = document.getElementById("price");
-        // console.log(payment_details)
         let product_id;
         let user_id = login_details.user_id;
 
-        price.innerText = payment_details[0]["no_of_coins"] + "BTC"
-
+        // Card Details code start
         let card_number = document.getElementById("card_number");
         let card_name = document.getElementById("card_name");
         let number = document.getElementById("month");
@@ -134,9 +136,7 @@
         function card() {
             let card_details = JSON.parse(localStorage.getItem("card_details")) ?? []
 
-
             let card_detail = {
-
                 "user_id": user_id,
                 "card number": card_number.value,
                 "card name": card_name.value,
@@ -151,14 +151,14 @@
             blackscreen.style.display = "none"
             alert("card added")
         }
+        // Card Details code ends
 
-
-            let newcard = document.getElementById("new_card");
-            newcard.addEventListener("click",(element) => {
-                popup.style.display = "block"
+        let newcard = document.getElementById("new_card");
+        newcard.addEventListener("click", (element) => {
+            popup.style.display = "block"
             blackscreen.style.display = "block"
-           
-            })
+        })
+
 
         let submit = document.getElementById("submit");
         submit.addEventListener("click", (e) => {
@@ -168,11 +168,13 @@
 
 
 
+        // card read code starts
 
+        let cards = JSON.parse(localStorage.getItem("card_details"));
 
         if (cards == null) {
 
-         }
+        }
         else {
             for (let i = 0; i < cards.length; i++) {
 
@@ -204,15 +206,23 @@
 
         let cancel = document.getElementById("cancel");
         cancel.addEventListener("click", (el) => {
+
             popup.style.display = "none"
             blackscreen.style.display = "none"
         })
 
         let pay = document.getElementById("button");
-        pay.addEventListener("click",(pay)=>{
+        pay.addEventListener("click", () => {
+
             alert("Thank you 😄")
-            window.location.href = "./exchange.html"
+            window.location.href = "Exchange.html"
         })
+
+
+
+
+        // balance code starts
+
 
 
     </script>

@@ -1,25 +1,78 @@
 body{
-    background-color: bisque
+    background-color:#4062ff;
 }
+
+
+
+/* pop up starts */
+#overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .popup{
-    width:500px ;
-    height: 300px;
-    background-color: white;
-    border-radius: 20px;
-    position: sticky;
-    left: 250px;
-    padding: 20px;
-    font-size: 20px;
+    width: 500px;
+    display: block;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 25px;
+    border: 1px solid #ccc;
+    font-size: 19px;
 }
-label,input{
+
+#close-btn{
+    color: #f03c0f;
+    font-size: 23px;
+   margin-left: 430px;
+}
+
+
+.popup label,
+input {
     margin: 10px;
 }
 
-#sell{
+.popup #sell {
     width: 100px;
     height: 30px;
-    border-radius:10px;
+    border-radius: 10px;
     border-style: none;
     font-size: 16px;
     background-color: #4062ff;
+}
+
+
+.coin{
+    overflow: scroll; 
+    height: 250px;
+}
+
+.one_coin{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border: 1px solid black;}
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 10px;
 }

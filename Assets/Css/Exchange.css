@@ -151,6 +151,7 @@ body {
     height: auto;
     overflow: scroll;
     display: flex;
+    
 }
 
 .onecard {
@@ -211,19 +212,29 @@ body {
     /* border: 1px solid blue; */
     width: 100%;
     height: 220px;
-    margin: 10px 0px;
+    margin: 10px 0px 0px 0px;
     background-color: #EDF3FD;
     border-radius: 10px;
     padding: 5px;
 }
 
+.exchange label{
+    width: 120px;
+    height: 80px;
+    border-radius: 5px 0px 0px 5px ;
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    padding: 9px;
+    background-color: white;
+    margin: 0px -0px 0px 20px;
+
+}
 .exchange input {
     border-style: none;
-    border-left: 5px solid blue;
-    border-radius: 3px;
-    margin: 30px 0px 0px 20px;
-    width: 250px;
-    height: 35px;
+    border-radius:0px 5px 5px 0px;
+    margin: 30px 0px 0px 0px;
+    width: 200px;
+    height: 40px;
     background-color: white;
     padding-left: 10px;
     font-size: 16px;
@@ -287,8 +298,8 @@ body {
 /* scroll bar */
 
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 5px;
+    width: 8px;
+    height: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -303,8 +314,7 @@ body {
 /* Scroll bar ends */
 
 
-
-/* pop up starts */
+/* Popup Starts */
 #overlay {
     display: none;
     position: fixed;
@@ -318,13 +328,15 @@ body {
 .popup{
     width: 500px;
     display: none;
+    height: 500px;
     position: fixed;
     top: 50%;
     left: 54%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
+    padding: 25px;
     border: 1px solid #ccc;
+    font-size: 19px;
 }
 
 #close-btn{
@@ -332,6 +344,7 @@ body {
     font-size: 23px;
    margin-left: 430px;
 }
+
 
 .popup label,
 input {
@@ -345,4 +358,31 @@ input {
     border-style: none;
     font-size: 16px;
     background-color: #4062ff;
+}
+
+
+.coin{
+    overflow: scroll; 
+    height: 250px;
+}
+
+.one_coin{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    border: 1px solid black;}
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 10px;
 }

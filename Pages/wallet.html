@@ -61,12 +61,19 @@
     <div class="all">
         <div class="wallet">
             <h2><i class="fa-solid fa-wallet"></i>Your Wallet</h2>
-            <a href="../Pages/my_sell.html" id="my_sell">My sell</a>
-
+            <a href="../Pages/my_sell.html" id="my_sell">My Activites</a>
         </div>
         <hr class="line">
-        <div class="box" style="display: flex;">
-            <div class="boxes"></div>
+        <div class="boxes" style="display: flex;">
+
+            <!-- <div class="box">
+                <img src="../Assets/Images/Logo/btc.png" class="logos" alt="">
+                <div class="box1">
+                    <h2>Bitcoin</h2>
+                    <h4>09872656</h4>
+                </div>
+            </div> -->
+
         </div>
 
 
@@ -101,71 +108,92 @@
         <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
         </script>
         <script>
-            let payment = JSON.parse(localStorage.getItem
-                ("payment_details"))
+
+            let payment = JSON.parse(localStorage.getItem("payment_details"))
             let login = JSON.parse(localStorage.getItem("login"))
-            let user_detail = JSON.parse(localStorage.getItem("Userdata"))
+            let user_detail = JSON.parse(localStorage.getItem("userdata"))
 
             user_detail.find(e => {
                 if (e["email"] == login["email"]) {
                     res = e;
                 }
             })
+
             // console.log(res)
-            // console.log(res["profile_pic"])
+            
+            // balance card
+            let box = document.createElement("div");
+            box.setAttribute("class","box");
+            document.querySelector(".boxes").prepend(box);
+
+            let logos = document.createElement("img");
+            logos.setAttribute("src","../Assets/Images/Logo/btc.png")
+            logos.setAttribute("class","logos")
+            box.append(logos);
+
+            let box1 = document.createElement("div");
+            box1.setAttribute("class","box1");
+            box.append(box1)
+
+            let h2 = document.createElement("h2");
+            h2.innerText = "Bitcoin"
+            box1.append(h2)
+
+            let h4 = document.createElement("h4");
+            h4.setAttribute("class","price")
+            h4.innerText = "09876543"
+            box1.append(h4)
 
 
 
 
+            // payment history
+
+            if (payment == null) { }
+            else {
+                for (let i = 0; i < payment.length; i++) {
+
+                    if (login.user_id == payment[i]["user_id"]) {
 
 
-            // console.log(login.user_id);
-            // console.log(payment[0]["user_id"]);
-            for (let i = 0; i < payment.length; i++) {
+                        let one_detail = document.createElement("div");
+                        one_detail.setAttribute("class", "one_detail")
+                        document.querySelector(".today").append(one_detail)
 
-                if (login.user_id == payment[i]["user_id"]) {
+                        let seller_details = document.createElement("div");
+                        seller_details.setAttribute("class", "seller_details")
+                        one_detail.append(seller_details)
 
+                        let user_photo = document.createElement("img");
+                        user_photo.setAttribute("src", payment[i]["profile_pic"]);
+                        user_photo.setAttribute("width", "80px")
+                        user_photo.style.borderRadius = "50px"
+                        seller_details.append(user_photo)
 
-                    let one_detail = document.createElement("div");
-                    one_detail.setAttribute("class", "one_detail")
-                    document.querySelector(".today").append(one_detail)
+                        let seller_username = document.createElement("h3");
+                        seller_username.setAttribute("class", "seller_username")
+                        seller_username.innerText = payment[i]["seller_username"]
+                        seller_details.append(seller_username);
 
-                    let seller_details = document.createElement("div");
-                    seller_details.setAttribute("class", "seller_details")
-                    one_detail.append(seller_details)
+                        let method = document.createElement("h4");
+                        method.setAttribute("class", "method")
+                        method.innerText = payment[i]["type"]
+                        one_detail.append(method);
 
-                    let user_photo = document.createElement("img");
-                    user_photo.setAttribute("src", payment[i]["profile_pic"]);
-                    user_photo.setAttribute("width", "80px")
-                    user_photo.style.borderRadius = "50px"
-                    seller_details.append(user_photo)
+                        let time = document.createElement("h4");
+                        time.setAttribute("class", "time")
+                        time.innerText = payment[i]["time"]
+                        one_detail.append(time);
 
-                    let seller_username = document.createElement("h3");
-                    seller_username.setAttribute("class", "seller_username")
-                    seller_username.innerText = payment[i]["username"]
-                    seller_details.append(seller_username);
+                        let coins = document.createElement("h4");
+                        coins.setAttribute("class", "coins")
+                        coins.innerText = payment[i]["no_of_coins"] + "BTC"
+                        one_detail.append(coins);
 
-                    let method = document.createElement("h4");
-                    method.setAttribute("class", "method")
-                    method.innerText = payment[i]["type"]
-                    one_detail.append(method);
-
-                    let time = document.createElement("h4");
-                    time.setAttribute("class", "time")
-                    time.innerText = payment[i]["time"]
-                    one_detail.append(time);
-
-                    let coins = document.createElement("h4");
-                    coins.setAttribute("class", "coins")
-                    coins.innerText = payment[i]["no_of_coins"] + "BTC"
-                    one_detail.append(coins);
-
+                    }
                 }
             }
 
-
-            
-                
 
         </script>
 </body>

@@ -31,8 +31,9 @@
 
             <input type="checkbox" name="viewpassword" id="viewpassword">
             <label for="viewpassword">Show Password</label><br>
-            <button type="button" id="btn">Sign in</button>
 
+
+            <button type="button" id="btn">Sign in</button>
         </form>
 
     </div>
@@ -41,36 +42,27 @@
     </script>
     <script>
 
-        
-        let checkbox = document.getElementById("viewpassword");
-
-
-
         function login() {
             let email = document.getElementById("email").value
-        let password = document.getElementById("password")
-        let arr = JSON.parse(localStorage.getItem("Userdata"))
-        let res;
-        let user_id;
+            let password = document.getElementById("password")
+            let arr = JSON.parse(localStorage.getItem("userdata"))
+            let res;
+            let user_id;
 
             arr.find(e => {
 
                 if (e["email"] == email && e["password"] == password.value) {
 
-
                     user_id = e["user_id"]
                     console.log(e["user_id"])
                     res = 1;
-                    // return True
+
                 }
             });
+            // console.log(res);
 
 
-            console.log(res);
             if (res == 1) {
-
-                alert("Logged in")
-                window.location.href = "./profile.html"
 
                 let login = {
                     "user_id": user_id,
@@ -79,14 +71,25 @@
                 }
 
                 localStorage.setItem("login", JSON.stringify(login))
-
+                alert("Logged in")
+                window.location.href = "./profile.html"
 
             }
+
             else {
                 alert("Invalid Email or Password")
             }
 
         }
+
+        const form = document.getElementById("btn");
+        form.addEventListener("click", (el) => {
+            el.preventDefault();
+            login()
+        })
+
+
+        let checkbox = document.getElementById("viewpassword");
 
         checkbox.addEventListener("click", e => {
             if (checkbox.checked) {
@@ -95,14 +98,7 @@
             else {
                 password.setAttribute("type", "password");
             }
-
         })
-
-        const form = document.getElementById("btn");
-        form.addEventListener("click", e => {
-            e.preventDefault();
-            login()
-        }) 
     </script>
 
 

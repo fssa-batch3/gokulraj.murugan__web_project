@@ -62,7 +62,7 @@
 
             <input type="search" name="search" id="search">
         </div>
-        <div class="boxes" >
+        <div class="boxes">
 
             <!-- <div class="box">
 
@@ -186,8 +186,8 @@
 
         for (let i = 0; i < product_list.length; i++) {
             let a = document.createElement("a")
-            a.setAttribute("class","link")
-            a.setAttribute("href","#")
+            a.setAttribute("class", "link")
+            a.setAttribute("href", "./statistics.html?name=" + product_list[i]["name"])
             document.querySelector(".boxes").append(a)
 
             //  <div class = "box">

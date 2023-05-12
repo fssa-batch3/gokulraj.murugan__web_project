@@ -60,7 +60,7 @@
     <div class="box">
         <div class="box1">
             <div class="profile_pic">
-                <img src="../Assets/Images/profile.png" alt="" id="profile_image">
+                <img src="" alt="" id="profile_image">
             </div>
             <div class="profile_details">
                 <!-- <h2>My profile</h2>  -->
@@ -114,9 +114,9 @@
                         <h4>Master card account</h4>
                     </div>
                     <div>
-                        <label for="">Card Number :</label> 
-                        <input type="number" >
-                       
+                        <label for="">Card Number :</label>
+                        <input type="number">
+
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
     </script>
     <script>
 
-        let arr = JSON.parse(localStorage.getItem("Userdata"));// getting data from localStorage
+        let userdata = JSON.parse(localStorage.getItem("userdata"));// getting data from localStorage
         const profile = JSON.parse(localStorage.getItem("login"));
 
         let check;
@@ -144,31 +144,35 @@
         let confirm_password = document.getElementById("confirm_password")
         let profile_image = document.getElementById("profile_image");
 
-        let user_details = JSON.parse(localStorage.getItem("Userdata"));
 
 
         // showing datas in Profile Page
 
-        user_details.find(e => {
+        userdata.find(e => {
             if (e["email"] == profile["email"]) {
                 res = e;
             }
         })
-
         //   console.log(res)
 
-        name.value = res["Username"];
+        name.value = res["username"];
         email.value = res["email"];
         phone_number.value = res["phone_number"];
         password.value = res["password"]
         confirm_password.value = res["confirm_password"]
-        profile_pic.value = res["profile_pic"]
-        profile_image.src = res["profile_pic"]
+        if (res["profile_pic"] == null) {
+            profile_pic.value = "https://iili.io/HSXZjrg.png"
+            profile_image.src = "https://iili.io/HSXZjrg.png"
+        }
+        else {
+            profile_image.src = res["profile_pic"]
+        }
+
+
 
         //           Update profile  
 
         let edit = document.getElementById("btn1")
-        // let save = document.getElementById("save")
         let logout = document.getElementById("delete")
 
         edit.addEventListener("click", e => {
@@ -196,13 +200,13 @@
                 edit.innerText = "Edit"
 
                 res["profile_pic"] = profile_pic.value;
-                res["Username"] = name.value;
+                res["username"] = name.value;
                 res["email"] = email.value;
                 res["phone_number"] = phone_number.value;
                 res["password"] = password.value;
                 res["confirm_password"] = confirm_password.value;
 
-                alert("Profile Updated")
+                alert("Profile Updated ✌")
 
                 profile_pic.setAttribute("disabled", "")
                 name.setAttribute("disabled", "")
@@ -216,7 +220,7 @@
                 console.log(profile_image);
 
 
-                localStorage.setItem("Userdata", JSON.stringify(user_details))
+                localStorage.setItem("userdata", JSON.stringify(user_details))
 
             }
         }
@@ -236,7 +240,7 @@
 
 
         //payment card
-        let card = JSON.parse(localStorage.getItem("card_details"))
+        // let card = JSON.parse(localStorage.getItem("card_details"))
 
 
 

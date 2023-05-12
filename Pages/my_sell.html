@@ -60,7 +60,7 @@
 
 
         <div class="head">
-            <h3><a href="./Exchange.html">Buy</a></h3>
+            <h3><a href="./Exchange.html">My Activites</a></h3>
             <div>
                 <input type="search" name="search" placeholder="Search" id="search">
             </div>
@@ -146,20 +146,21 @@
         // Product Read ends
 
         for (let i = 0; i < product_detail.length; i++) {
-            if (product_detail[i]["User_id"] === login_details["user_id"]) {
+            if (product_detail[i]["seller_id"] === login_details["user_id"]) {
 
                 // <div class="onecard">
                 let onecard = document.createElement("div")
                 onecard.setAttribute("class", "onecard")
                 let crypto_data = document.querySelectorAll(".cards");
 
+
                 crypto_data.forEach((e) => {
                     if (e.dataset.id == product_detail[i]["crypto_name"]) {
-                        // console.log("matched")
                         e.prepend(onecard)
                     }
                     // console.log(e.dataset.id)
                 })
+
 
                 // <div class="profile">
                 let profile = document.createElement("div")
@@ -202,7 +203,7 @@
                 // <h4 class="username">Username</h4>
                 let username = document.createElement("h4")
                 username.setAttribute("class", "username")
-                username.innerText = product_detail[i]["username"]
+                username.innerText = product_detail[i]["seller_username"]
                 coin_details.append(username)
 
                 // <div class="exchange">
@@ -259,12 +260,16 @@
 
 
 
+
+
+
         // Pop up starts
         // let sell_button = document.getElementById("sell_button")
         let overlay = document.querySelector('#overlay');
         let popup = document.querySelector('.popup');
         let closebtn = document.getElementById('close-btn');
-        let edit_button = document.querySelector(".buttons2");
+        let edit_button = document.querySelectorAll(".buttons2");
+
         let save = document.getElementById("save");
 
         function openPopup() {
@@ -285,7 +290,21 @@
 
 
         // product update starts
+        let crypto_name = document.getElementById("crypto_name2").value;
+        let username = document.getElementById("crypto_name2").value;
+        let crypto = document.getElementById("crypto").value;
+        let money = document.getElementById("money").value;
 
+
+        edit_button.forEach((edittt) => {
+            edittt.addEventListener("click", () => {
+                button_id = edittt.value
+                // console.log(button_id)
+                // for(let )
+                openPopup()
+            })
+
+        })
     </script>
 </body>
 

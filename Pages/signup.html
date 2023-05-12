@@ -37,6 +37,9 @@
                     required>
                 <br>
 
+                <!-- <label for="date_of_birth">Date Of Birth :</label>
+                <input type="date" name="date_of_birth" id="date_of_birth"  required>
+                <br> -->
 
                 <label for="password">Password :</label>
                 <input type="password" name="password" id="password" placeholder="Password"
@@ -61,81 +64,79 @@
 
 
 
-
-
         function signup() {
 
+            // getting the values from input
             const user_id = Math.floor(Math.random() * 100)
             const first_name = document.getElementById("fn_name").value;
             const last_name = document.getElementById("last_name").value
             const email = document.getElementById("email").value
             const phone_number = document.getElementById("phone_number").value
             const password = document.getElementById("password").value
-            const confirm_password = document.getElementById("confirm_password").value
-
-
+            const confirm_password = document.getElementById("confirm_password").value;
+             const profile_pic = "https://iili.io/HSXZjrg.png"
             let res;
-            let gokul = JSON.parse(localStorage.getItem("Userdata")) ?? [];
+
+            let gokul = JSON.parse(localStorage.getItem("userdata")) ?? [];
 
             if (password === confirm_password) {
                 if (gokul == "") {
                     let gokul_data = {
-                        "User_id": user_id,
-                        "Username": first_name + last_name,
-                        // "last_name": last_name,
+                        "user_id": user_id,
+                        "username": first_name + last_name,
                         "email": email,
                         "phone_number": phone_number,
                         "password": password,
                         "confirm_password": confirm_password,
+                        "profile_pic" : profile_pic,
                     }
 
 
                     gokul.push(gokul_data);
-                    localStorage.setItem("Userdata", JSON.stringify(gokul))
+                    localStorage.setItem("userdata", JSON.stringify(gokul))
+                    alert("Account created Successfully")
                     window.location.href = 'login.html'
 
                 }
 
                 else {
-                    let check = JSON.parse(localStorage.getItem("Userdata"))
-                    check.find(e => {
+                    gokul.find(e => {
                         if (e["email"] === email) {
                             return res = 1;
                         }
-                        console.log(check)
+                        // console.log(check)
                     })
 
-                    if (res == 1) {
+
+                    if (res === 1) {
                         alert("email already taken")
                     }
+
                     else {
                         let gokul_data = {
-                            "User_id": user_id,
-                            "Username": first_name + last_name,
-                            // "last_name": last_name,
+                            "user_id": user_id,
+                            "username": first_name + last_name,
                             "email": email,
                             "phone_number": phone_number,
                             "password": password,
                             "confirm_password": confirm_password,
+                            "profile_pic" : profile_pic,
                         }
 
-
                         gokul.push(gokul_data);
-                        localStorage.setItem("Userdata", JSON.stringify(gokul))
+                        localStorage.setItem("userdata", JSON.stringify(gokul))
+                        alert("Account created Successfully 😉")
                         window.location.href = './login.html'
                     }
                 }
-
-
             }
+
             else {
                 alert("password not matched")
             }
+
         }
 
-
-
-        // document.getElementById("btn").onclick = signup
         let form = document.getElementById("form");
         form.addEventListener("submit", e => {
             e.preventDefault();
