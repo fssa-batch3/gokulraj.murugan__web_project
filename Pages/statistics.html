@@ -20,37 +20,49 @@
 
             <li>
                 <a href="./dashboard.html">
-                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-house"></i>
+</span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="./Exchange.html">
-                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-arrows-rotate"></i>
+</span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="./wallet.html">
-                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-wallet"></i>
+</span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="./cryptos.html">
-                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-square-poll-vertical"></i>
+</span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-user"></i>
+</span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-gear"></i>
+</span>
                     <span class="title">Settings</span>
                 </a>
             </li>
@@ -176,181 +188,173 @@
         </divstyle=> -->
     </div>
 
-
     <!-- <h2 id="data" style="margin-left:500px"></h2> -->
     <script src="../Assets/js/statics.js"></script>
    <script>
-     let url=window.location.search;
-     let params=new URLSearchParams(url)
-     let param_value=params.get("name")
+     const url=window.location.search;
+     const params=new URLSearchParams(url)
+     const param_value=params.get("name")
      console.log(param_value)
 
-        let main = document.createElement("div");
+        const main = document.createElement("div");
         main.setAttribute("class", "main");
 
-        let box = document.createElement("div");
+        const box = document.createElement("div");
         box.setAttribute("class", "box");
         main.append(box);
 
-        let rank = document.createElement("p");
+        const rank = document.createElement("p");
         rank.setAttribute("id", "rank");
         rank.innerText = "Rank #1"
         box.append(rank);
 
-        let top1 = document.createElement("div");
+        const top1 = document.createElement("div");
         top1.setAttribute("class", "top")
         box.append(top1);
 
-        let logo = document.createElement("img")
+        const logo = document.createElement("img")
         logo.setAttribute("src", "../Assets/Images/Logo/btc.png")
         logo.setAttribute("width", "20%")
         top1.append(logo)
 
-        let coin_name = document.createElement("h1")
+        const coin_name = document.createElement("h1")
         coin_name.innerText = "Bitcoin"
         top1.append(coin_name);
 
-        let symbol = document.createElement("h4")
+        const symbol = document.createElement("h4")
         symbol.innerText = "BTC"
         top1.append(symbol);
 
-        let check = document.createElement("input")
+        const check = document.createElement("input")
         check.setAttribute("id", "check")
         check.setAttribute("type", "checkbox")
         top1.append(check)
 
-        let price_change = document.createElement("div");
+        const price_change = document.createElement("div");
         price_change.setAttribute("class", "price_change");
 
-        let price = document.createElement("h2");
+        const price = document.createElement("h2");
         price.setAttribute("id", "price");
         price.innerText = "&#8377;" + "12,34,56"
         price_change.append(price);
 
-        let percentage = document.createElement("h3");
+        const percentage = document.createElement("h3");
         percentage.innerText = "98 %";
         price_change.append(percentage);
 
-        let value = document.createElement("div");
+        const value = document.createElement("div");
         value.setAttribute("class", "value")
         box.append(value);
 
         for (let i = 0; i < 2; i++) {
-            let box1 = document.createElement("div");
+            const box1 = document.createElement("div");
             box1.setAttribute("class", "box1");
             value.append(box1)
 
             for (let j = 0; j < 3; j++) {
-                let flex = document.createElement("div");
+                const flex = document.createElement("div");
                 flex.setAttribute("class", "flex");
                 box1.append(flex)
 
-                let p = document.createElement("p")
+                const p = document.createElement("p")
                 p.innerText = "market value"
                 flex.append(p)
 
-                let h5 = document.createElement("h5");
+                const h5 = document.createElement("h5");
                 h5.innerText = "";
                 flex.append(h5)
 
-                let line = document.createElement("hr");
+                const line = document.createElement("hr");
                 box1.append(line)
             }
         }
 
-        let stat = document.createElement("div")
+        const stat = document.createElement("div")
         stat.setAttribute("class", "stat")
         main.append(stat);
 
-
-        let img = document.createElement("img");
+        const img = document.createElement("img");
         img.setAttribute("src", "../Assets/Images/stat.png");
         img.setAttribute("width", "80%");
         stat.append(img);
 
-        let aside = document.createElement("div");
+        const aside = document.createElement("div");
         aside.setAttribute("class", "aside");
-        
 
-        let converter = document.createElement("div");
+        const converter = document.createElement("div");
         converter.setAttribute("class", "converter");
         aside.append(converter);
 
-        let box_h2 = document.createElement("h2");
+        const box_h2 = document.createElement("h2");
         box_h2.setAttribute("class", "box_h2");
         box_h2.innerText = "Bitcoin Converter";
         converter.append(box_h2);
 
-        let div = document.createElement("div");
+        const div = document.createElement("div");
         converter.append(div);
 
-        let coin = document.createElement("div");
+        const coin = document.createElement("div");
         coin.setAttribute("class", "coin");
         div.append(coin);
 
-        let input_span = document.createElement("p");
+        const input_span = document.createElement("p");
         input_span.setAttribute("class", "input_span");
         coin.append(input_span);
 
-        let input_value = document.createElement("input");
+        const input_value = document.createElement("input");
         input_value.setAttribute("type", "number")
         input_value.setAttribute("class", "input_value");
         coin.append(input_value);
 
-        let coin2 = document.createElement("div");
+        const coin2 = document.createElement("div");
         coin2.setAttribute("class", "coin");
         div.append(coin2);
 
-        let input_span2 = document.createElement("p");
+        const input_span2 = document.createElement("p");
         input_span2.setAttribute("class", "input_span");
         coin2.append(input_span2);
 
-        let input_value2 = document.createElement("input");
+        const input_value2 = document.createElement("input");
         input_value2.setAttribute("type", "number")
         input_value2.setAttribute("class", "input_value");
         coin2.append(input_value2);
 
-
-        let statistics = document.createElement("div");
+        const statistics = document.createElement("div");
         statistics.setAttribute("class", "statistics");
         aside.append(statistics);
 
-        let box_h2s = document.createElement("h2");
+        const box_h2s = document.createElement("h2");
         box_h2s.setAttribute("class", "box_h2");
         box_h2s.innerText = "BTC price statistics";
         statistics.append(box_h2s);
 
-        let stat2 = document.createElement("div");
+        const stat2 = document.createElement("div");
         stat2.setAttribute("class", "stat2");
         statistics.append(stat2);
 
-        let box2 = document.createElement("div");
+        const box2 = document.createElement("div");
         box2.setAttribute("class", "box1");
         stat2.append(box2);
 
-
         for (let l = 0; l < 6; l++) {
-            let phone = document.createElement("div");
+            const phone = document.createElement("div");
             phone.setAttribute("class", "phone");
             box2.append(phone);
 
-            let stat_data = document.createElement("p");
+            const stat_data = document.createElement("p");
             stat_data.innerText = "Bitcoin Price";
             phone.append(stat_data);
 
-            let h5 = document.createElement("h5");
+            const h5 = document.createElement("h5");
             h5.innerText = "09875430987"
             phone.append(h5);
 
-            let line_2 = document.createElement("hr");
+            const line_2 = document.createElement("hr");
             phone.append(line_2);
         }
 
-
-
         document.querySelector(".all").append(main);
         document.querySelector(".all").append(aside);
-
     </script>
     <script src="../Assets/js/statics.js"></script>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">

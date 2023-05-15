@@ -19,37 +19,49 @@
 
             <li>
                 <a href="../Pages/dashboard.html">
-                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-house"></i>
+</span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/Exchange.html">
-                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-arrows-rotate"></i>
+</span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/wallet.html">
-                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-wallet"></i>
+</span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/cryptos.html">
-                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-square-poll-vertical"></i>
+</span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="profile.html">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-user"></i>
+</span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-gear"></i>
+</span>
                     <span class="title">Settings</span>
                 </a>
             </li>
@@ -58,9 +70,10 @@
 
     <div class="all">
 
-
         <div class="head">
-            <h3><a href="./Exchange.html">My Activites</a></h3>
+            <h3>
+<a href="./Exchange.html">My Activites</a>
+</h3>
             <div>
                 <input type="search" name="search" placeholder="Search" id="search">
             </div>
@@ -109,26 +122,31 @@
                 </div>
             </div>
 
-
-
             <!-- pop up for edit -->
             <div id="overlay"></div>
             <div class="popup">
 
-                <div><a href="#"><i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i></a>
+                <div>
+<a href="#">
+<i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i>
+</a>
                 </div>
                 <form action="">
                     <label for="cryoto_name2">Coin Name :</label>
-                    <input type="text" name="cryoto_name2" id="crypto_name2" required><br>
+                    <input type="text" name="cryoto_name2" id="crypto_name2" required>
+<br>
 
                     <label for="username">Username :</label>
-                    <input type="text" name="edit_username" id="username" required><br>
+                    <input type="text" name="edit_username" id="username" required>
+<br>
 
                     <label for="crypto">How many coins :</label>
-                    <input type="number" name="crypto" id="crypto" minlength="1" required><br>
+                    <input type="number" name="crypto" id="crypto" minlength="1" required>
+<br>
 
                     <label for="money">Money :</label>
-                    <input type="number" name="money" id="money" required><br>
+                    <input type="number" name="money" id="money" required>
+<br>
                 </form>
                 <button id="save">Save</button>
             </div>
@@ -136,165 +154,139 @@
     </div>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
-
-        // Product Read starts
-        let product_detail = JSON.parse(localStorage.getItem("product_details"))
-        let login_details = JSON.parse(localStorage.getItem("login"));
+    <script>        // Product Read starts
+        const product_detail = JSON.parse(localStorage.getItem("product_details"))
+        const login_details = JSON.parse(localStorage.getItem("login"));
         let button_id;
 
         // Product Read ends
 
         for (let i = 0; i < product_detail.length; i++) {
-            if (product_detail[i]["seller_id"] === login_details["user_id"]) {
+            if (product_detail[i].seller_id === login_details.user_id) {
 
                 // <div class="onecard">
-                let onecard = document.createElement("div")
+                const onecard = document.createElement("div")
                 onecard.setAttribute("class", "onecard")
-                let crypto_data = document.querySelectorAll(".cards");
-
+                const crypto_data = document.querySelectorAll(".cards");
 
                 crypto_data.forEach((e) => {
-                    if (e.dataset.id == product_detail[i]["crypto_name"]) {
+                    if (e.dataset.id == product_detail[i].crypto_name) {
                         e.prepend(onecard)
                     }
                     // console.log(e.dataset.id)
                 })
 
-
                 // <div class="profile">
-                let profile = document.createElement("div")
+                const profile = document.createElement("div")
                 profile.setAttribute("class", "profile")
                 onecard.append(profile)
 
                 // <img src="../Assets/Images/profile.png" class="user_photo" alt="">
-                let user_photo = document.createElement("img")
-                user_photo.setAttribute("src", product_detail[i]["profile_pic"])
+                const user_photo = document.createElement("img")
+                user_photo.setAttribute("src", product_detail[i].profile_pic)
                 user_photo.setAttribute("class", "user_photo")
                 user_photo.setAttribute("alt", "error_found")
                 profile.append(user_photo)
 
                 // <div class="coin_details">
-                let coin_details = document.createElement("div")
+                const coin_details = document.createElement("div")
                 coin_details.setAttribute("class", "coin_details")
                 profile.append(coin_details)
 
                 // <div class="coin_details2">
-                let coin_details2 = document.createElement("div")
+                const coin_details2 = document.createElement("div")
                 coin_details2.setAttribute("class", "coin_details2")
                 coin_details.append(coin_details2)
 
-
                 // <img src="../Assets/Images/Logo/btc.png" width="12%" alt="" class="crypto_image">
-                let crypto_image = document.createElement("img")
+                const crypto_image = document.createElement("img")
                 crypto_image.setAttribute("src", "../Assets/Images/Logo/btc.png")
                 crypto_image.setAttribute("class", "crypto_image")
                 crypto_image.setAttribute("alt", "error_found")
                 crypto_image.setAttribute("width", "12")
                 coin_details2.append(crypto_image)
 
-
                 //  <h4 class="crypto_name2">Bitcoin</h4>
-                let cryoto_name2 = document.createElement("h4")
+                const cryoto_name2 = document.createElement("h4")
                 cryoto_name2.setAttribute("class", "cryoto_name2")
-                cryoto_name2.innerText = product_detail[i]["crypto_name"]
+                cryoto_name2.innerText = product_detail[i].crypto_name
                 coin_details2.append(cryoto_name2)
 
                 // <h4 class="username">Username</h4>
-                let username = document.createElement("h4")
+                const username = document.createElement("h4")
                 username.setAttribute("class", "username")
-                username.innerText = product_detail[i]["seller_username"]
+                username.innerText = product_detail[i].seller_username
                 coin_details.append(username)
 
                 // <div class="exchange">
-                let exchange = document.createElement("div")
+                const exchange = document.createElement("div")
                 exchange.setAttribute("class", "exchange")
                 onecard.append(exchange)
 
                 // <input type="number" name="crypto" id="crypto" disabled>
-                let crypto = document.createElement("input")
+                const crypto = document.createElement("input")
                 crypto.setAttribute("type", "number")
                 crypto.setAttribute("name", "crypto")
                 crypto.setAttribute("id", "crypto")
                 crypto.setAttribute("disabled", "")
-                crypto.setAttribute("value", product_detail[i]["no_of_coins"])
+                crypto.setAttribute("value", product_detail[i].no_of_coins)
                 exchange.append(crypto)
 
                 // <br>
-                let space = document.createElement("br")
+                const space = document.createElement("br")
                 exchange.append(space)
 
-
                 // <input type="number" name="price" id="price" disabled>
-                let price = document.createElement("input")
+                const price = document.createElement("input")
                 price.setAttribute("type", "number")
                 price.setAttribute("name", "price")
                 price.setAttribute("id", "price")
                 price.setAttribute("disabled", "")
-                price.value = product_detail[i]["money"]
+                price.value = product_detail[i].money
                 exchange.append(price)
 
                 // <br>
-                let space2 = document.createElement("br")
+                const space2 = document.createElement("br")
                 exchange.append(space2)
 
                 // <button class="buttons">Buy</button>
-                let buy_button = document.createElement("button")
+                const buy_button = document.createElement("button")
                 buy_button.setAttribute("class", "buttons2")
-                buy_button.setAttribute("value", product_detail[i]["product_id"])
+                buy_button.setAttribute("value", product_detail[i].product_id)
                 buy_button.innerText = "Edit"
                 exchange.append(buy_button)
-
 
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Pop up starts
         // let sell_button = document.getElementById("sell_button")
-        let overlay = document.querySelector('#overlay');
-        let popup = document.querySelector('.popup');
-        let closebtn = document.getElementById('close-btn');
-        let edit_button = document.querySelectorAll(".buttons2");
+        const overlay = document.querySelector('#overlay');
+        const popup = document.querySelector('.popup');
+        const closebtn = document.getElementById('close-btn');
+        const edit_button = document.querySelectorAll(".buttons2");
 
-        let save = document.getElementById("save");
+        const save = document.getElementById("save");
 
         function openPopup() {
             popup.style.display = 'block';
             overlay.style.display = 'block';
         }
 
-
         function closePopup() {
             popup.style.display = 'none';
             overlay.style.display = 'none';
         }
 
-
         // edit_button.addEventListener("click", openPopup);
         closebtn.addEventListener("click", closePopup);
         // Pop up ends
 
-
         // product update starts
-        let crypto_name = document.getElementById("crypto_name2").value;
-        let username = document.getElementById("crypto_name2").value;
-        let crypto = document.getElementById("crypto").value;
-        let money = document.getElementById("money").value;
-
+        const crypto_name = document.getElementById("crypto_name2").value;
+        const username = document.getElementById("crypto_name2").value;
+        const crypto = document.getElementById("crypto").value;
+        const money = document.getElementById("money").value;
 
         edit_button.forEach((edittt) => {
             edittt.addEventListener("click", () => {

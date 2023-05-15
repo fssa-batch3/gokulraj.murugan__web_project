@@ -19,37 +19,49 @@
 
             <li>
                 <a href="./dashboard.html">
-                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="./Exchange.html">
-                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="./wallet.html">
-                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="./cryptos.html">
-                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
                     <span class="title">Settings</span>
                 </a>
             </li>
@@ -61,10 +73,13 @@
             <h1>Payment Details</h1>
             <form action="">
                 <input type="tel" inputmode="numeric" pattern="[0-9]{16}" autocomplete="cc-number" maxlength="16"
-                    name="card_number" id="card_number" placeholder="CARD NUMBER" class="card" required><br>
+                    name="card_number" id="card_number" placeholder="CARD NUMBER" class="card" required>
+                <br>
                 <input type="text" pattern="[A-Za-z]{1,32}" name="name" id="card_name" placeholder="CARDHOLDER NAME"
-                    class="card" required><br>
-                <label id="expiry">Expiration Date:</label><br>
+                    class="card" required>
+                <br>
+                <label id="expiry">Expiration Date:</label>
+                <br>
                 <input type="number" name="month" id="month" placeholder="DATE" class="date">
                 <input type="number" name="year" id="year" placeholder="YEAR" class="date">
                 <input type="number" name="cvv" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" id="cvv"
@@ -74,9 +89,6 @@
             </form>
             <button id="cancel">cancel</button>
         </div>
-
-
-
 
         <div class="payment">
             <div class="summary">
@@ -91,7 +103,6 @@
                         **** 1234</label>
                 </div>
 
-
                 <div class="box">
                     <input type="radio" name="new_card" id="master" class="radio">
                     <label for="master"><img src="../Assets/Images/Mastercard-logo.png" alt="">
@@ -99,45 +110,42 @@
                 </div> -->
                 <div class="box">
                     <input type="radio" name="new_card" id="new_card" class="radio">
-                    <label for="new_card"><i class="fa fa-plus"></i>Add new card</label>
+                    <label for="new_card">
+                        <i class="fa fa-plus"></i>Add new card
+                    </label>
                 </div>
-
                 <button id="button">Pay</button>
 
             </form>
         </div>
     </div>
     <script>
-       
-        let login_details = JSON.parse(localStorage.getItem("login"));
-        let payment_details = JSON.parse(localStorage.getItem("payment_details"))
-       
+        const login_details = JSON.parse(localStorage.getItem("login"));
+        const payment_details = JSON.parse(localStorage.getItem("payment_details"))
 
         // console.log(cards)
 
+        const popup = document.querySelector(".popup")
+        const blackscreen = document.querySelector(".blackscreen")
 
-        let popup = document.querySelector(".popup")
-        let blackscreen = document.querySelector(".blackscreen")
-
-
-        let master = document.getElementById("master");
-        let new_card = document.getElementById("new_card");
-        let price = document.getElementById("price");
+        const master = document.getElementById("master");
+        const new_card = document.getElementById("new_card");
+        const price = document.getElementById("price");
         let product_id;
-        let user_id = login_details.user_id;
+        const { user_id } = login_details;
 
         // Card Details code start
-        let card_number = document.getElementById("card_number");
-        let card_name = document.getElementById("card_name");
-        let number = document.getElementById("month");
-        let year = document.getElementById("year");
-        let cvv = document.getElementById("cvv");
+        const card_number = document.getElementById("card_number");
+        const card_name = document.getElementById("card_name");
+        const number = document.getElementById("month");
+        const year = document.getElementById("year");
+        const cvv = document.getElementById("cvv");
 
         function card() {
-            let card_details = JSON.parse(localStorage.getItem("card_details")) ?? []
+            const card_details = JSON.parse(localStorage.getItem("card_details")) ?? []
 
-            let card_detail = {
-                "user_id": user_id,
+            const card_detail = {
+                user_id,
                 "card number": card_number.value,
                 "card name": card_name.value,
                 "number": number.value,
@@ -150,27 +158,25 @@
             popup.style.display = "none"
             blackscreen.style.display = "none"
             alert("card added")
+            location.reload()
         }
         // Card Details code ends
 
-        let newcard = document.getElementById("new_card");
+        const newcard = document.getElementById("new_card");
         newcard.addEventListener("click", (element) => {
             popup.style.display = "block"
             blackscreen.style.display = "block"
         })
 
-
-        let submit = document.getElementById("submit");
+        const submit = document.getElementById("submit");
         submit.addEventListener("click", (e) => {
             e.preventDefault()
             card()
         })
 
-
-
         // card read code starts
 
-        let cards = JSON.parse(localStorage.getItem("card_details"));
+        const cards = JSON.parse(localStorage.getItem("card_details"));
 
         if (cards == null) {
 
@@ -178,53 +184,43 @@
         else {
             for (let i = 0; i < cards.length; i++) {
 
-                let box = document.createElement("div");
+                const box = document.createElement("div");
                 box.setAttribute("class", "box");
                 document.querySelector(".form").prepend(box)
 
-
-                let radio = document.createElement("input");
+                const radio = document.createElement("input");
                 radio.setAttribute("type", "radio");
                 radio.setAttribute("name", ",master");
                 radio.setAttribute("id", "master");
                 radio.setAttribute("class", "radio")
                 box.append(radio);
 
-                let label = document.createElement("label");
+                const label = document.createElement("label");
                 label.setAttribute("for", "master");
                 label.innerText = cards[i]["card number"]
                 box.append(label);
 
-                let img = document.createElement("img");
+                const img = document.createElement("img");
                 img.setAttribute("src", "../Assets/Images/Mastercard-logo.png");
                 label.prepend(img);
             }
         }
 
-
-
-
-        let cancel = document.getElementById("cancel");
+        const cancel = document.getElementById("cancel");
         cancel.addEventListener("click", (el) => {
 
             popup.style.display = "none"
             blackscreen.style.display = "none"
         })
 
-        let pay = document.getElementById("button");
+        const pay = document.getElementById("button");
         pay.addEventListener("click", () => {
 
             alert("Thank you 😄")
-            window.location.href = "Exchange.html"
+            window.location.href = "../Pages/Exchange.html"
         })
 
-
-
-
         // balance code starts
-
-
-
     </script>
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">

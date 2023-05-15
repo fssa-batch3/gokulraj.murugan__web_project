@@ -12,8 +12,12 @@
 <body>
     <div class="login">
         <div class="head">
-            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+            <a href="../index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+            <h5>
+New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
+</h5>
         </div>
         <div class="h2">
             <h2>Sign In</h2>
@@ -22,16 +26,18 @@
         <form action="" id="form">
 
             <label for="email">Email :</label>
-            <input type="email" name="email" id="email" placeholder="Email" required><br>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+<br>
 
             <label for="password">Password :</label>
             <input type="password" name="password" id="password" placeholder="Password"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Enter a Uppercase,a lowercase, a number,a special character" required><br>
+                title="Enter a Uppercase,a lowercase, a number,a special character" required>
+<br>
 
             <input type="checkbox" name="viewpassword" id="viewpassword">
-            <label for="viewpassword">Show Password</label><br>
-
+            <label for="viewpassword">Show Password</label>
+<br>
 
             <button type="button" id="btn">Sign in</button>
         </form>
@@ -40,35 +46,32 @@
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
-
-        function login() {
-            let email = document.getElementById("email").value
-            let password = document.getElementById("password")
-            let arr = JSON.parse(localStorage.getItem("userdata"))
+    <script>        function login() {
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password")
+            const arr = JSON.parse(localStorage.getItem("userdata"))
             let res;
             let user_id;
 
             arr.find(e => {
 
-                if (e["email"] == email && e["password"] == password.value) {
+                if (e.email == email && e.password == password.value) {
 
-                    user_id = e["user_id"]
-                    console.log(e["user_id"])
+                    user_id = e.user_id
+                    console.log(e.user_id)
                     res = 1;
 
                 }
             });
             // console.log(res);
 
-
             if (res == 1) {
 
-                let login = {
-                    "user_id": user_id,
-                    "email": email,
-                    "password": password.value,
-                }
+                const login = {
+            user_id,
+            email,
+            "password": password.value,
+        }
 
                 localStorage.setItem("login", JSON.stringify(login))
                 alert("Logged in")
@@ -88,8 +91,7 @@
             login()
         })
 
-
-        let checkbox = document.getElementById("viewpassword");
+        const checkbox = document.getElementById("viewpassword");
 
         checkbox.addEventListener("click", e => {
             if (checkbox.checked) {
@@ -100,7 +102,6 @@
             }
         })
     </script>
-
 
 </body>
 

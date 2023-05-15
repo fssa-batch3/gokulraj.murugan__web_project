@@ -12,8 +12,12 @@
 <body>
     <div class="all">
         <div class="head">
-            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+            <a href="../index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+            <h5>
+New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
+</h5>
         </div>
         <div class="h2">
             <h2>Sign Up</h2>
@@ -59,12 +63,7 @@
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
-
-
-
-
-        function signup() {
+    <script>        function signup() {
 
             // getting the values from input
             const user_id = Math.floor(Math.random() * 100)
@@ -77,20 +76,19 @@
              const profile_pic = "https://iili.io/HSXZjrg.png"
             let res;
 
-            let gokul = JSON.parse(localStorage.getItem("userdata")) ?? [];
+            const gokul = JSON.parse(localStorage.getItem("userdata")) ?? [];
 
             if (password === confirm_password) {
                 if (gokul == "") {
-                    let gokul_data = {
-                        "user_id": user_id,
-                        "username": first_name + last_name,
-                        "email": email,
-                        "phone_number": phone_number,
-                        "password": password,
-                        "confirm_password": confirm_password,
-                        "profile_pic" : profile_pic,
-                    }
-
+                    const gokul_data = {
+                user_id,
+                "username": first_name + last_name,
+                email,
+                phone_number,
+                password,
+                confirm_password,
+                profile_pic,
+            }
 
                     gokul.push(gokul_data);
                     localStorage.setItem("userdata", JSON.stringify(gokul))
@@ -101,27 +99,26 @@
 
                 else {
                     gokul.find(e => {
-                        if (e["email"] === email) {
+                        if (e.email === email) {
                             return res = 1;
                         }
                         // console.log(check)
                     })
-
 
                     if (res === 1) {
                         alert("email already taken")
                     }
 
                     else {
-                        let gokul_data = {
-                            "user_id": user_id,
-                            "username": first_name + last_name,
-                            "email": email,
-                            "phone_number": phone_number,
-                            "password": password,
-                            "confirm_password": confirm_password,
-                            "profile_pic" : profile_pic,
-                        }
+                        const gokul_data = {
+                    user_id,
+                    "username": first_name + last_name,
+                    email,
+                    phone_number,
+                    password,
+                    confirm_password,
+                    profile_pic,
+                }
 
                         gokul.push(gokul_data);
                         localStorage.setItem("userdata", JSON.stringify(gokul))
@@ -137,15 +134,12 @@
 
         }
 
-        let form = document.getElementById("form");
+        const form = document.getElementById("form");
         form.addEventListener("submit", e => {
             e.preventDefault();
             signup()
         })
-
-
     </script>
-
 
 </body>
 

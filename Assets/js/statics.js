@@ -1,5 +1,3 @@
-
-
 // fetch("https://api.coinstats.app/public/v1/coins?skip=0&limit=5&currency=EUR")
 // .then(response => (response.json()))
 // .then(e =>{
@@ -33,26 +31,25 @@
 //     // document.getElementById("websiteUrl").innerText = websiteUrl
 //     console.log(e["coins"][0]);
 
-// })  
+// })
 
-
-getCrypto("INR", "BTC")
-
+getCrypto("INR", "BTC");
 
 function getCrypto(currency, coin) {
-    // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-    const xhrrequest = new XMLHttpRequest();
+  // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  const xhrrequest = new XMLHttpRequest();
 
-    xhrrequest.onload = function () {
-        let resJSON = JSON.parse(xhrrequest.response)
-        console.log(resJSON)
-    }
-    xhrrequest.open('get', `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=EUR&symbol=BTC`, true)
-    xhrrequest.send();
-
-
+  xhrrequest.onload = function () {
+    const resJSON = JSON.parse(xhrrequest.response);
+    console.log(resJSON);
+  };
+  xhrrequest.open(
+    "get",
+    `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=EUR&symbol=BTC`,
+    true
+  );
+  xhrrequest.send();
 }
-
 
 // fetch(`https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=${currency}&symbol=${coin}`)
 // .then((response)=>{

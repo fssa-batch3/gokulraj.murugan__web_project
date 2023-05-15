@@ -19,43 +19,54 @@
 
             <li>
                 <a href="./dashboard.html">
-                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-house"></i>
+</span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="./Exchange.html">
-                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-arrows-rotate"></i>
+</span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="./wallet.html">
-                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-wallet"></i>
+</span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="./cryptos.html">
-                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-square-poll-vertical"></i>
+</span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-user"></i>
+</span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="icon">
+<i class="fa-solid fa-gear"></i>
+</span>
                     <span class="title">Settings</span>
                 </a>
             </li>
         </ul>
     </div>
-
 
     <div class="box">
         <div class="box1">
@@ -65,25 +76,27 @@
             <div class="profile_details">
                 <!-- <h2>My profile</h2>  -->
                 <label for="profille_pic">Profile Pic :</label>
-                <input type="url" name="profille_pic" id="profile_pic" disabled><br>
+                <input type="url" name="profille_pic" id="profile_pic" disabled>
+<br>
 
                 <label for="name">UserName :</label>
-                <input type="text" name="name" id="name" pattern="[A-Za-z]{1,32}" disabled><br>
+                <input type="text" name="name" id="name" pattern="[A-Za-z]{1,32}" disabled>
+<br>
 
                 <label for="email">Email :</label>
-                <input type="email" name="email" id="email" disabled><br>
+                <input type="email" name="email" id="email" disabled>
+<br>
 
                 <label for="phone_no">Phone Number :</label>
                 <input type="number" name="phone_no" id="phone_number" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    title="Enter a Uppercase,a lowercase, a number,a special character" disabled><br>
-
+                    title="Enter a Uppercase,a lowercase, a number,a special character" disabled>
+<br>
 
                 <button id="btn1">Edit</button>
                 <!-- <button id="save">Save</button> -->
                 <button id="delete">Log out</button>
             </div>
         </div>
-
 
         <div class="right_box">
 
@@ -94,13 +107,13 @@
                 <hr class="line">
                 <div class="password_box">
                     <label for="password">Password : </label>
-                    <input type="password" name="password" id="password" disabled><br>
+                    <input type="password" name="password" id="password" disabled>
+<br>
 
                     <label for="confirm_password">Confirm Password :</label>
                     <input type="password" name="confirm_password" id="confirm_password" disabled>
                 </div>
             </div>
-
 
             <div class="box2">
                 <div class="heading">
@@ -123,57 +136,49 @@
         </div>
     </div>
 
-
-
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
-
-        let userdata = JSON.parse(localStorage.getItem("userdata"));// getting data from localStorage
+    <script>        const userdata = JSON.parse(localStorage.getItem("userdata"));// getting data from localStorage
         const profile = JSON.parse(localStorage.getItem("login"));
 
         let check;
         let res;
 
         //assigning variables
-        let profile_pic = document.getElementById("profile_pic");
-        let email = document.getElementById("email");
-        let name = document.getElementById("name");
-        let phone_number = document.getElementById("phone_number");
-        let password = document.getElementById("password");
-        let confirm_password = document.getElementById("confirm_password")
-        let profile_image = document.getElementById("profile_image");
-
-
+        const profile_pic = document.getElementById("profile_pic");
+        const email = document.getElementById("email");
+        const name = document.getElementById("name");
+        const phone_number = document.getElementById("phone_number");
+        const password = document.getElementById("password");
+        const confirm_password = document.getElementById("confirm_password")
+        const profile_image = document.getElementById("profile_image");
 
         // showing datas in Profile Page
 
         userdata.find(e => {
-            if (e["email"] == profile["email"]) {
+            if (e.email == profile.email) {
                 res = e;
             }
         })
         //   console.log(res)
 
-        name.value = res["username"];
-        email.value = res["email"];
-        phone_number.value = res["phone_number"];
-        password.value = res["password"]
-        confirm_password.value = res["confirm_password"]
-        if (res["profile_pic"] == null) {
+        name.value = res.username;
+        email.value = res.email;
+        phone_number.value = res.phone_number;
+        password.value = res.password
+        confirm_password.value = res.confirm_password
+        if (res.profile_pic == null) {
             profile_pic.value = "https://iili.io/HSXZjrg.png"
             profile_image.src = "https://iili.io/HSXZjrg.png"
         }
         else {
-            profile_image.src = res["profile_pic"]
+            profile_image.src = res.profile_pic
         }
-
-
 
         //           Update profile  
 
-        let edit = document.getElementById("btn1")
-        let logout = document.getElementById("delete")
+        const edit = document.getElementById("btn1")
+        const logout = document.getElementById("delete")
 
         edit.addEventListener("click", e => {
             e.preventDefault()
@@ -199,12 +204,12 @@
 
                 edit.innerText = "Edit"
 
-                res["profile_pic"] = profile_pic.value;
-                res["username"] = name.value;
-                res["email"] = email.value;
-                res["phone_number"] = phone_number.value;
-                res["password"] = password.value;
-                res["confirm_password"] = confirm_password.value;
+                res.profile_pic = profile_pic.value;
+                res.username = name.value;
+                res.email = email.value;
+                res.phone_number = phone_number.value;
+                res.password = password.value;
+                res.confirm_password = confirm_password.value;
 
                 alert("Profile Updated ✌")
 
@@ -215,18 +220,15 @@
                 confirm_password.setAttribute("disabled", "")
                 password.setAttribute("type", "password")
                 confirm_password.setAttribute("type", "password")
-                profile_image.src = res["profile_pic"]
+                profile_image.src = res.profile_pic
                 logout.style.display = "none"
                 console.log(profile_image);
-
 
                 localStorage.setItem("userdata", JSON.stringify(user_details))
 
             }
         }
         //     Udpate profile completed
-
-
 
         //         Delete Profile
 
@@ -237,14 +239,8 @@
             window.location.href = "../../index.html"
         })
 
-
-
         //payment card
         // let card = JSON.parse(localStorage.getItem("card_details"))
-
-
-
-
     </script>
 
 </body>

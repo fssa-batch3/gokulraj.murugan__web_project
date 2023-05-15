@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <div class="navigation">
         <div>
             <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
@@ -25,37 +24,49 @@
 
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="./Exchange.html">
-                    <span class="icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="./wallet.html">
-                    <span class="icon"><i class="fa-solid fa-wallet"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="./cryptos.html">
-                    <span class="icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
                     <span class="title">Settings</span>
                 </a>
             </li>
@@ -72,9 +83,11 @@
         </div>
         <div class="sec-2">
             <div class="para">
-                <h2>Started to Discover New Our Crypto Currency</h2>
-                <p>lets started a crypt portfolio</p>
-                <button id="trans_details"><a href="./wallet.html">Detail Transaction</a></button>
+                <h2>Start to Discover New Our Crypto Currency</h2>
+                <p>lets start a crypt portfolio</p>
+                <button id="trans_details">
+                    <a href="./wallet.html">Detail Transaction</a>
+                </button>
             </div>
             <img src="../Assets/Images/illustration1.png" id="phone" alt="">
         </div>
@@ -105,12 +118,11 @@
         </div>
     </div>
 
-
-
-
     <div class="aside">
         <div class="sec-5">
-            <div><i class="fa-solid fa-bell"></i></div>
+            <div>
+                <i class="fa-solid fa-bell"></i>
+            </div>
             <div class="sec5-1">
                 <img src="../Assets/Images/profile.png" width="20%" alt="" id="profile_image">
                 <a href="./profile.html">
@@ -134,7 +146,9 @@
         <div class="sec-8">
             <a href="./Exchange.html">
                 <div class="transfer">
-                    <div class="small"><i class="fa-solid fa-arrow-up"></i></div>
+                    <div class="small">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
                     <div>
                         <h5 class="buy">Transfer</h5>
                     </div>
@@ -142,7 +156,9 @@
             </a>
             <a href="./Exchange.html">
                 <div class="transfer" style="background-color: #2696F9;">
-                    <div class="small" style="color: #2696F9;"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="small" style="color: #2696F9;">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
                     <div>
                         <h5 class="buy">Request</h5>
                     </div>
@@ -182,38 +198,30 @@
         </div>
     </div>
 
-
-
     <!-- Javascript  -->
-
 
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
-    <script>
+    <script>        // getting values from local storage
+        const userdata = JSON.parse(localStorage.getItem("userdata"))
+        const login = JSON.parse(localStorage.getItem("login"));
 
-        // getting values from local storage
-        let userdata = JSON.parse(localStorage.getItem("userdata"))
-        let login = JSON.parse(localStorage.getItem("login"));
-
-        let username = document.querySelectorAll(".username");
-        let profile_image = document.getElementById("profile_image");
+        const username = document.querySelectorAll(".username");
+        const profile_image = document.getElementById("profile_image");
         let res;
 
         userdata.find(e => {
-            if (e["email"] == login["email"]) {
+            if (e.email == login.email) {
                 res = e;
             }
         })
-            // console.log(res);
+        // console.log(res);
 
         username.forEach((e) => {
-            e.innerText = res["username"];
+            e.innerText = res.username;
         })
 
-        profile_image.setAttribute("src", res["profile_pic"])
-
-
-
+        profile_image.setAttribute("src", res.profile_pic)
     </script>
 </body>
 <script src="../Assets/js/liveprice.js"></script>
