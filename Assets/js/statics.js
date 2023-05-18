@@ -33,19 +33,20 @@
 
 // })
 
-getCrypto("INR", "BTC");
+getCrypto("BTC");
 
-function getCrypto(currency, coin) {
+function getCrypto(coin) {
   // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   const xhrrequest = new XMLHttpRequest();
 
   xhrrequest.onload = function () {
     const resJSON = JSON.parse(xhrrequest.response);
     console.log(resJSON);
+    
   };
   xhrrequest.open(
     "get",
-    `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=EUR&symbol=BTC`,
+    `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=INR&symbol=${coin}`,
     true
   );
   xhrrequest.send();
