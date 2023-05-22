@@ -58,11 +58,11 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/content.html">
                     <span class="icon">
-                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-book"></i>
                     </span>
-                    <span class="title">Settings</span>
+                    <span class="title">Blog</span>
                 </a>
             </li>
         </ul>
@@ -94,7 +94,7 @@
             </div>
             <div class="exchagnes">
                 <h2 class="crypto_name">Doge Coin</h2>
-                <div data-id="dogecoin" class="cards">
+                <div data-id="doge coin" class="cards">
                 </div>
             </div>
             <div class="exchagnes">
@@ -182,7 +182,7 @@
                             <h6>SOL</h6>
                         </div>
                         <div class="one_coin">
-                            <img src="../Assets/Images/Logo/bnb.png" alt="" width="40px" height="40px">
+                            <img src="../Assets/Images/Logo/ltc.png" alt="" width="40px" height="40px">
                             <h3>LiteCoin</h3>
                             <h6>LTC</h6>
                         </div>
@@ -282,8 +282,9 @@
 
                     })
                 }
-                else if (crypto.value == el.children[1].innerText) {
+                else if (crypto.value === el.children[1].innerText) {
                     coin_img = el.children[0].src
+                    coin_symbol = data.children[2].innerText
                     console.log(coin_img);
                 }
             })
@@ -433,7 +434,7 @@
                     const space2 = document.createElement("br")
                     exchange.append(space2)
 
-                    if (login.user_id == product_detail[i].user_id) {
+                    if (login.user_id == product_detail[i].seller_id) {
                     }
                     else {
                         // <button class="buttons">Buy</button>
@@ -473,7 +474,6 @@
 
             // payment details create
 
-            // let payment = JSON.parse(localStorage.getItem("payment_details"))
             const payment_id = document.querySelectorAll(".buttons2")
             let product_Id;
             let res;
@@ -501,11 +501,15 @@
             let curr_index;
             let cryto_coinss;
             let ifnotobject;
+            let coin_i;
 
             payment_id.forEach((data) => {
                 console.log(data)
                 data.addEventListener("click", () => {
                     product_Id = data.value
+
+                    coin_i = data.parentElement.parentElement.children[0].children[1].children[0].children[0].src
+                    
 
                     cryto_coinss = Number(data.parentElement.children[1].value);
 
@@ -554,12 +558,11 @@
 
                 payment.push(payment_details)
                 localStorage.setItem("payment_details", JSON.stringify(payment));
-                // window.location.href = "./selectpayment.html"
+                window.location.href = "./selectpayment.html"
 
             }
 
             let get_index;
-
             function cardbalanace() {
 
                 if (localStorage.getItem("card_balance")) {
@@ -568,12 +571,7 @@
                     card_balance1.find((balance) => {
 
                         if (balance["user_id"] === login["user_id"]) {
-
-                            // for (let i = 0; i < card_balance1.length; i++) {
-
-                            //     for (let j = 0; j < card_balance1[i]["coin_details"].length; j++) {
-
-                            // crypto_detail = data_id;
+ 
                             balance["coin_details"].find((e) => {
                                 if (data_id == e["coin_name"]) {
 
@@ -582,16 +580,19 @@
                                 }
                             })
 
-
                             if (get_index) {
                                 get_index["coins"] = Number(get_index["coins"]) + Number(cryto_coinss)
 
                                 localStorage.setItem("card_balance", JSON.stringify(card_balance1))
                             }
+
                             else {
+                                console.log(coin_img)
+
                                 ifnotobject = {
                                     "coin_name": data_id,
-                                    "coins": cryto_coinss
+                                    "coins": cryto_coinss,
+                                    "coin_image" :  coin_i,
                                 }
                                 balance["coin_details"].push(ifnotobject)
                                 localStorage.setItem("card_balance", JSON.stringify(card_balance1))
@@ -602,21 +603,19 @@
                         else {
                             console.log("front")
 
-
                         }
-
                     })
 
                 }
 
                 else {
-                    // console.log("back")
                     card_balance = []
                     crypto_detail = data_id;
 
                     let coin_obj = {
                         "coin_name": crypto_detail,
                         "coins": cryto_coinss,
+                        "coin_image" :  coin_i,       
                     }
 
                     coin_arr.push(coin_obj)

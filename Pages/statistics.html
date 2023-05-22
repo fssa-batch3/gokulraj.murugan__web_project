@@ -63,7 +63,7 @@
                     <span class="icon">
                         <i class="fa-solid fa-gear"></i>
                     </span>
-                    <span class="title">Settings</span>
+                    <span class="title">Blog</span>
                 </a>
             </li>
         </ul>
@@ -197,6 +197,7 @@
             xhrrequest.onload = function () {
                 const resJSON = JSON.parse(xhrrequest.response);
                 console.log(resJSON);
+
                 const main = document.createElement("div");
                 main.setAttribute("class", "main");
 
@@ -235,13 +236,6 @@
                 price_change.setAttribute("class", "price_change");
                 box.append(price_change)
 
-                // let rupee = Number(Math.floor(resJSON.price));
-                // console.log(rupee.toLocaleString("en-IN", {
-                //     maximumFractionDigits: 0,
-                //     style: "currency",
-                //     currency: "INR",
-                // }))
-
                 let price = document.createElement("h2");
                 price.setAttribute("id", "price");
                 price.innerText = "₹" + Number(Math.floor(resJSON.price));
@@ -255,8 +249,6 @@
                 const value = document.createElement("div");
                 value.setAttribute("class", "value")
                 box.append(value);
-
-
 
                 let json = [
                     {
@@ -397,6 +389,7 @@
             };
             xhrrequest.open(
                 "get",
+                "https://deploy-preview-1--bit-wallet.netlify.app/",
                 `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=INR&symbol=${coin}`,
                 true
             );
@@ -406,15 +399,6 @@
         const params = new URLSearchParams(url)
         const param_value = params.get("name")
         console.log(param_value)
-
-
-
-
-        // let add = input_value.value;
-
-        // let result = add * Math.floor(resJSON.price)
-        // console.log(result)
-        // input_value2.value = result
 
 
     </script>

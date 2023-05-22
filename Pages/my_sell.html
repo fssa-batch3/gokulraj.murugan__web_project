@@ -20,48 +20,48 @@
             <li>
                 <a href="../Pages/dashboard.html">
                     <span class="icon">
-<i class="fa-solid fa-house"></i>
-</span>
+                        <i class="fa-solid fa-house"></i>
+                    </span>
                     <span class="title">Home</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/Exchange.html">
                     <span class="icon">
-<i class="fa-solid fa-arrows-rotate"></i>
-</span>
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
                     <span class="title">Exchange</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/wallet.html">
                     <span class="icon">
-<i class="fa-solid fa-wallet"></i>
-</span>
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
                     <span class="title">Wallet</span>
                 </a>
             </li>
             <li>
                 <a href="../Pages/cryptos.html">
                     <span class="icon">
-<i class="fa-solid fa-square-poll-vertical"></i>
-</span>
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
                     <span class="title">Chart</span>
                 </a>
             </li>
             <li>
                 <a href="profile.html">
                     <span class="icon">
-<i class="fa-solid fa-user"></i>
-</span>
+                        <i class="fa-solid fa-user"></i>
+                    </span>
                     <span class="title">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Pages/content.html">
                     <span class="icon">
-<i class="fa-solid fa-gear"></i>
-</span>
+                        <i class="fa-solid fa-book"></i>
+                    </span>
                     <span class="title">Settings</span>
                 </a>
             </li>
@@ -72,8 +72,8 @@
 
         <div class="head">
             <h3>
-<a href="./Exchange.html">My Activites</a>
-</h3>
+                <a href="./Exchange.html">My Activites</a>
+            </h3>
             <div>
                 <input type="search" name="search" placeholder="Search" id="search">
             </div>
@@ -127,26 +127,26 @@
             <div class="popup">
 
                 <div>
-<a href="#">
-<i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i>
-</a>
+                    <a href="#">
+                        <i class="fa-solid fa-xmark" style="color: #f03c0f;" id="close-btn"></i>
+                    </a>
                 </div>
                 <form action="">
                     <label for="cryoto_name2">Coin Name :</label>
                     <input type="text" name="cryoto_name2" id="crypto_name2" required>
-<br>
+                    <br>
 
                     <label for="username">Username :</label>
                     <input type="text" name="edit_username" id="username" required>
-<br>
+                    <br>
 
                     <label for="crypto">How many coins :</label>
                     <input type="number" name="crypto" id="crypto" minlength="1" required>
-<br>
+                    <br>
 
                     <label for="money">Money :</label>
                     <input type="number" name="money" id="money" required>
-<br>
+                    <br>
                 </form>
                 <button id="save">Save</button>
             </div>
@@ -158,17 +158,19 @@
         const product_detail = JSON.parse(localStorage.getItem("product_details"))
         const login_details = JSON.parse(localStorage.getItem("login"));
         let button_id;
-
+        // console.log(product_detail)
+        console.log(login_details.user_id,product_detail[0].seller_id);
         // Product Read ends
 
         for (let i = 0; i < product_detail.length; i++) {
-            if (product_detail[i].seller_id === login_details.user_id) {
-
+            if (product_detail[0].seller_id == login_details.user_id) {
+            
                 // <div class="onecard">
                 const onecard = document.createElement("div")
                 onecard.setAttribute("class", "onecard")
                 const crypto_data = document.querySelectorAll(".cards");
-
+                    
+               
                 crypto_data.forEach((e) => {
                     if (e.dataset.id == product_detail[i].crypto_name) {
                         e.prepend(onecard)
@@ -249,12 +251,12 @@
                 const space2 = document.createElement("br")
                 exchange.append(space2)
 
-                // <button class="buttons">Buy</button>
-                const buy_button = document.createElement("button")
-                buy_button.setAttribute("class", "buttons2")
-                buy_button.setAttribute("value", product_detail[i].product_id)
-                buy_button.innerText = "Edit"
-                exchange.append(buy_button)
+                // // <button class="buttons">Buy</button>
+                // const buy_button = document.createElement("button")
+                // buy_button.setAttribute("class", "buttons2")
+                // buy_button.setAttribute("value", product_detail[i].product_id)
+                // buy_button.innerText = "Edit"
+                // exchange.append(buy_button)
 
             }
         }
@@ -291,8 +293,6 @@
         edit_button.forEach((edittt) => {
             edittt.addEventListener("click", () => {
                 button_id = edittt.value
-                // console.log(button_id)
-                // for(let )
                 openPopup()
             })
 
