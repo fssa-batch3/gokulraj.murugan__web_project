@@ -298,3 +298,34 @@ body {
 #profile_image{
     border-radius: 50%;
 }
+
+
+
+.div {
+    width: 260px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 15px 10px 10px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.logos {
+    margin: 0px 0px 0px 30px;
+    width: 25%;
+}
+
+
+.price{
+    color: grey;
+}
+.details {
+    margin-top: 10px;
+}
+
+.div1 {
+    margin-left: 25px;
+    text-align: center;
+}

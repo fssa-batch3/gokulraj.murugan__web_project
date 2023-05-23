@@ -250,51 +250,63 @@
                 value.setAttribute("class", "value")
                 box.append(value);
 
-                let json = [
-                    {
-                        "name": "market value",
-                        "value": resJSON.market_cap,
-                    },
-                    {
-                        "name": "△ 1h",
-                        "value": resJSON.delta_1h,
-                    },
-                    {
-                        "name": "△ 24h",
-                        "value": resJSON.delta_24h,
-                    },
-                    {
-                        "name": "△ 7D",
-                        "value": resJSON.delta_7d,
-                    },
-                    {
-                        "name": "market value",
-                        "value": resJSON.market_cap,
-                    },
-                ]
-                    console.log(json)
-                for (let i = 0; i < 2; i++) {
-                    const box1 = document.createElement("div");
-                    box1.setAttribute("class", "box1");
-                    value.append(box1)
 
-                    for (let j = 0; j < 3; j++) {
-                        const flex = document.createElement("div");
-                        flex.setAttribute("class", "flex");
-                        box1.append(flex)
+                const values = document.createElement("div");
+                values.innerHTML = ` Market cap: ${ resJSON.market_cap} <br><br>
+                    △ 1h   :  ${ resJSON.delta_1h }<br><br>
+                    △ 24h   :   ${ resJSON.delta_24h }<br><br>
+                    △ 7D    :   ${ resJSON.delta_7d }<br><br>
+                    △ 7D    :   ${ resJSON.delta_7d }<br><br>
+                `
+                value.append(values)    
 
-                        const p = document.createElement("p")
-                        p.innerText = json[i]["name"]
-                        flex.append(p)
 
-                        const h5 = document.createElement("h5");
-                        h5.innerText = json[i]["value"]
-                        flex.append(h5)
 
-                        const line = document.createElement("hr");
-                        box1.append(line)
-                    }
-                }
+                // let json = [
+                //     {
+                //         "name": "market value",
+                //         "value": resJSON.market_cap,
+                //     },
+                //     {
+                //         "name": "△ 1h",
+                //         "value": resJSON.delta_1h,
+                //     },
+                //     {
+                //         "name": "△ 24h",
+                //         "value": resJSON.delta_24h,
+                //     },
+                //     {
+                //         "name": "△ 7D",
+                //         "value": resJSON.delta_7d,
+                //     },
+                //     {
+                //         "name": "market value",
+                //         "value": resJSON.market_cap,
+                //     },
+                // ]
+                //     console.log(json)
+                // for (let i = 0; i < 2; i++) {
+                //     const box1 = document.createElement("div");
+                //     box1.setAttribute("class", "box1");
+                //     value.append(box1)
+
+                //     for (let j = 0; j < 3; j++) {
+                //         const flex = document.createElement("div");
+                //         flex.setAttribute("class", "flex");
+                //         box1.append(flex)
+
+                //         const p = document.createElement("p")
+                //         p.innerText = json[i]["name"]
+                //         flex.append(p)
+
+                //         const h5 = document.createElement("h5");
+                //         h5.innerText = json[i]["value"]
+                //         flex.append(h5)
+
+                //         const line = document.createElement("hr");
+                //         box1.append(line)
+                //     }
+                // }
 
                 const stat = document.createElement("div")
                 stat.setAttribute("class", "stat")
@@ -389,7 +401,6 @@
             };
             xhrrequest.open(
                 "get",
-                "https://deploy-preview-1--bit-wallet.netlify.app/",
                 `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=INR&symbol=${coin}`,
                 true
             );
