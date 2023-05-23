@@ -19,7 +19,7 @@ body {
 
 /* sidebar navigation starts */
 .navigation {
-    background-color: #4062ff;
+    background-color:#4285F4;
     position: fixed;
     top: 20px;
     left: 20px;
@@ -63,7 +63,7 @@ body {
     background-color: #EDF3FD;
     width: 104%;
     border-radius: 15px 0px 0px 15px;
-    color: #4062ff;
+    color: #4285F4;
 
 }
 
@@ -94,7 +94,6 @@ body {
 .box {
     width: 70%;
     height: 700px;
-    /* border: 1px solid black; */
     margin: 80px 10px 10px 385px;
     border-radius: 10px;
     display: flex;
@@ -109,28 +108,53 @@ body {
     width: 400px;
     height: 600px;
     margin: 50px 40px;
-    /* border: 1px solid black; */
-    background-color: #fff;
-    /* color: white; */
+    background-color: #FEFCFF	;
     border-radius: 10px;
+    overflow: none;
 }
 
 .profile_pic {
-    /* border: 1px solid black; */
-    margin: 10px;
+    margin: 5px;
     border-radius: 10px;
 }
-#profile_image{
+
+#profile_image {
     width: 100%;
     height: 320px;
     border-radius: 10px 10px 0px 0px;
 }
 
-#delete{
+#form {
+    font-size: 18px;
+}
+
+#form label{
+    border: 1px solid black;
+    padding: 8px 30px 5px 10px;
+    border-radius: 5px 0px 0px 5px; 
+}
+
+#form input {
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.input_tag {
+    margin: 20px 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#delete {
     display: none;
 }
+
 .profile_details {
-    /* border: 1px solid black; */
     width: 380px;
     height: 250px;
     background-color: white;
@@ -139,9 +163,7 @@ body {
 }
 
 
-.profile_details h2 {
-    margin: 10px 130px;
-}
+
 
 .box2 {
     width: 500px;
@@ -172,35 +194,10 @@ body {
     margin: 0px 20px;
 }
 
-label,
-input {
-    margin: 11px 5px;
-    font-size: 17px;
-}
-
-input {
-    border-left: 5px solid #4062ff;
-    width: 200px;
-    height: 30px;
-    /* background-color: #EDF3FD;  */
-    text-align: center;
-}
-
-.password_box {
-    padding: 10px;
-}
-.password_box  label{
-    margin-left:30px;
-
-}
-
-#name,.heading {
+.heading {
     margin-left: 45px
 }
 
-#email,#password    {
-    margin-left: 74px;
-}
 
 .buttons {
     width: 70px;
@@ -211,7 +208,7 @@ input {
 }
 
 #btn1 {
-    margin: 10px 120px;
+    margin: 0px 120px;
     width: 90px;
     height: 40px;
     border-radius: 10px;

@@ -509,7 +509,7 @@
                     product_Id = data.value
 
                     coin_i = data.parentElement.parentElement.children[0].children[1].children[0].children[0].src
-                    
+
 
                     cryto_coinss = Number(data.parentElement.children[1].value);
 
@@ -566,12 +566,13 @@
             function cardbalanace() {
 
                 if (localStorage.getItem("card_balance")) {
+
                     let card_balance1 = JSON.parse(localStorage.getItem("card_balance"))
 
                     card_balance1.find((balance) => {
 
                         if (balance["user_id"] === login["user_id"]) {
- 
+
                             balance["coin_details"].find((e) => {
                                 if (data_id == e["coin_name"]) {
 
@@ -592,7 +593,7 @@
                                 ifnotobject = {
                                     "coin_name": data_id,
                                     "coins": cryto_coinss,
-                                    "coin_image" :  coin_i,
+                                    "coin_image": coin_i,
                                 }
                                 balance["coin_details"].push(ifnotobject)
                                 localStorage.setItem("card_balance", JSON.stringify(card_balance1))
@@ -602,6 +603,30 @@
                         }
                         else {
                             console.log("front")
+
+                            crypto_detail = data_id;
+
+                            let coin_obj = {
+                                "coin_name": crypto_detail,
+                                "coins": cryto_coinss,
+                                "coin_image": coin_i,
+                            }
+
+                            coin_arr.push(coin_obj)
+
+                            let card = {
+                                "coin_details": coin_arr,
+                                "username": username22,
+                                "user_id": login["user_id"],
+                            }
+
+                            // console.log(card)
+
+                            card_balance.push(card)
+
+                            localStorage.setItem("card_balance", JSON.stringify(card_balance));
+
+
 
                         }
                     })
@@ -615,7 +640,7 @@
                     let coin_obj = {
                         "coin_name": crypto_detail,
                         "coins": cryto_coinss,
-                        "coin_image" :  coin_i,       
+                        "coin_image": coin_i,
                     }
 
                     coin_arr.push(coin_obj)
