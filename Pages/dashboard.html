@@ -86,7 +86,44 @@
             </div>
         </div>
         <div class="sec-4">
-           
+            <div class="exchang">
+                <div class="option">
+                    <div class="choose">
+                        Buy
+                    </div>
+                    <div  class="choose">
+                        sell
+                    </div>
+                </div>
+                <form id="form">
+                    <div class="sell">
+                        <div>
+                            <p>Spend</p>
+                            <input type="number" class="input" >
+                        </div>
+                        <div class="flex">
+                            <img src="../Assets/Images/Logo/btc.png" alt="" width="30px">
+                            <p>BTC</p>
+                            <i class="fa-solid fa-angle-down fa-2xs" style="color: #a9acb1;font-size: 15px;"></i>
+                        </div>
+                    </div>
+
+                    <div class="sell">
+                        <div>
+                            <p>Spend</p>
+                            <input type="number" class="input" >
+                        </div>
+                        <div class="flex">
+                           
+                            <p>₹</p>
+                            <p>INR</p>
+                          
+                        </div>
+                    </div>
+
+                    <button>Buy</button>
+                </form>
+            </div>
         </div>
 
         <div>
@@ -162,7 +199,7 @@
                 </div>
             </div>
             <div class="Transaction">
-                <img src="../Assets/Images/Logo/sol.png" width="20%" class="img2" alt="">
+                <img src="../Assets/Images/Logo/ltc.png" width="20%" class="img2" alt="">
                 <div class="para1">
                     <h4>lite coin</h4>
                     <p id="litecoin"></p>
@@ -198,46 +235,7 @@
         })
         profile_image.setAttribute("src",res["profile_pic"])
 
-
-
-
-
-        let card = JSON.parse(localStorage.getItem("card_balance"));
-        console.log(card)
-        // if (card.user_id == login.user_id) {
-            if (card == null) { }
-            else {
-                for (let i = 0; i < card.length; i++) {
-                    for (let j = 0; j < card[i]["coin_details"].length; j++) {
-                        
-                        const box = document.createElement("div");
-                        box.setAttribute("class", "div");
-                        
-                        
-                        const logos = document.createElement("img");
-                        logos.setAttribute("src", card[i]["coin_details"][j]["coin_image"])
-                        logos.setAttribute("class", "logos")
-                        box.append(logos);
-
-                        const box1 = document.createElement("div");
-                        box1.setAttribute("class", "div1");
-                        box.append(box1)
-
-                        const h2 = document.createElement("h2");
-                        h2.innerText = card[i]["coin_details"][j]["coin_name"]
-                        box1.append(h2)
-
-                        const h4 = document.createElement("h4");
-                        h4.setAttribute("class", "price")
-                        h4.innerText = card[i]["coin_details"][j]["coins"]
-                        box1.append(h4)
-
-
-                        document.querySelector(".sec-4").prepend(box);
-                    }
-                }
-            }
-        // }
+        
 
 
     </script>

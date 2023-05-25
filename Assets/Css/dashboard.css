@@ -23,7 +23,7 @@ body {
     border-left: 5px solid #EDF3FD;
 }
 
-#img{
+#img {
     border-radius: 15px;
     margin-top: 50px;
 }
@@ -54,10 +54,10 @@ body {
 }
 
 .navigation ul li a:hover {
-    background-color:#EDF3FD;
+    background-color: #EDF3FD;
     width: 104%;
     border-radius: 15px 0px 0px 15px;
-    color: #4062ff  ;
+    color: #4062ff;
 
 }
 
@@ -101,7 +101,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 50px 0px 20px ;
+    padding: 0px 50px 0px 20px;
 
 }
 
@@ -127,9 +127,10 @@ body {
 
 }
 
-.para p{
+.para p {
     margin: 5px;
 }
+
 #phone {
     /* margin-bottom: 60px;
     margin-right: -50px; */
@@ -138,7 +139,7 @@ body {
 
 }
 
-#trans_details{
+#trans_details {
     padding: 7px;
     border-radius: 10px;
     border-style: none;
@@ -146,24 +147,29 @@ body {
     font-size: 18px;
     margin-top: 13px;
 }
-.sec-2 .para a{
+
+.sec-2 .para a {
     text-decoration: none;
     color: white;
 }
-.sec-3{
+
+.sec-3 {
     display: flex;
     align-items: center;
     padding: 20px;
 }
-.icons{
+
+.icons {
     display: flex;
     margin-left: 60%;
 }
-.sec-3 i{
+
+.sec-3 i {
     margin: 0px 5px 0px 10px;
 }
-#icon{
-    background-color:#4062ff;
+
+#icon {
+    background-color: #4062ff;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -171,29 +177,71 @@ body {
     font-size: 28px;
     padding: 7px;
 }
+
 .sec-4 {
     display: flex;
-    /* justify-content: center; */
-    /* overflow-x: scroll; */
-    /* overflow: hidden; */
+    border: 1px solid black;
+    /* padding: 20px;    */
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
 }
 
-.sec-4 .box1 {
-    background-color: white;
-    width: 250px;
-    height: 80px;
-    border-radius: 15px;
-    margin: 5px;
+.sec-4 .exchang {
+    border: 1px solid black;
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
 }
 
-#statics{
-    margin: 50px 0px 0px 0px;
+.sec-4 .option{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 70px;
+    display: flex;
+    /* align-items: center;
+    justify-content: space-evenly; */
+}
+
+.choose{
+    /* border: 1px solid black;  */
+    width: 50%;
+    text-align: center;
+    padding-top: 12px;
+}
+.input{
+    background-color: none;
+    border: none;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.sell{
+    border-radius: 10px;
+    border: 1px solid   black;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 19px;
+    border: 1px solid black;
+    border-radius: 30px;
+    height: 40px;
 }
 
 /* content ends */
 
 
-.aside{
+.aside {
     margin-left: 80%;
     position: relative;
     bottom: 850px;
@@ -202,34 +250,41 @@ body {
     /* border: 1px solid black; */
     width: 350px;
 }
-.sec-5{
+
+.sec-5 {
     display: flex;
-   align-items: center;
-   margin-top: 20px;
+    align-items: center;
+    margin-top: 20px;
 }
-.sec-5 i{
+
+.sec-5 i {
     font-size: 20px;
     color: gray;
     margin-left: 30px;
 }
-.sec5-1{
+
+.sec5-1 {
     display: flex;
     margin-left: 25%;
 }
-.sec-5 a{
+
+.sec-5 a {
     text-decoration: none;
     color: black;
     margin: 5px;
 }
-.buy{
+
+.buy {
     margin: 30px 0px 0px 10px;
     font-size: 16px;
 }
-.sec-6{
+
+.sec-6 {
     margin: 20px 0px 0px 15px;
     color: gray;
 }
-.sec-7{
+
+.sec-7 {
     background-color: #2696F9;
     width: 350px;
     height: 250px;
@@ -238,43 +293,50 @@ body {
     padding: 10px;
     margin: 10px 0px 10px 0px;
 }
-.sec7-1{
+
+.sec7-1 {
     margin: 20px 0px 0px 15px;
 }
-.sec7-2{
+
+.sec7-2 {
     margin: 35px 0px 0px 15px;
 }
-.sec-8{
+
+.sec-8 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
 }
-.sec-8 a{
+
+.sec-8 a {
     text-decoration: none;
     color: white;
 }
-.sec-8 .transfer{
-    background-color:#4062ff;
+
+.sec-8 .transfer {
+    background-color: #4062ff;
     width: 170px;
     height: 100px;
     border-radius: 15px;
-    display: flex;  
+    display: flex;
 }
-.small{
+
+.small {
     background-color: white;
     width: 60px;
     height: 60px;
     border-radius: 10px;
     text-align: center;
-    color:#4062ff;
+    color: #4062ff;
     font-size: 30px;
     padding: 5px;
     margin-left: 15px;
     margin-top: 20px;
-    
+
 }
-.Transaction{
+
+.Transaction {
     background-color: white;
     width: 95%;
     height: 100px;
@@ -285,17 +347,19 @@ body {
     align-items: center;
 }
 
-.sec-9{
+.sec-9 {
     margin: 20px 0px 0px 0px;
 }
-.sec-9 h2{
+
+.sec-9 h2 {
     margin: 0px 0px 0px 15px;
 }
-.img2{
+
+.img2 {
     margin: 16px;
 }
 
-#profile_image{
+#profile_image {
     border-radius: 50%;
 }
 
@@ -318,9 +382,10 @@ body {
 }
 
 
-.price{
+.price {
     color: grey;
 }
+
 .details {
     margin-top: 10px;
 }

@@ -41,12 +41,17 @@ function getCrypto(coin) {
 
   xhrrequest.onload = function () {
     const resJSON = JSON.parse(xhrrequest.response);
-    console.log(resJSON);
+    // console.log(resJSON["Realtime Currency Exchange Rate"]);
+    let size=Object.keys(resJSON["Realtime Currency Exchange Rate"])
+    for(let i=0;i<size.length;i++){
+      let get=Object.keys(resJSON["Realtime Currency Exchange Rate"])[i]
+      console.log(get +resJSON["Realtime Currency Exchange Rate"][get])
+    }
     
   };
   xhrrequest.open(
     "get",
-    `https://coinlib.io/api/v1/coin?key=0f699c336c04344a&pref=INR&symbol=${coin}`,
+    `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${coin}&to_currency=INR&apikey=EP4QF8JQ134XTCHY`,
     true
   );
   xhrrequest.send();

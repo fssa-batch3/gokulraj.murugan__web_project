@@ -13,11 +13,11 @@
     <div class="login">
         <div class="head">
             <a href="../index.html">
-<i class="fa-solid fa-arrow-left"></i>
-</a>
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
             <h5>
-New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
-</h5>
+                New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
+            </h5>
         </div>
         <div class="h2">
             <h2>Sign In</h2>
@@ -27,17 +27,17 @@ New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
 
             <label for="email">Email :</label>
             <input type="email" name="email" id="email" placeholder="Email" required>
-<br>
+            <br>
 
             <label for="password">Password :</label>
             <input type="password" name="password" id="password" placeholder="Password"
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Enter a Uppercase,a lowercase, a number,a special character" required>
-<br>
+            <br>
 
             <input type="checkbox" name="viewpassword" id="viewpassword">
             <label for="viewpassword">Show Password</label>
-<br>
+            <br>
 
             <button type="button" id="btn">Sign in</button>
         </form>
@@ -68,10 +68,10 @@ New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
             if (res == 1) {
 
                 const login = {
-            user_id,
-            email,
-            "password": password.value,
-        }
+                    user_id,
+                    email,
+                    "password": password.value,
+                }
 
                 localStorage.setItem("login", JSON.stringify(login))
                 alert("Logged in")
