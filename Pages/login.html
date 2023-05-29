@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/login.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="head">
+            <a href="../index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <h5>
+                New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
+            </h5>
+        </div>
+        <div class="h2">
+            <h2>Sign In</h2>
+        </div>
+
+        <form action="" id="form">
+
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <br>
+
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Enter a Uppercase,a lowercase, a number,a special character" required>
+            <br>
+
+            <input type="checkbox" name="viewpassword" id="viewpassword">
+            <label for="viewpassword">Show Password</label>
+            <br>
+
+            <button type="button" id="btn">Sign in</button>
+        </form>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>        function login() {
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password")
+            const arr = JSON.parse(localStorage.getItem("userdata"))
+            let res;
+            let user_id;
+
+            arr.find(e => {
+
+                if (e.email == email && e.password == password.value) {
+
+                    user_id = e.user_id
+                    console.log(e.user_id)
+                    res = 1;
+
+                }
+            });
+            // console.log(res);
+
+            if (res == 1) {
+
+                const login = {
+                    user_id,
+                    email,
+                    "password": password.value,
+                }
+
+                localStorage.setItem("login", JSON.stringify(login))
+                alert("Logged in")
+                window.location.href = "./profile.html"
+
+            }
+
+            else {
+                alert("Invalid Email or Password")
+            }
+
+        }
+
+        const form = document.getElementById("btn");
+        form.addEventListener("click", (el) => {
+            el.preventDefault();
+            login()
+        })
+
+        const checkbox = document.getElementById("viewpassword");
+
+        checkbox.addEventListener("click", e => {
+            if (checkbox.checked) {
+                password.setAttribute("type", "text");
+            }
+            else {
+                password.setAttribute("type", "password");
+            }
+        })
+    </script>
+
+</body>
+
+</html>

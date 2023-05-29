@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/statistics.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="./dashboard.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./Exchange.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="./wallet.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="./cryptos.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span class="title">Blog</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="all">
+        <!-- <div class="main">
+            <div class="box">
+                <p id="rank">Rank #1</p>
+                <div class="top">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="20%">
+                    <h1>Bitcoin</h1>
+                    <h4>BTC</h4>
+                    <input type="checkbox" id="check">
+                </div>
+                <div class="price_change">
+                        <h2 id="price"> &#8377; 12,34,56</h2>
+                        <h3>98%</h3>
+                </div>
+                <div class="value">
+                    <div class="box1">
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="box1">
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="flex">
+                            <p>market value </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="stat">
+                <img src="../Assets/Images/stat.png" width="80%" alt="">
+            </div>
+        </div>
+        <divstyle="margin-top: 50px ;">
+            <div class="converter">
+                <h2 class="box_h2">Bitcoin Converter</h2>
+                <div>
+                    <div class="coin">
+                        <p class="input_span">BTC</p>
+                        <input type="number" class="input_value">
+                    </div>
+                    <div class="coin">
+                        <p class="input_span">INR</p>
+                        <input type="number" class="input_value">
+                    </div>
+                </div>
+            </div>
+            <div class="statistics">
+                <h2 class="box_h2">BTC price statistics</h2>
+                <div class="stat2">
+                    <div class="box1">
+                        <div class="phone">
+                            <p>Bitcoin Price </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>24h Low / 24h High</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>7d Low / 7d High</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Volume / Market Cap</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+
+                        <div class="phone">
+                            <p>Trading Volume </p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap Rank</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                        <div class="phone">
+                            <p>Market Cap Dominance</p>
+                            <h5>98765678908765</h5>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </divstyle=> -->
+    </div>
+
+    <script>
+
+
+const url = window.location.search;
+        const params = new URLSearchParams(url)
+        const param_value = params.get("name")
+        console.log(param_value)
+        const product_list = [
+            {
+
+                "img": "../Assets/Images/logo/btc.png",
+                "name": "Bitcoin",
+                "symbol": "BTC"
+            },
+            {
+
+                "img": "../Assets/Images/logo/eth.png",
+                "name": "Ether",
+                "symbol": "ETH"
+            },
+            {
+
+                "img": "../Assets/Images/logo/etc.png",
+                "name": "Etherium",
+                "symbol": "ETC"
+            },
+            {
+
+                "img": "../Assets/Images/logo/doge.png",
+                "name": "Dodge",
+                "symbol": "DOGE"
+            },
+            {
+
+                "img": "../Assets/Images/logo/bnb.png",
+                "name": "Binace",
+                "symbol": "bnb"
+            },
+            {
+
+                "img": "../Assets/Images/logo/stak.png",
+                "name": "Solanao",
+                "symbol": "STAK"
+            },
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "Solanao",
+                "symbol": "sol"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/elec.png",
+                "name": "Solanao",
+                "symbol": "ELEC"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/flo.png",
+                "name": "Solanao",
+                "symbol": "FLO"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/game.png",
+                "name": "Solanao",
+                "symbol": "GAME"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/gold.png",
+                "name": "Solanao",
+                "symbol": "GOLD"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/usd.png",
+                "name": "Solanao",
+                "symbol": "USD"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/vivo.png",
+                "name": "Solanao",
+                "symbol": "VIVO"
+            },
+
+            {
+
+                "img": "../Assets/Images/logo/sol.png",
+                "name": "Solanao",
+                "symbol": "SOL"
+            },
+
+        ]
+let pass_value=product_list.find((e)=>{
+    if(e.name==param_value){
+        return e.symbol;        
+    }
+})
+console.log(pass_value["symbol"])
+        getCrypto(pass_value["symbol"]);
+
+        let a;
+
+        function getCrypto(coin) {
+            const xhrrequest = new XMLHttpRequest();
+
+            xhrrequest.onload = function () {
+                const resJSON = JSON.parse(xhrrequest.response);
+                // console.log(resJSON["Realtime Currency Exchange Rate"]);
+                let size = Object.keys(resJSON["Realtime Currency Exchange Rate"])
+                // for (let i = 0; i < size.length; i++) {
+                    let get = Object.keys(resJSON["Realtime Currency Exchange Rate"])
+                    console.log(resJSON["Realtime Currency Exchange Rate"][get[3]])
+
+                
+                    const main = document.createElement("div");
+                    main.setAttribute("class", "main");
+
+                    const box = document.createElement("div");
+                    box.setAttribute("class", "box");
+                    main.append(box);
+
+                    const rank = document.createElement("p");
+                    rank.setAttribute("id", "rank");
+                    rank.innerText = "# rank" + resJSON["Realtime Currency Exchange Rate"][get[0]]
+                    box.append(rank);
+
+                    const top1 = document.createElement("div");
+                    top1.setAttribute("class", "top")
+                    box.append(top1);
+
+                    const logo = document.createElement("img")
+                    logo.setAttribute("src", "../Assets/Images/Logo/btc.png")
+                    logo.setAttribute("width", "20%")
+                    top1.append(logo)
+
+                    const coin_name = document.createElement("h1")
+                    coin_name.innerText = resJSON["Realtime Currency Exchange Rate"][get[1]]
+                    top1.append(coin_name);
+
+                    const symbol = document.createElement("h4")
+                    symbol.innerText = resJSON.symbol;
+                    top1.append(symbol);
+
+                    const check = document.createElement("input")
+                    check.setAttribute("id", "check")
+                    check.setAttribute("type", "checkbox")
+                    top1.append(check)
+
+                    const price_change = document.createElement("div");
+                    price_change.setAttribute("class", "price_change");
+                    box.append(price_change)
+
+                    let price = document.createElement("h2");
+                    price.setAttribute("id", "price");
+                    price.innerText = "₹" + Number(Math.round(resJSON["Realtime Currency Exchange Rate"][get[4]]));
+                    price_change.append(price);
+
+
+                    const percentage = document.createElement("h3");
+                    percentage.innerText = "98 %";
+                    price_change.append(percentage);
+
+                    const value = document.createElement("div");
+                    value.setAttribute("class", "value")
+                    box.append(value);
+
+
+                    const values = document.createElement("div");
+                    values.innerHTML = ` Market cap: ${resJSON.market_cap} <br><br>
+                    △ 1h   :  ${resJSON.delta_1h}<br><br>
+                    △ 24h   :   ${resJSON.delta_24h}<br><br>
+                    △ 7D    :   ${resJSON.delta_7d}<br><br>
+                    △ 7D    :   ${resJSON.delta_7d}<br><br>
+                `
+                    value.append(values)
+
+                    const stat = document.createElement("div")
+                    stat.setAttribute("class", "stat")
+                    main.append(stat);
+
+                    const img = document.createElement("img");
+                    img.setAttribute("src", "../Assets/Images/stat.png");
+                    img.setAttribute("width", "80%");
+                    stat.append(img);
+
+                    const aside = document.createElement("div");
+                    aside.setAttribute("class", "aside");
+
+                    const converter = document.createElement("div");
+                    converter.setAttribute("class", "converter");
+                    aside.append(converter);
+
+                    const box_h2 = document.createElement("h2");
+                    box_h2.setAttribute("class", "box_h2");
+                    box_h2.innerText = "Bitcoin Converter";
+                    converter.append(box_h2);
+
+                    // cardss.forEach((details) => {
+                    //     if (details.user_id == login.user_id) {
+                    //         det = details.coin_details;
+                    //     }
+                    // })
+
+                    // let detttt
+                    // det.find((data) => {
+                    //     console.log(verify.value)
+                    //     if (data.coin_name == verify.value.toLowerCase()) {
+                    //         return detttt = data.coin_name
+                    //     }
+                    // })
+
+                    // console.log(detttt)
+                    const div = document.createElement("div");
+                    converter.append(div);
+
+                    const coin = document.createElement("div");
+                    coin.setAttribute("class", "coin");
+                    div.append(coin);
+
+                    const input_span = document.createElement("p");
+                    input_span.setAttribute("class", "input_span");
+                    input_span.innerHTML = resJSON.symbol
+                    coin.append(input_span);
+
+                    let input_value = document.createElement("input");
+                    input_value.setAttribute("type", "number")
+                    input_value.setAttribute("class", "input_value");
+                    input_value.setAttribute("id", "tag")
+                    coin.append(input_value);
+
+                    const coin2 = document.createElement("div");
+                    coin2.setAttribute("class", "coin");
+                    div.append(coin2);
+
+                    const input_span2 = document.createElement("p");
+                    input_span2.setAttribute("class", "input_span");
+                    input_span2.innerText = "INR"
+                    coin2.append(input_span2);
+
+                    const input_value2 = document.createElement("input");
+                    input_value2.setAttribute("type", "number")
+                    input_value2.setAttribute("class", "input_value");
+                    coin2.append(input_value2);
+
+                    const statistics = document.createElement("div");
+                    statistics.setAttribute("class", "statistics");
+                    aside.append(statistics);
+
+                    const box_h2s = document.createElement("h2");
+                    box_h2s.setAttribute("class", "box_h2");
+                    box_h2s.innerText = "BTC price statistics";
+                    statistics.append(box_h2s);
+
+                    const stat2 = document.createElement("div");
+                    stat2.setAttribute("class", "stat2");
+                    statistics.append(stat2);
+
+                    const box2 = document.createElement("div");
+                    box2.setAttribute("class", "box1");
+                    stat2.append(box2);
+
+                    for (let l = 0; l < 6; l++) {
+                        const phone = document.createElement("div");
+                        phone.setAttribute("class", "phone");
+                        box2.append(phone);
+
+                        const stat_data = document.createElement("p");
+                        stat_data.innerText = "Bitcoin Price";
+                        phone.append(stat_data);
+
+                        const h5 = document.createElement("h5");
+                        h5.innerText = "09875430987"
+                        phone.append(h5);
+
+                        const line_2 = document.createElement("hr");
+                        phone.append(line_2);
+                    }
+
+                    document.querySelector(".all").append(main);
+                    document.querySelector(".all").append(aside);
+
+                    let addd = document.getElementById("tag");
+
+                // };
+            }
+                xhrrequest.open(
+                    "get",
+                    `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${coin}&to_currency=INR&apikey=EP4QF8JQ134XTCHY`,
+                    true
+                );
+                // xhrrequest.setRequestHeader("Access-Control-Allow-Origin", "*");
+                xhrrequest.send();
+                gedetail()
+            
+        
+
+        }
+       
+
+
+
+
+        function gedetail(addd) {
+
+
+
+
+            addd.addEventListener("keyup", (e) => {
+
+                console.log(a.value)
+            })
+
+        }
+
+
+
+    </script>
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+
+</body>
+
+</html>

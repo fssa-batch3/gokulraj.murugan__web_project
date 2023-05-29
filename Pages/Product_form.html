@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../Assets/Css/Product_form.css">
+</head>
+
+<body>
+    <!-- pop up -->
+    <div id="overlay"></div>
+    <div class="popup">
+
+        <div>
+<a href="#">
+<i class="fa-solid fa-xmark" id="close-btn"></i>
+</a>
+        </div>
+        <form id="form">
+            <label for="cryoto_name2" class="coiname">Coin :</label>
+            <input type="text" name="cryoto_name2" id="crypto_name" required>
+<br>
+
+            <label for="crypto">How many coins :</label>
+            <input type="number" name="crypto" id="no_of_coins" required>
+<br>
+
+            <label for="crypto">MONEY :</label>
+            <input type="number" name="money" id="money" required>
+<br>
+
+            <div class="coin">
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                    <h3>Bitcoin</h3>
+                    <h6>BTC</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/doge.png" alt="" width="40px" height="40px">
+                    <h3>Tether</h3>
+                    <h6>USDT</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/eth.png" alt="" width="40px" height="40px">
+                    <h3>Ethereum</h3>
+                    <h6>ETH</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/bnb.png" alt="" width="40px" height="40px">
+                    <h3>Binace</h3>
+                    <h6>BNB</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/usd.png" alt="" width="40px" height="40px">
+                    <h3>USD Coin</h3>
+                    <h6>USD</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/doge.png" alt="" width="40px" height="40px">
+                    <h3>Doge Coin</h3>
+                    <h6>DOGE</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/sol.png" alt="" width="40px" height="40px">
+                    <h3>Solana</h3>
+                    <h6>SOL</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/bnb.png" alt="" width="40px" height="40px">
+                    <h3>LiteCoin</h3>
+                    <h6>LTC</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                    <h3>Shiba Inu</h3>
+                    <h6>SHIB</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                    <h3>Ape coin</h3>
+                    <h6>APE</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                    <h3>Flow</h3>
+                    <h6>FLOW</h6>
+                </div>
+                <div class="one_coin">
+                    <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                    <h3>Neo</h3>
+                    <h6>NEO</h6>
+                </div>
+
+            </div>
+        </form>
+        <button id="sell">Sell</button>
+    </div>
+
+    </div>
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+
+    </script>
+    <script>        const no_of_coins = document.getElementById("no_of_coins");
+        const coin_div = document.querySelectorAll(".one_coin");
+        const crypto = document.getElementById("crypto_name");
+        const money = document.getElementById("money")
+        crypto.addEventListener("keyup", (e) => {
+
+            const currency = e.target.value.toLowerCase();
+            let div;
+
+            // console.log(currency)
+            const one_coin = document.querySelectorAll(".one_coin");
+            // console.log(one_coin)
+            one_coin.forEach(element => {
+                // console.log(element)
+                const content = element.children[1].textContent.toLowerCase();
+
+                if (content.includes(currency)) {
+                    element.style.display = "flex";
+                }
+                else {
+                    element.style.display = "none";
+                }
+            })
+        });
+
+        let data;
+        let coin_img;
+        coin_div.forEach((el) => {
+            // console.log(el);
+            el.addEventListener("click", () => {
+                data = el;
+                crypto.value = el.children[1].innerHTML
+                coin_img = el.children[0].src
+                console.log(coin_img);
+            })
+        })
+
+        function product_details() {
+            const product_id = Math.floor(Math.random() * 100)
+            const crypto = document.getElementById("crypto_name").value.toLowerCase();
+            const no_of_coins = document.getElementById("no_of_coins").value;
+            const money = document.getElementById("money").value;
+
+            const product_details = JSON.parse(localStorage.getItem("product_details")) ?? [];
+
+            const product = {
+        // "seller_id": user_id,
+        product_id,
+        crypto_name,
+        // "seller_username": username,
+        no_of_coins,
+        money,
+        // "profile_pic": profile_image,
+        coin_img,
+    }
+            product_details.push(product)
+            localStorage.setItem("product_details", JSON.stringify(product_details))
+            window.location.href = "./Exchange.html"
+
+        }
+        const check = document.getElementById("sell");
+        check.addEventListener("click", (click) => {
+            click.preventDefault()
+            product_details()
+        })
+    </script>
+
+</body>
+
+</html>

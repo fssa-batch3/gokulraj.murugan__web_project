@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/wallet.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="../Pages/dashboard.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pages/Exchange.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pages/wallet.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pages/cryptos.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pages/content.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-book"></i>
+                    </span>
+                    <span class="title">Blog</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="all">
+        <div class="wallet">
+            <h2>
+                <i class="fa-solid fa-wallet"></i>Your Wallet
+            </h2>
+            <a href="../Pages/my_sell.html" id="my_sell">My Activites</a>
+        </div>
+        <hr class="line">
+        <div class="boxes" style="display: flex;">
+
+            <!-- <div class="box">
+                <img src="../Assets/Images/Logo/btc.png" class="logos" alt="">
+                <div class="box1">
+                    <h2>Bitcoin</h2>
+                    <h4>09872656</h4>
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="details">
+            <div class="recent_activity">
+                <h2>
+                    <i class="fa-solid fa-clock-rotate-left"></i>Recent Activity
+                </h2>
+                <hr>
+            </div>
+            <div class="list_of_details">
+                <div class="today">
+                    <h3 style="margin: 20px 0px 20px 50px;color: grey;">Today</h3>
+                    <!-- <div class="one_detail">
+                            <div class="seller_details">
+                                <img src="../Assets/Images/test-1.png" width="15%" alt="">
+                                <h3 class="seller_username">Username</h3>
+                            </div>
+                            <h4 class="method">Withdraw</h4>
+                            <h4 class="time">9.14 A.M</h4>
+                            <h4 class="coins">2 BTC</h4>
+                        </div>
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+    <script>
+        const payment = JSON.parse(localStorage.getItem("payment_details"))
+        const login = JSON.parse(localStorage.getItem("login"))
+        const user_detail = JSON.parse(localStorage.getItem("userdata"))
+
+        user_detail.find(e => {
+            if (e.email == login.email) {
+                res = e;
+            }
+        })
+
+        // console.log(res)
+
+
+
+        // balance card
+
+        let card = JSON.parse(localStorage.getItem("card_balance"));
+
+        // console.log(card)
+        for (let k = 0; k < card.length; k++) {
+
+
+            if (card[k]["user_id"] == login.user_id) {
+
+                let balance = card[k]["coin_details"]
+
+                // console.log(balance)
+               
+                    for (let i = 0; i < balance.length; i++) {
+                       
+                            const box = document.createElement("div");
+                            box.setAttribute("class", "box");
+
+
+                            const logos = document.createElement("img");
+                            logos.setAttribute("src", balance[i]["coin_image"])
+                            logos.setAttribute("class", "logos")
+                            box.append(logos);
+
+                            const box1 = document.createElement("div");
+                            box1.setAttribute("class", "box1");
+                            box.append(box1)
+
+                            const h2 = document.createElement("h2");
+                            h2.innerText = balance[i]["coin_name"]
+                            box1.append(h2)
+
+                            const h4 = document.createElement("h4");
+                            h4.setAttribute("class", "price")
+                            h4.innerText =balance[i]["coins"]
+                            box1.append(h4)
+
+
+                            document.querySelector(".boxes").prepend(box);
+                    }
+                    
+            }
+        }
+        // payment history
+
+        if (payment == null) { }
+        else {
+            for (let i = 0; i < payment.length; i++) {
+
+                if (login.user_id == payment[i].user_id) {
+
+                    const one_detail = document.createElement("div");
+                    one_detail.setAttribute("class", "one_detail")
+                    document.querySelector(".today").append(one_detail)
+
+                    const seller_details = document.createElement("div");
+                    seller_details.setAttribute("class", "seller_details")
+                    one_detail.append(seller_details)
+
+                    const user_photo = document.createElement("img");
+                    user_photo.setAttribute("src", payment[i].profile_pic);
+                    user_photo.setAttribute("width", "80px")
+                    user_photo.style.borderRadius = "50px"
+                    seller_details.append(user_photo)
+
+                    const seller_username = document.createElement("h3");
+                    seller_username.setAttribute("class", "seller_username")
+                    seller_username.innerText = payment[i].seller_username
+                    seller_details.append(seller_username);
+
+                    const method = document.createElement("h4");
+                    method.setAttribute("class", "method")
+                    method.innerText = payment[i].type
+                    one_detail.append(method);
+
+                    const time = document.createElement("h4");
+                    time.setAttribute("class", "time")
+                    time.innerText = payment[i].time
+                    one_detail.append(time);
+
+                    const coins = document.createElement("h4");
+                    coins.setAttribute("class", "coins")
+                    coins.innerText = `${payment[i].no_of_coins}BTC`
+                    one_detail.append(coins);
+
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

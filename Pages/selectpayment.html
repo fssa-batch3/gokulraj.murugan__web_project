@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/selectpayment.css">
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="./dashboard.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./Exchange.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="./wallet.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="./cryptos.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <i class="fa-solid fa-gear"></i>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="blackscreen"></div>
+        <div class="popup">
+            <h1>Payment Details</h1>
+            <form action="">
+                <input type="tel" inputmode="numeric" pattern="[0-9]{16}" autocomplete="cc-number" maxlength="16"
+                    name="card_number" id="card_number" placeholder="CARD NUMBER" class="card" required>
+                <br>
+                <input type="text" pattern="[A-Za-z]{1,32}" name="name" id="card_name" placeholder="CARDHOLDER NAME"
+                    class="card" required>
+                <br>
+                <label id="expiry">Expiration Date:</label>
+                <br>
+                <input type="number" name="month" id="month" placeholder="DATE" class="date">
+                <input type="number" name="year" id="year" placeholder="YEAR" class="date">
+                <input type="number" name="cvv" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" id="cvv"
+                    placeholder="CVV" class="date">
+
+                <button id="submit">Submit</button>
+            </form>
+            <button id="cancel">cancel</button>
+        </div>
+
+        <div class="payment">
+            <div class="summary">
+                <h3>Order Summary</h3>
+                <h4 id="price"></h4>
+            </div>
+            <hr class="line">
+            <form action="" class="form">
+                <!-- <div class="box">
+                    <input type="radio" name="visa" id="visa" class="radio">
+                    <label for="visa"><img src="../Assets/Images/visa_logo.png" alt="">
+                        **** 1234</label>
+                </div>
+
+                <div class="box">
+                    <input type="radio" name="new_card" id="master" class="radio">
+                    <label for="master"><img src="../Assets/Images/Mastercard-logo.png" alt="">
+                        **** 1234</label>
+                </div> -->
+                <div class="box">
+                    <input type="radio" name="new_card" id="new_card" class="radio">
+                    <label for="new_card">
+                        <i class="fa fa-plus"></i>Add new card
+                    </label>
+                </div>
+                <button id="button">Pay</button>
+
+            </form>
+        </div>
+    </div>
+    <script>
+        const login_details = JSON.parse(localStorage.getItem("login"));
+        const payment_details = JSON.parse(localStorage.getItem("payment_details"))
+
+        // console.log(cards)
+
+        const popup = document.querySelector(".popup")
+        const blackscreen = document.querySelector(".blackscreen")
+
+        const master = document.getElementById("master");
+        const new_card = document.getElementById("new_card");
+        const price = document.getElementById("price");
+        let product_id;
+        const { user_id } = login_details;
+
+        // Card Details code start
+        const card_number = document.getElementById("card_number");
+        const card_name = document.getElementById("card_name");
+        const number = document.getElementById("month");
+        const year = document.getElementById("year");
+        const cvv = document.getElementById("cvv");
+
+        function card() {
+            const card_details = JSON.parse(localStorage.getItem("card_details")) ?? []
+
+            const card_detail = {
+                user_id,
+                "card number": card_number.value,
+                "card name": card_name.value,
+                "number": number.value,
+                "year": year.value,
+                "cvv": cvv.value,
+            }
+
+            card_details.push(card_detail);
+            localStorage.setItem("card_details", JSON.stringify(card_details))
+            popup.style.display = "none"
+            blackscreen.style.display = "none"
+            alert("card added")
+            location.reload()
+        }
+        // Card Details code ends
+
+        const newcard = document.getElementById("new_card");
+        newcard.addEventListener("click", (element) => {
+            popup.style.display = "block"
+            blackscreen.style.display = "block"
+        })
+
+        const submit = document.getElementById("submit");
+        submit.addEventListener("click", (e) => {
+            e.preventDefault()
+            card()
+        })
+
+        // card read code starts
+
+        const cards = JSON.parse(localStorage.getItem("card_details"));
+
+        if (cards == null) {
+
+        }
+        else {
+            for (let i = 0; i < cards.length; i++) {
+
+                const box = document.createElement("div");
+                box.setAttribute("class", "box");
+                document.querySelector(".form").prepend(box)
+
+                const radio = document.createElement("input");
+                radio.setAttribute("type", "radio");
+                radio.setAttribute("name", ",master");
+                radio.setAttribute("id", "master");
+                radio.setAttribute("class", "radio")
+                box.append(radio);
+
+                const label = document.createElement("label");
+                label.setAttribute("for", "master");
+                label.innerText = cards[i]["card number"]
+                box.append(label);
+
+                const img = document.createElement("img");
+                img.setAttribute("src", "../Assets/Images/Mastercard-logo.png");
+                label.prepend(img);
+            }
+        }
+
+        const cancel = document.getElementById("cancel");
+        cancel.addEventListener("click", (el) => {
+
+            popup.style.display = "none"
+            blackscreen.style.display = "none"
+        })
+
+        const pay = document.getElementById("button");
+        pay.addEventListener("click", () => {
+
+            alert("Thank you 😄")
+            window.location.href = "../Pages/Exchange.html"
+        })
+
+        // balance code starts
+    </script>
+
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+    </script>
+</body>
+
+</html>

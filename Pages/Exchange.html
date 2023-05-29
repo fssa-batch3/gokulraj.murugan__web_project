@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Assets/Css/Exchange.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <div>
+            <img src="../Assets/Images/Screenshot__74..png" width="90%" id="logo" alt="">
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="./dashboard.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./Exchange.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </span>
+                    <span class="title">Exchange</span>
+                </a>
+            </li>
+            <li>
+                <a href="./wallet.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    <span class="title">Wallet</span>
+                </a>
+            </li>
+            <li>
+                <a href="./cryptos.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </span>
+                    <span class="title">Chart</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <span class="title">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="../Pages/content.html">
+                    <span class="icon">
+                        <i class="fa-solid fa-book"></i>
+                    </span>
+                    <span class="title">Blog</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="all">
+
+        <div class="head">
+            <h3>
+                <a href="./Exchange.html">Buy</a>
+            </h3>
+            <button id="sell_button" type="button">Sell</button>
+            <div>
+                <input type="search" name="search" placeholder="Search" id="search">
+            </div>
+        </div>
+        <hr class="line">
+
+        <div class="main">
+
+            <div class="exchagnes">
+                <h2 class="crypto_name">Bitcoin</h2>
+                <div data-id="bitcoin" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Tether</h2>
+                <div data-id="tether" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Doge Coin</h2>
+                <div data-id="doge coin" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Solana</h2>
+                <div data-id="solana" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Ethereum</h2>
+                <div data-id="ethereum" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Lite Coin</h2>
+                <div data-id="litecoin" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Binance</h2>
+                <div data-id="binace" class="cards">
+                </div>
+            </div>
+            <div class="exchagnes">
+                <h2 class="crypto_name">Cardano</h2>
+                <div data-id="cardano" class="cards">
+                </div>
+            </div>
+
+            <!-- pop up -->
+            <div id="overlay"></div>
+            <div class="popup">
+
+                <div>
+                    <a href="#">
+                        <i class="fa-solid fa-xmark" id="close-btn"></i>
+                    </a>
+                </div>
+                <form id="form">
+                    
+                    <label for="cryoto_name2" class="coiname">COIN </label>
+                    <input type="text" name="cryoto_name2" id="crypto_name" required>
+                    <br>
+
+                    <label for="crypto">HOW MANY COINS </label>
+                    <input type="number" name="crypto" id="no_of_coins" required>
+                    <br>
+
+                    <label for="crypto">MONEY </label>
+                    <input type="number" name="money" id="money" required>
+                    <br>
+
+
+
+    
+                    <div class="coin">
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/btc.png" alt="" width="40px" height="40px">
+                            <h3>Bitcoin</h3>
+                            <h6>BTC</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/usdt.png" alt="" width="40px" height="40px">
+                            <h3>Tether</h3>
+                            <h6>USDT</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/eth.png" alt="" width="40px" height="40px">
+                            <h3>Ethereum</h3>
+                            <h6>ETH</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/bnb.png" alt="" width="40px" height="40px">
+                            <h3>Binace</h3>
+                            <h6>BNB</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/doge.png" alt="" width="40px" height="40px">
+                            <h3>Doge Coin</h3>
+                            <h6>DOGE</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/sol.png" alt="" width="40px" height="40px">
+                            <h3>Solana</h3>
+                            <h6>SOL</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/ltc.png" alt="" width="40px" height="40px">
+                            <h3>LiteCoin</h3>
+                            <h6>LTC</h6>
+                        </div>
+                        <div class="one_coin">
+                            <img src="../Assets/Images/Logo/ada.png" alt="" width="40px" height="40px">
+                            <h3>Cardano</h3>
+                            <h6>ADA</h6>
+                        </div>
+                    </div>
+
+                    <button id="sell">Sell</button>
+                </form>
+            </div>
+
+        </div>
+        <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+        </script>
+
+        <script src="../Assets/js/exchange.js"></script>
+
+</body>
+
+</html>

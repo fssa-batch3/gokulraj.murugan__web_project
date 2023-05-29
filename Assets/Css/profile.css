@@ -1,0 +1,236 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #EDF3FD;
+    /* width: 1440px; */
+    height: 900px;
+    background-image: url(../Images/1.png);
+    background-position: 600%;
+    background-image: fixed;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+
+/* sidebar navigation starts */
+.navigation {
+    background-color:#4285F4;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 15px;
+    border-left: 5px solid #EDF3FD;
+}
+
+#img {
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    color: #EDF3FD;
+}
+
+.navigation ul li a:hover {
+    background-color: #EDF3FD;
+    width: 104%;
+    border-radius: 15px 0px 0px 15px;
+    color: #4285F4;
+
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i {
+    font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+
+/* sidebar navigation ends */
+
+
+.box {
+    width: 70%;
+    height: 700px;
+    margin: 80px 10px 10px 385px;
+    border-radius: 10px;
+    display: flex;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+}
+
+.box1 {
+    width: 400px;
+    height: 600px;
+    margin: 50px 40px;
+    background-color: #FEFCFF	;
+    border-radius: 10px;
+    overflow: none;
+}
+
+.profile_pic {
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#profile_image {
+    width: 100%;
+    height: 320px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#form {
+    font-size: 18px;
+}
+
+#form label{
+    border: 1px solid black;
+    padding: 8px 30px 5px 10px;
+    border-radius: 5px 0px 0px 5px; 
+}
+
+#form input {
+    height: 35px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.input_tag {
+    margin: 20px 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#delete {
+    display: none;
+}
+
+.profile_details {
+    width: 380px;
+    height: 250px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+
+
+
+.box2 {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 50px 41px 50px 20px;
+    background-color: #fff;
+}
+
+.box3 {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 50px 41px 50px 20px;
+    background-color: #fff;
+}
+
+.heading {
+    display: flex;
+    font-size: 18px;
+    margin: 15px 0px 13px 0px;
+}
+
+.line {
+    width: 90%;
+    margin: 0px 20px;
+}
+
+.heading {
+    margin-left: 45px
+}
+
+
+.buttons {
+    width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    border-style: none;
+    margin-left: 200px;
+}
+
+#btn1 {
+    margin: 0px 120px;
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.right_box {
+    overflow: scroll
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
